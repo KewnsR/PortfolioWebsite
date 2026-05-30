@@ -434,7 +434,7 @@ nav.scrolled {
 
 .scroll-to-top:hover {
     transform: translateY(-3px) scale(1.02);
-    box-shadow: 0 6px 24px rgba(102, 126, 234, 0.45);
+    box-shadow: 0 6px 24px rgba(67, 102, 255, 0.45);
 }
 
 .scroll-to-top:active {
@@ -483,7 +483,7 @@ nav.scrolled {
 
 /* Gradient text with animation */
 .gradient-text {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #667eea 100%);
+    background: linear-gradient(135deg, #4d6cf3 0%, #6432ef 50%, #4d6cf3 100%);
     background-size: 200% 100%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
