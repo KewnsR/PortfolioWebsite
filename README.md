@@ -1,4 +1,4 @@
-# Lloyd Kenneth Ramos - Portfolio Website
+# Portfolio Website
 
 ![Portfolio Preview](https://img.shields.io/badge/Status-Live-brightgreen) ![Flask](https://img.shields.io/badge/Flask-3.1.0-blue) ![TailwindCSS](https://img.shields.io/badge/TailwindCSS-Latest-38B2AC) ![Python](https://img.shields.io/badge/Python-3.x-yellow)
 
