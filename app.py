@@ -6,7 +6,7 @@ import os
 # Load environment variables
 load_dotenv()
 
-app = Flask(__name__, template_folder='../templates', static_folder='../static')
+app = Flask(__name__)
 
 # Email Configuration
 app.config['MAIL_SERVER'] = os.getenv('MAIL_SERVER', 'smtp.gmail.com')
@@ -15,7 +15,7 @@ app.config['MAIL_USE_TLS'] = os.getenv('MAIL_USE_TLS', 'True') == 'True'
 app.config['MAIL_USERNAME'] = os.getenv('MAIL_USERNAME')
 app.config['MAIL_PASSWORD'] = os.getenv('MAIL_PASSWORD')
 app.config['MAIL_DEFAULT_SENDER'] = os.getenv('MAIL_DEFAULT_SENDER', os.getenv('MAIL_USERNAME'))
-app.config['RECIPIENT_EMAIL'] = os.getenv('RECIPIENT_EMAIL')
+app.config['RECIPIENT_EMAIL'] = os.getenv('RECIPIENT_EMAIL', 'ramoslloydkenneth1@gmail.com')
 
 mail = Mail(app)
 
@@ -23,28 +23,9 @@ mail = Mail(app)
 def home():
     return render_template("index.html")
 
-@app.route("/test-config", methods=['GET'])
-def test_config():
-    """Debug endpoint to check if environment variables are set"""
-    config_status = {
-        'MAIL_SERVER': 'SET' if os.getenv('MAIL_SERVER') else 'MISSING',
-        'MAIL_PORT': 'SET' if os.getenv('MAIL_PORT') else 'MISSING',
-        'MAIL_USERNAME': 'SET' if os.getenv('MAIL_USERNAME') else 'MISSING',
-        'MAIL_PASSWORD': 'SET' if os.getenv('MAIL_PASSWORD') else 'MISSING',
-        'RECIPIENT_EMAIL': 'SET' if os.getenv('RECIPIENT_EMAIL') else 'MISSING'
-    }
-    return jsonify(config_status), 200
-
 @app.route("/send-email", methods=['POST'])
 def send_email():
     try:
-        # Check if email is configured
-        if not app.config['MAIL_USERNAME'] or not app.config['MAIL_PASSWORD']:
-            return jsonify({
-                'success': False, 
-                'message': 'Email service is not configured. Please contact the administrator.'
-            }), 503
-        
         data = request.get_json()
         
         # Get form data
@@ -82,26 +63,11 @@ Message:
         return jsonify({'success': True, 'message': 'Message sent successfully!'}), 200
         
     except Exception as e:
-        error_message = str(e)
-        print(f"Error sending email: {error_message}")
-        
-        # Provide more specific error messages
-        if 'authentication' in error_message.lower():
-            return jsonify({
-                'success': False, 
-                'message': 'Email authentication failed. Please try again later.'
-            }), 500
-        elif 'timeout' in error_message.lower():
-            return jsonify({
-                'success': False, 
-                'message': 'Request timed out. Please try again.'
-            }), 500
-        else:
-            return jsonify({
-                'success': False, 
-                'message': 'Failed to send message. Please try again.'
-            }), 500
+        print(f"Error sending email: {str(e)}")
+        return jsonify({'success': False, 'message': 'Failed to send message. Please try again.'}), 500
 
-# For Vercel
+# This is required for Vercel
+app = app
+
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=int(os.environ.get('PORT', 5000)), debug=True)
