@@ -1,6 +1,7 @@
 # Email Setup Instructions
 
 ## Step 1: Install Required Packages
+
 ```bash
 pip install -r requirements.txt
 ```
@@ -8,6 +9,7 @@ pip install -r requirements.txt
 ## Step 2: Configure Email Settings
 
 1. Copy `.env.example` to `.env`:
+
    ```bash
    copy .env.example .env
    ```
@@ -30,12 +32,13 @@ pip install -r requirements.txt
    ```
    MAIL_USERNAME=your-email@gmail.com
    MAIL_PASSWORD=your-16-character-app-password
-   RECIPIENT_EMAIL=ramoslloydkenneth1@gmail.com
+   RECIPIENT_EMAIL=your-email@gmail.com
    ```
 
 ### For Other Email Providers:
 
 - **Outlook/Hotmail**:
+
   ```
   MAIL_SERVER=smtp-mail.outlook.com
   MAIL_PORT=587
@@ -50,6 +53,7 @@ pip install -r requirements.txt
 ## Step 3: Test the Contact Form
 
 1. Start the Flask application:
+
    ```bash
    python app.py
    ```
@@ -61,6 +65,7 @@ pip install -r requirements.txt
 4. Check your email inbox for the message
 
 ## Security Notes:
+
 - Never commit `.env` file to version control
 - Use App Passwords instead of regular passwords
 - Keep your credentials secure
