@@ -1,532 +1,1150 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" class="scroll-smooth">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Lloyd Kenneth Ramos - Developer Portfolio</title>
-    <link rel="icon" type="image/png" href="{{ url_for('static', filename='img/LKR_Logo.png') }}">
-    <link rel="apple-touch-icon" href="{{ url_for('static', filename='img/LKR_Logo.png') }}">
+    <link
+      rel="icon"
+      type="image/png"
+      href="{{ url_for('static', filename='img/LKR_Logo.png') }}"
+    />
+    <link
+      rel="apple-touch-icon"
+      href="{{ url_for('static', filename='img/LKR_Logo.png') }}"
+    />
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
-</head>
-<body>
+    <link
+      href="{{ url_for('static', filename='css/style.css') }}"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
     <!-- Navigation -->
     <nav id="navbar" class="fixed top-0 w-full z-50 px-6 py-4">
-        <div class="max-w-7xl mx-auto flex justify-between items-center">
-            <a href="#home" class="text-xl font-bold tracking-tight">LKR.</a>
-            
-            <!-- Desktop Navigation -->
-            <div class="hidden md:flex gap-8">
-                <a href="#home" class="nav-link text-sm uppercase tracking-wider">Home</a>
-                <a href="#about" class="nav-link text-sm uppercase tracking-wider">About</a>
-                <a href="#skills" class="nav-link text-sm uppercase tracking-wider">Skills</a>
-                <a href="#projects" class="nav-link text-sm uppercase tracking-wider">Projects</a>
-                <a href="#contact" class="nav-link text-sm uppercase tracking-wider">Contact</a>
-            </div>
-            
-            <!-- Mobile Menu Button -->
-            <button id="mobile-toggle" class="md:hidden">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                </svg>
-            </button>
+      <div class="max-w-7xl mx-auto flex justify-between items-center">
+        <a href="#home" class="text-xl font-bold tracking-tight">LKR.</a>
+
+        <!-- Desktop Navigation -->
+        <div class="hidden md:flex gap-8">
+          <a href="#home" class="nav-link text-sm uppercase tracking-wider"
+            >Home</a
+          >
+          <a href="#about" class="nav-link text-sm uppercase tracking-wider"
+            >About</a
+          >
+          <a href="#skills" class="nav-link text-sm uppercase tracking-wider"
+            >Skills</a
+          >
+          <a href="#projects" class="nav-link text-sm uppercase tracking-wider"
+            >Projects</a
+          >
+          <a href="#contact" class="nav-link text-sm uppercase tracking-wider"
+            >Contact</a
+          >
         </div>
+
+        <!-- Mobile Menu Button -->
+        <button id="mobile-toggle" class="md:hidden">
+          <svg
+            class="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            ></path>
+          </svg>
+        </button>
+      </div>
     </nav>
-    
+
     <!-- Mobile Menu -->
-    <div id="mobile-menu" class="mobile-menu fixed inset-0 bg-black z-40 md:hidden">
-        <div class="flex flex-col items-center justify-center h-full gap-8">
-            <a href="#home" class="mobile-link text-2xl uppercase tracking-wider">Home</a>
-            <a href="#about" class="mobile-link text-2xl uppercase tracking-wider">About</a>
-            <a href="#skills" class="mobile-link text-2xl uppercase tracking-wider">Skills</a>
-            <a href="#projects" class="mobile-link text-2xl uppercase tracking-wider">Projects</a>
-            <a href="#contact" class="mobile-link text-2xl uppercase tracking-wider">Contact</a>
-        </div>
+    <div
+      id="mobile-menu"
+      class="mobile-menu fixed inset-0 bg-black z-40 md:hidden"
+    >
+      <div class="flex flex-col items-center justify-center h-full gap-8">
+        <a href="#home" class="mobile-link text-2xl uppercase tracking-wider"
+          >Home</a
+        >
+        <a href="#about" class="mobile-link text-2xl uppercase tracking-wider"
+          >About</a
+        >
+        <a href="#skills" class="mobile-link text-2xl uppercase tracking-wider"
+          >Skills</a
+        >
+        <a
+          href="#projects"
+          class="mobile-link text-2xl uppercase tracking-wider"
+          >Projects</a
+        >
+        <a href="#contact" class="mobile-link text-2xl uppercase tracking-wider"
+          >Contact</a
+        >
+      </div>
     </div>
 
     <!-- Hero Section -->
-    <section id="home" class="min-h-screen flex items-center justify-center px-4 sm:px-6 pt-20 sm:pt-24 md:pt-32 pb-12 sm:pb-16 md:pb-20 relative overflow-hidden">
-        <!-- Animated background elements -->
-        <div class="absolute inset-0 overflow-hidden pointer-events-none">
-            <div class="hero-glow hero-glow-1"></div>
-            <div class="hero-glow hero-glow-2"></div>
-            <div class="floating-element floating-1"></div>
-            <div class="floating-element floating-2"></div>
-            <div class="floating-element floating-3"></div>
-        </div>
-        
-        <div class="max-w-7xl w-full relative z-10">
-            <div class="flex items-center justify-center gap-8 sm:gap-12 relative">
-                <!-- Text Content -->
-                <div class="reveal flex-1 w-full text-center">
-                    <div class="inline-block mb-4 sm:mb-5">
-                        <span class="px-4 py-2 bg-gradient-to-r from-purple-500/10 to-blue-500/10 border border-purple-500/20 rounded-full text-xs sm:text-sm uppercase tracking-widest text-purple-300 backdrop-blur-sm">Aspiring Developer</span>
-                    </div>
-                    <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold mb-5 sm:mb-7 leading-tight hero-title">
-                        LLOYD KENNETH<br/>
-                        <span class="text-white">RAMOS</span>
-                    </h1>
-                    <p class="text-base sm:text-lg md:text-xl text-gray-300 max-w-3xl mx-auto mb-8 sm:mb-10 leading-relaxed font-light">
-                        CS Student crafting elegant digital experiences through clean code and thoughtful design.
-                    </p>
-                    <div class="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 justify-center items-center">
-                        <a href="#contact" class="btn-primary-enhanced px-6 sm:px-8 py-3 sm:py-3.5 rounded-full font-semibold text-xs sm:text-sm text-center shadow-2xl">Get In Touch</a>
-                        <a href="#projects" class="btn-secondary-enhanced px-6 sm:px-8 py-3 sm:py-3.5 rounded-full font-semibold text-xs sm:text-sm text-center">View Work</a>
-                        <a href="{{ url_for('static', filename='kenramos-cv.pdf') }}" download class="btn-tertiary px-6 sm:px-8 py-3 sm:py-3.5 rounded-full font-semibold text-xs sm:text-sm text-center inline-flex items-center gap-2">
-                            Download CV
-                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-                            </svg>
-                        </a>
-                    </div>
-                    
-                    <!-- Scroll indicator -->
-                    <div class="mt-24 sm:mt-32 text-center">
-                        <div class="text-[10px] tracking-[0.3em] mb-1.5 text-blue-300/60 animate-pulse">SCROLL</div>
-                        <svg class="w-4 h-4 mx-auto text-blue-300/60 scroll-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-                        </svg>
-                    </div>
-                </div>
+    <section
+      id="home"
+      class="min-h-screen flex items-center justify-center px-4 sm:px-6 pt-20 sm:pt-24 md:pt-32 pb-12 sm:pb-16 md:pb-20 relative overflow-hidden"
+    >
+      <!-- Animated background elements -->
+      <div class="absolute inset-0 overflow-hidden pointer-events-none">
+        <div class="hero-glow hero-glow-1"></div>
+        <div class="hero-glow hero-glow-2"></div>
+        <div class="floating-element floating-1"></div>
+        <div class="floating-element floating-2"></div>
+        <div class="floating-element floating-3"></div>
+      </div>
+
+      <div class="max-w-7xl w-full relative z-10">
+        <div class="flex items-center justify-center gap-8 sm:gap-12 relative">
+          <!-- Text Content -->
+          <div class="reveal flex-1 w-full text-center">
+            <div class="inline-block mb-4 sm:mb-5">
+              <span
+                class="px-4 py-2 bg-gradient-to-r from-purple-500/10 to-blue-500/10 border border-purple-500/20 rounded-full text-xs sm:text-sm uppercase tracking-widest text-purple-300 backdrop-blur-sm"
+                >Aspiring Developer</span
+              >
             </div>
+            <h1
+              class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold mb-5 sm:mb-7 leading-tight hero-title"
+            >
+              LLOYD KENNETH<br />
+              <span class="text-white">RAMOS</span>
+            </h1>
+            <p
+              class="text-base sm:text-lg md:text-xl text-gray-300 max-w-3xl mx-auto mb-8 sm:mb-10 leading-relaxed font-light"
+            >
+              CS Student crafting elegant digital experiences through clean code
+              and thoughtful design.
+            </p>
+            <div
+              class="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 justify-center items-center"
+            >
+              <a
+                href="#contact"
+                class="btn-primary-enhanced px-6 sm:px-8 py-3 sm:py-3.5 rounded-full font-semibold text-xs sm:text-sm text-center shadow-2xl"
+                >Get In Touch</a
+              >
+              <a
+                href="#projects"
+                class="btn-secondary-enhanced px-6 sm:px-8 py-3 sm:py-3.5 rounded-full font-semibold text-xs sm:text-sm text-center"
+                >View Work</a
+              >
+              <a
+                href="{{ url_for('static', filename='kenramos-cv.pdf') }}"
+                download
+                class="btn-tertiary px-6 sm:px-8 py-3 sm:py-3.5 rounded-full font-semibold text-xs sm:text-sm text-center inline-flex items-center gap-2"
+              >
+                Download CV
+                <svg
+                  class="w-3.5 h-3.5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 14l-7 7m0 0l-7-7m7 7V3"
+                  ></path>
+                </svg>
+              </a>
+            </div>
+
+            <!-- Scroll indicator -->
+            <div class="mt-24 sm:mt-32 text-center">
+              <div
+                class="text-[10px] tracking-[0.3em] mb-1.5 text-blue-300/60 animate-pulse"
+              >
+                SCROLL
+              </div>
+              <svg
+                class="w-4 h-4 mx-auto text-blue-300/60 scroll-arrow"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 14l-7 7m0 0l-7-7m7 7V3"
+                ></path>
+              </svg>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="flex items-center justify-center px-4 sm:px-6 py-16 sm:py-20 md:py-24 relative">
-        <div class="section-decoration"></div>
-        <div class="max-w-7xl w-full relative z-10">
-            <div class="grid md:grid-cols-[260px_1fr] lg:grid-cols-[280px_1fr] gap-10 sm:gap-12 md:gap-16 items-start">
-                <!-- Profile Image -->
-                <div class="reveal-slide-right w-full mx-auto md:mx-0 max-w-[220px] sm:max-w-[240px] md:max-w-none">
-                    <div class="profile-image-container relative w-full aspect-[3/4] mx-auto group">
-                        <div class="absolute inset-0 bg-gradient-to-br from-purple-600/30 to-blue-600/30 rounded-3xl blur-xl transition-all duration-500"></div>
-                        <div class="absolute inset-0 bg-gradient-to-br from-purple-600/20 to-blue-600/20 rounded-3xl"></div>
-                        <img src="{{ url_for('static', filename='img/1v1formal.png') }}" alt="Lloyd Kenneth Ramos" class="relative w-full h-full object-cover rounded-3xl shadow-2xl">
-                    </div>
-                </div>
-                
-                <!-- Text Content -->
-                <div class="reveal-slide-left flex flex-col justify-center">
-                    <div class="inline-block mb-4 sm:mb-5">
-                        <span class="px-4 py-2 bg-gradient-to-r from-purple-500/10 to-blue-500/10 border border-purple-500/20 rounded-full text-xs uppercase tracking-widest text-purple-300">Who I Am</span>
-                    </div>
-                    <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 sm:mb-8 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">About Me</h2>
-                    <div class="space-y-5 sm:space-y-6 text-gray-300 leading-relaxed text-base sm:text-lg font-light">
-                        <p class="hover-lift">
-                            Hello! I'm Lloyd Kenneth Ramos, a passionate Computer Science student at Taguig City University. I have a strong interest in web development and software development, and I enjoy creating efficient and user-friendly applications.
-                        </p>
-                        <p class="hover-lift">
-                            I am seeking an internship or entry-level opportunity where I can apply what I have learned, gain hands-on experience, and grow as a developer by working with a supportive and collaborative team.
-                        </p>
-                        <p class="hover-lift">
-                            I am motivated, eager to learn, and open to new challenges that will help me develop both my technical and professional skills.
-                        </p>
-                    </div>
-                    
-                    <!-- Quick Info -->
-                    <div class="mt-6 sm:mt-8 grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
-                        <div class="border border-gray-800 rounded-lg sm:rounded-xl p-4 sm:p-5 hover:border-gray-700 transition-colors">
-                            <p class="text-xs text-gray-500 uppercase tracking-wider mb-1">Location</p>
-                            <p class="text-sm font-medium">Taguig City, PH</p>
-                        </div>
-                        <div class="border border-gray-800 rounded-lg sm:rounded-xl p-4 sm:p-5 hover:border-gray-700 transition-colors">
-                            <p class="text-xs text-gray-500 uppercase tracking-wider mb-1">Status</p>
-                            <p class="text-sm font-medium text-green-400">Available for OJT</p>
-                        </div>
-                    </div>
-                </div>
+    <section
+      id="about"
+      class="flex items-center justify-center px-4 sm:px-6 py-16 sm:py-20 md:py-24 relative"
+    >
+      <div class="section-decoration"></div>
+      <div class="max-w-7xl w-full relative z-10">
+        <div
+          class="grid md:grid-cols-[260px_1fr] lg:grid-cols-[280px_1fr] gap-10 sm:gap-12 md:gap-16 items-start"
+        >
+          <!-- Profile Image -->
+          <div
+            class="reveal-slide-right w-full mx-auto md:mx-0 max-w-[220px] sm:max-w-[240px] md:max-w-none"
+          >
+            <div
+              class="profile-image-container relative w-full aspect-[3/4] mx-auto group"
+            >
+              <div
+                class="absolute inset-0 bg-gradient-to-br from-purple-600/30 to-blue-600/30 rounded-3xl blur-xl transition-all duration-500"
+              ></div>
+              <div
+                class="absolute inset-0 bg-gradient-to-br from-purple-600/20 to-blue-600/20 rounded-3xl"
+              ></div>
+              <img
+                src="{{ url_for('static', filename='img/1v1formal.png') }}"
+                alt="Lloyd Kenneth Ramos"
+                class="relative w-full h-full object-cover rounded-3xl shadow-2xl"
+              />
             </div>
+          </div>
+
+          <!-- Text Content -->
+          <div class="reveal-slide-left flex flex-col justify-center">
+            <div class="inline-block mb-4 sm:mb-5">
+              <span
+                class="px-4 py-2 bg-gradient-to-r from-purple-500/10 to-blue-500/10 border border-purple-500/20 rounded-full text-xs uppercase tracking-widest text-purple-300"
+                >Who I Am</span
+              >
+            </div>
+            <h2
+              class="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 sm:mb-8 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent"
+            >
+              About Me
+            </h2>
+            <div
+              class="space-y-5 sm:space-y-6 text-gray-300 leading-relaxed text-base sm:text-lg font-light"
+            >
+              <p class="hover-lift">
+                Hello! I'm Lloyd Kenneth Ramos, a passionate Computer Science
+                student at Taguig City University. I have a strong interest in
+                web development and software development, and I enjoy creating
+                efficient and user-friendly applications.
+              </p>
+              <p class="hover-lift">
+                I am seeking an internship or entry-level opportunity where I
+                can apply what I have learned, gain hands-on experience, and
+                grow as a developer by working with a supportive and
+                collaborative team.
+              </p>
+              <p class="hover-lift">
+                I am motivated, eager to learn, and open to new challenges that
+                will help me develop both my technical and professional skills.
+              </p>
+            </div>
+
+            <!-- Quick Info -->
+            <div
+              class="mt-6 sm:mt-8 grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4"
+            >
+              <div
+                class="border border-gray-800 rounded-lg sm:rounded-xl p-4 sm:p-5 hover:border-gray-700 transition-colors"
+              >
+                <p class="text-xs text-gray-500 uppercase tracking-wider mb-1">
+                  Location
+                </p>
+                <p class="text-sm font-medium">Taguig City, PH</p>
+              </div>
+              <div
+                class="border border-gray-800 rounded-lg sm:rounded-xl p-4 sm:p-5 hover:border-gray-700 transition-colors"
+              >
+                <p class="text-xs text-gray-500 uppercase tracking-wider mb-1">
+                  Status
+                </p>
+                <p class="text-sm font-medium text-green-400">
+                  Intern at Team Pacific Corporation
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Education Section -->
-    <section id="education" class="flex items-center justify-center px-4 sm:px-6 py-16 sm:py-20 md:py-24 relative">
-        <div class="max-w-7xl w-full">
-            <div class="reveal mb-10 sm:mb-14 text-center">
-                <div class="inline-block mb-4">
-                    <span class="px-4 py-2 bg-gradient-to-r from-green-500/10 to-teal-500/10 border border-green-500/20 rounded-full text-xs uppercase tracking-widest text-green-300">Academic Background</span>
-                </div>
-                <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">Education</h2>
-            </div>
-            
-            <div class="card-enhanced p-8 sm:p-10 rounded-3xl reveal hover-lift-strong group">
-                <div class="flex items-start gap-6">
-                    <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-gradient-to-br from-green-500/20 to-teal-500/20 flex items-center justify-center flex-shrink-0">
-                        <svg class="w-8 h-8 sm:w-10 sm:h-10 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"></path>
-                        </svg>
-                    </div>
-                    <div class="flex-1">
-                        <h3 class="text-xl sm:text-2xl font-bold mb-2 text-white">Taguig City University</h3>
-                        <p class="text-gray-300 mb-2 text-base sm:text-lg font-medium">Bachelor of Science in Computer Science</p>
-                        <p class="text-sm sm:text-base text-gray-400">2022 - Expected July 2026</p>
-                    </div>
-                </div>
-            </div>
+    <section
+      id="education"
+      class="flex items-center justify-center px-4 sm:px-6 py-16 sm:py-20 md:py-24 relative"
+    >
+      <div class="max-w-7xl w-full">
+        <div class="reveal mb-10 sm:mb-14 text-center">
+          <div class="inline-block mb-4">
+            <span
+              class="px-4 py-2 bg-gradient-to-r from-green-500/10 to-teal-500/10 border border-green-500/20 rounded-full text-xs uppercase tracking-widest text-green-300"
+              >Academic Background</span
+            >
+          </div>
+          <h2
+            class="text-3xl sm:text-4xl md:text-5xl font-bold bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent"
+          >
+            Education
+          </h2>
         </div>
+
+        <div
+          class="card-enhanced p-8 sm:p-10 rounded-3xl reveal hover-lift-strong group"
+        >
+          <div class="flex items-start gap-6">
+            <div
+              class="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-gradient-to-br from-green-500/20 to-teal-500/20 flex items-center justify-center flex-shrink-0"
+            >
+              <svg
+                class="w-8 h-8 sm:w-10 sm:h-10 text-green-400"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"
+                ></path>
+              </svg>
+            </div>
+            <div class="flex-1">
+              <h3 class="text-xl sm:text-2xl font-bold mb-2 text-white">
+                Taguig City University
+              </h3>
+              <p class="text-gray-300 mb-2 text-base sm:text-lg font-medium">
+                Bachelor of Science in Computer Science
+              </p>
+              <p class="text-sm sm:text-base text-gray-400">2022 - June 2026</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" class="flex items-center justify-center px-4 sm:px-6 py-16 sm:py-20 md:py-24 relative">
-        <div class="section-decoration section-decoration-right"></div>
-        <div class="max-w-7xl w-full relative z-10">
-            <div class="reveal mb-10 sm:mb-14 text-center">
-                <div class="inline-block mb-4">
-                    <span class="px-4 py-2 bg-gradient-to-r from-orange-500/10 to-pink-500/10 border border-orange-500/20 rounded-full text-xs uppercase tracking-widest text-orange-300">Technical Stack</span>
-                </div>
-                <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">Skills & Expertise</h2>
-                <p class="text-gray-300 text-base sm:text-lg font-light">Technologies I work with</p>
-            </div>
-            
-            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7 md:gap-8">
-                <!-- Frontend -->
-                <div class="card-enhanced p-6 sm:p-7 rounded-3xl reveal hover-lift-strong group">
-                    <div class="flex items-center gap-3 mb-5">
-                        <h3 class="text-lg sm:text-xl font-bold text-white">Frontend Development</h3>
-                    </div>
-                    <div class="flex flex-wrap gap-2.5">
-                        <span class="px-3.5 py-2 bg-gradient-to-br from-white/10 to-white/5 border border-white/10 rounded-xl text-xs font-medium flex items-center gap-2 hover:border-orange-500/30 transition-colors duration-300">
-                            <svg class="w-5 h-5" fill="#E34F26" viewBox="0 0 24 24"><path d="M1.5 0h21l-1.91 21.563L11.977 24l-8.564-2.438L1.5 0zm7.031 9.75l-.232-2.718 10.059.003.23-2.622L5.412 4.41l.698 8.01h9.126l-.326 3.426-2.91.804-2.955-.81-.188-2.11H6.248l.33 4.171L12 19.351l5.379-1.443.744-8.157H8.531z"/></svg>
-                            HTML/CSS
-                        </span>
-                        <span class="px-3.5 py-2 bg-gradient-to-br from-white/10 to-white/5 border border-white/10 rounded-xl text-xs font-medium flex items-center gap-2 hover:border-yellow-500/30 transition-colors duration-300">
-                            <svg class="w-5 h-5" fill="#F7DF1E" viewBox="0 0 24 24"><path d="M0 0h24v24H0V0zm22.034 18.276c-.175-1.095-.888-2.015-3.003-2.873-.736-.345-1.554-.585-1.797-1.14-.091-.33-.105-.51-.046-.705.15-.646.915-.84 1.515-.66.39.12.75.42.976.9 1.034-.676 1.034-.676 1.755-1.125-.27-.42-.404-.601-.586-.78-.63-.705-1.469-1.065-2.834-1.034l-.705.089c-.676.165-1.32.525-1.71 1.005-1.14 1.291-.811 3.541.569 4.471 1.365 1.02 3.361 1.244 3.616 2.205.24 1.17-.87 1.545-1.966 1.41-.811-.18-1.26-.586-1.755-1.336l-1.83 1.051c.21.48.45.689.81 1.109 1.74 1.756 6.09 1.666 6.871-1.004.029-.09.24-.705.074-1.65l.046.067zm-8.983-7.245h-2.248c0 1.938-.009 3.864-.009 5.805 0 1.232.063 2.363-.138 2.711-.33.689-1.18.601-1.566.48-.396-.196-.597-.466-.83-.855-.063-.105-.11-.196-.127-.196l-1.825 1.125c.305.63.75 1.172 1.324 1.517.855.51 2.004.675 3.207.405.783-.226 1.458-.691 1.811-1.411.51-.93.402-2.07.397-3.346.012-2.054 0-4.109 0-6.179l.004-.056z"/></svg>
-                            JavaScript
-                        </span>
-                        <span class="px-3.5 py-2 bg-gradient-to-br from-white/10 to-white/5 border border-white/10 rounded-xl text-xs font-medium flex items-center gap-2 hover:border-cyan-500/30 transition-colors duration-300">
-                            <svg class="w-5 h-5" fill="#61DAFB" viewBox="0 0 24 24"><path d="M14.23 12.004a2.236 2.236 0 0 1-2.235 2.236 2.236 2.236 0 0 1-2.236-2.236 2.236 2.236 0 0 1 2.235-2.236 2.236 2.236 0 0 1 2.236 2.236zm2.648-10.69c-1.346 0-3.107.96-4.888 2.622-1.78-1.653-3.542-2.602-4.887-2.602-.41 0-.783.093-1.106.278-1.375.793-1.683 3.264-.973 6.365C1.98 8.917 0 10.42 0 12.004c0 1.59 1.99 3.097 5.043 4.03-.704 3.113-.39 5.588.988 6.38.32.187.69.275 1.102.275 1.345 0 3.107-.96 4.888-2.624 1.78 1.654 3.542 2.603 4.887 2.603.41 0 .783-.09 1.106-.275 1.374-.792 1.683-3.263.973-6.365C22.02 15.096 24 13.59 24 12.004c0-1.59-1.99-3.097-5.043-4.032.704-3.11.39-5.587-.988-6.38a2.167 2.167 0 0 0-1.092-.278zm-.005 1.09v.006c.225 0 .406.044.558.127.666.382.955 1.835.73 3.704-.054.46-.142.945-.25 1.44a23.476 23.476 0 0 0-3.107-.534A23.892 23.892 0 0 0 12.769 4.7c1.592-1.48 3.087-2.292 4.105-2.295zm-9.77.02c1.012 0 2.514.808 4.11 2.28-.686.72-1.37 1.537-2.02 2.442a22.73 22.73 0 0 0-3.113.538 15.02 15.02 0 0 1-.254-1.42c-.23-1.868.054-3.32.714-3.707.19-.09.4-.127.563-.132zm4.882 3.05c.455.468.91.992 1.36 1.564-.44-.02-.89-.034-1.345-.034-.46 0-.915.01-1.36.034.44-.572.895-1.096 1.345-1.565zM12 8.1c.74 0 1.477.034 2.202.093.406.582.802 1.203 1.183 1.86.372.64.71 1.29 1.018 1.946-.308.655-.646 1.31-1.013 1.95-.38.66-.773 1.288-1.18 1.87a25.64 25.64 0 0 1-4.412.005 26.64 26.64 0 0 1-1.183-1.86c-.372-.64-.71-1.29-1.018-1.946a25.17 25.17 0 0 1 1.013-1.954c.38-.66.773-1.286 1.18-1.868A25.245 25.245 0 0 1 12 8.098zm-3.635.254c-.24.377-.48.763-.704 1.16-.225.39-.435.782-.635 1.174-.265-.656-.49-1.31-.676-1.947.64-.15 1.315-.283 2.015-.386zm7.26 0c.695.103 1.365.23 2.006.387-.18.632-.405 1.282-.66 1.933a25.952 25.952 0 0 0-1.345-2.32zm3.063.675c.484.15.944.317 1.375.498 1.732.74 2.852 1.708 2.852 2.476-.005.768-1.125 1.74-2.857 2.475-.42.18-.88.342-1.355.493a23.966 23.966 0 0 0-1.1-2.98c.45-1.017.81-2.01 1.085-2.964zm-13.395.004c.278.96.645 1.957 1.1 2.98a23.142 23.142 0 0 0-1.086 2.964c-.484-.15-.944-.318-1.37-.5-1.732-.737-2.852-1.706-2.852-2.474 0-.768 1.12-1.742 2.852-2.476.42-.18.88-.342 1.356-.494zm11.678 4.28c.265.657.49 1.312.676 1.948-.64.157-1.316.29-2.016.39a25.819 25.819 0 0 0 1.341-2.338zm-9.945.02c.2.392.41.783.64 1.175.23.39.465.772.705 1.143a22.005 22.005 0 0 1-2.006-.386c.18-.63.406-1.282.66-1.933zM17.92 16.32c.112.493.2.968.254 1.423.23 1.868-.054 3.32-.714 3.708-.147.09-.338.128-.563.128-1.012 0-2.514-.807-4.11-2.28.686-.72 1.37-1.536 2.02-2.44 1.107-.118 2.154-.3 3.113-.54zm-11.83.01c.96.234 2.006.415 3.107.532.66.905 1.345 1.727 2.035 2.446-1.595 1.483-3.092 2.295-4.11 2.295a1.185 1.185 0 0 1-.553-.132c-.666-.38-.955-1.834-.73-3.703.054-.46.142-.944.25-1.438zm4.56.64c.44.02.89.034 1.345.034.46 0 .915-.01 1.36-.034-.44.572-.895 1.095-1.345 1.565-.455-.47-.91-.993-1.36-1.565z"/></svg>
-                            React
-                        </span>
-                        <span class="px-3.5 py-2 bg-gradient-to-br from-white/10 to-white/5 border border-white/10 rounded-xl text-xs font-medium flex items-center gap-2 hover:border-cyan-500/30 transition-colors duration-300">
-                            <svg class="w-5 h-5" fill="#06B6D4" viewBox="0 0 24 24"><path d="M12.001 4.8c-3.2 0-5.2 1.6-6 4.8 1.2-1.6 2.6-2.2 4.2-1.8.913.228 1.565.89 2.288 1.624C13.666 10.618 15.027 12 18.001 12c3.2 0 5.2-1.6 6-4.8-1.2 1.6-2.6 2.2-4.2 1.8-.913-.228-1.565-.89-2.288-1.624C16.337 6.182 14.976 4.8 12.001 4.8zm-6 7.2c-3.2 0-5.2 1.6-6 4.8 1.2-1.6 2.6-2.2 4.2-1.8.913.228 1.565.89 2.288 1.624 1.177 1.194 2.538 2.576 5.512 2.576 3.2 0 5.2-1.6 6-4.8-1.2 1.6-2.6 2.2-4.2 1.8-.913-.228-1.565-.89-2.288-1.624C10.337 13.382 8.976 12 6.001 12z"/></svg>
-                            Tailwind CSS
-                        </span>
-                    </div>
-                </div>
-                
-                <!-- Backend -->
-                <div class="card-enhanced p-6 sm:p-7 rounded-3xl reveal hover-lift-strong group">
-                    <div class="flex items-center gap-3 mb-5">
-                        <h3 class="text-lg sm:text-xl font-bold text-white">Backend Development</h3>
-                    </div>
-                    <div class="flex flex-wrap gap-2.5">
-                        <span class="px-3 py-1.5 bg-white/5 rounded-full text-xs flex items-center gap-1.5">
-                            <svg class="w-5 h-5" viewBox="0 0 24 24"><defs><linearGradient id="pythonGradient" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" style="stop-color:#3776AB"/><stop offset="100%" style="stop-color:#FFD43B"/></linearGradient></defs><path fill="url(#pythonGradient)" d="M14.25.18l.9.2.73.26.59.3.45.32.34.34.25.34.16.33.1.3.04.26.02.2-.01.13V8.5l-.05.63-.13.55-.21.46-.26.38-.3.31-.33.25-.35.19-.35.14-.33.1-.3.07-.26.04-.21.02H8.77l-.69.05-.59.14-.5.22-.41.27-.33.32-.27.35-.2.36-.15.37-.1.35-.07.32-.04.27-.02.21v3.06H3.17l-.21-.03-.28-.07-.32-.12-.35-.18-.36-.26-.36-.36-.35-.46-.32-.59-.28-.73-.21-.88-.14-1.05-.05-1.23.06-1.22.16-1.04.24-.87.32-.71.36-.57.4-.44.42-.33.42-.24.4-.16.36-.1.32-.05.24-.01h.16l.06.01h8.16v-.83H6.18l-.01-2.75-.02-.37.05-.34.11-.31.17-.28.25-.26.31-.23.38-.2.44-.18.51-.15.58-.12.64-.1.71-.06.77-.04.84-.02 1.27.05zm-6.3 1.98l-.23.33-.08.41.08.41.23.34.33.22.41.09.41-.09.33-.22.23-.34.08-.41-.08-.41-.23-.33-.33-.22-.41-.09-.41.09zm13.09 3.95l.28.06.32.12.35.18.36.27.36.35.35.47.32.59.28.73.21.88.14 1.04.05 1.23-.06 1.23-.16 1.04-.24.86-.32.71-.36.57-.4.45-.42.33-.42.24-.4.16-.36.09-.32.05-.24.02-.16-.01h-8.22v.82h5.84l.01 2.76.02.36-.05.34-.11.31-.17.29-.25.25-.31.24-.38.2-.44.17-.51.15-.58.13-.64.09-.71.07-.77.04-.84.01-1.27-.04-1.07-.14-.9-.2-.73-.25-.59-.3-.45-.33-.34-.34-.25-.34-.16-.33-.1-.3-.04-.25-.02-.2.01-.13v-5.34l.05-.64.13-.54.21-.46.26-.38.3-.32.33-.24.35-.2.35-.14.33-.1.3-.06.26-.04.21-.02.13-.01h5.84l.69-.05.59-.14.5-.21.41-.28.33-.32.27-.35.2-.36.15-.36.1-.35.07-.32.04-.28.02-.21V6.07h2.09l.14.01zm-6.47 14.25l-.23.33-.08.41.08.41.23.33.33.23.41.08.41-.08.33-.23.23-.33.08-.41-.08-.41-.23-.33-.33-.23-.41-.08-.41.08z"/></svg>
-                            Python
-                        </span>
-                        <span class="px-3 py-1.5 bg-white/5 rounded-full text-xs flex items-center gap-1.5">
-                            <svg class="w-5 h-5" fill="#092E20" viewBox="0 0 24 24"><path d="M11.146 0h1.929v2.488h-1.929zm1.929 2.488h4.534v1.929h-4.534zM21.62 6.78v8.803h-1.974v-8.8h-4.534V4.417h8.488V6.78zm-15.14 0v8.803H4.509v-8.8H.13V4.417h8.338V6.78zm7.969 0v8.803h-1.982v-8.8h-4.534V4.417h8.488V6.78zm-7.969 0v8.803H4.5v-8.8H.12V4.417h8.338V6.78z"/></svg>
-                            Django
-                        </span>
-                        <span class="px-3 py-1.5 bg-white/5 rounded-full text-xs flex items-center gap-1.5">
-                            <svg class="w-5 h-5" fill="#FFFFFF" viewBox="0 0 24 24"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.6 0 12 0zM9.5 17.2c-.4 0-.7-.3-.7-.7 0-.4.3-.7.7-.7s.7.3.7.7c0 .4-.3.7-.7.7zm5.7-3.5c-.4.8-1.3 1.3-2.3 1.5v.8h-.8v-.8c-1.5-.2-2.6-1.3-2.6-1.3l.5-.6s.9.9 2.1 1v-3.1l-.3-.1c-1.2-.5-1.9-1-1.9-2.2 0-1.1.8-2 2.2-2.3v-.8h.8v.8c1.2.2 2 1 2 1l-.5.6s-.6-.6-1.5-.7v2.9l.3.1c1.5.6 2.2 1.1 2.2 2.4.1 1.1-.5 1.9-1.2 2.3zm-1-5.2c-.8-.1-1.4.4-1.4 1 0 .6.4 1 1 1.2l.4.2v-2.4zm.8 4.8c.8-.2 1.2-.8 1.2-1.4 0-.7-.4-1.1-1-.4l-.2-.1v2.9z"/></svg>
-                            Flask
-                        </span>
-                        <span class="px-3 py-1.5 bg-white/5 rounded-full text-xs flex items-center gap-1.5">
-                            <svg class="w-5 h-5" fill="#CC2927" viewBox="0 0 24 24"><path d="M4.7 19.5L2 11.2h3l1.7 5.7 1.7-5.7h2.8L9.5 19.5H4.7zm8.8 0L11.2 11.2h3l1.7 5.7 1.7-5.7H20l-2.7 8.3h-4.8z"/></svg>
-                            SQL
-                        </span>
-                        <span class="px-3 py-1.5 bg-white/5 rounded-full text-xs flex items-center gap-1.5">
-                            <svg class="w-5 h-5" fill="#4169E1" viewBox="0 0 24 24"><path d="M23.5 10.5v3c0 .3-.2.5-.5.5h-1v1.5c0 .8-.7 1.5-1.5 1.5h-17C2.7 17 2 16.3 2 15.5V14H1c-.3 0-.5-.2-.5-.5v-3c0-.3.2-.5.5-.5h1V8.5C2 7.7 2.7 7 3.5 7h17c.8 0 1.5.7 1.5 1.5V10h1c.3 0 .5.2.5.5zM3 12.5h1v-1H3v1zm2-5h16v8H5v-8zm16 9v1H5v-1h16z"/></svg>
-                            PostgreSQL
-                        </span>
-                    </div>
-                </div>
-                
-                <!-- Tools -->
-                <div class="card-enhanced p-6 sm:p-7 rounded-3xl reveal hover-lift-strong group">
-                    <div class="flex items-center gap-3 mb-5">
-                        <h3 class="text-lg sm:text-xl font-bold text-white">Tools & Technologies</h3>
-                    </div>
-                    <div class="flex flex-wrap gap-2.5">
-                        <span class="px-3 py-1.5 bg-white/5 rounded-full text-xs flex items-center gap-1.5">
-                            <svg class="w-5 h-5" fill="#F05032" viewBox="0 0 24 24"><path d="M23.546 10.93L13.067.452c-.604-.603-1.582-.603-2.188 0L8.708 2.627l2.76 2.76c.645-.215 1.379-.07 1.889.441.516.515.658 1.258.438 1.9l2.658 2.66c.645-.223 1.387-.078 1.9.435.721.72.721 1.884 0 2.604-.719.719-1.881.719-2.6 0-.539-.541-.674-1.337-.404-1.996L12.86 8.955v6.525c.176.086.342.203.488.348.713.721.713 1.883 0 2.6-.719.721-1.889.721-2.609 0-.719-.719-.719-1.879 0-2.598.182-.18.387-.316.605-.406V8.835c-.217-.091-.424-.222-.6-.401-.545-.545-.676-1.342-.396-2.009L7.636 3.7.45 10.881c-.6.605-.6 1.584 0 2.189l10.48 10.477c.604.604 1.582.604 2.186 0l10.43-10.43c.605-.603.605-1.582 0-2.187"/></svg>
-                            Git
-                        </span>
-                        <span class="px-3 py-1.5 bg-white/5 rounded-full text-xs flex items-center gap-1.5">
-                            <svg class="w-5 h-5" fill="#007ACC" viewBox="0 0 24 24"><path d="M23.15 2.587L18.21.21a1.494 1.494 0 0 0-1.705.29l-9.46 8.63-4.12-3.128a.999.999 0 0 0-1.276.057L.327 7.261A1 1 0 0 0 .326 8.74L3.899 12 .326 15.26a1 1 0 0 0 .001 1.479L1.65 17.94a.999.999 0 0 0 1.276.057l4.12-3.128 9.46 8.63a1.492 1.492 0 0 0 1.704.29l4.942-2.377A1.5 1.5 0 0 0 24 20.06V3.939a1.5 1.5 0 0 0-.85-1.352zm-5.146 14.861L10.826 12l7.178-5.448v10.896z"/></svg>
-                            VS Code
-                        </span>
-                        <span class="px-3 py-1.5 bg-white/5 rounded-full text-xs flex items-center gap-1.5">
-                            <svg class="w-5 h-5" viewBox="0 0 24 24"><path fill="#F24E1E" d="M8.148 24c-2.489 0-4.515-2.014-4.515-4.49s2.014-4.49 4.49-4.49h4.588v4.441c0 2.503-2.047 4.539-4.563 4.539z"/><path fill="#FF7262" d="M3.657 12c0-2.476 2.014-4.49 4.49-4.49h4.588v8.98H8.148c-2.476 0-4.49-2.014-4.49-4.49z"/><path fill="#A259FF" d="M3.657 4.49C3.657 2.014 5.671 0 8.148 0h4.588v8.981H8.148c-2.476 0-4.49-2.014-4.49-4.49z"/><path fill="#1ABCFE" d="M12.735 0h4.588c2.476 0 4.49 2.014 4.49 4.49s-2.014 4.491-4.49 4.491h-4.588V0z"/><path fill="#0ACF83" d="M20.323 12c0 2.476-2.014 4.49-4.49 4.49s-4.49-2.014-4.49-4.49 2.014-4.49 4.49-4.49 4.49 2.014 4.49 4.49z"/></svg>
-                            Figma
-                        </span>
-                        <span class="px-3 py-1.5 bg-white/5 rounded-full text-xs flex items-center gap-1.5">
-                            <svg class="w-5 h-5" fill="#2496ED" viewBox="0 0 24 24"><path d="M13.983 11.078h2.119a.186.186 0 00.186-.185V9.006a.186.186 0 00-.186-.186h-2.119a.185.185 0 00-.185.185v1.888c0 .102.083.185.185.185m-2.954-5.43h2.118a.186.186 0 00.186-.186V3.574a.186.186 0 00-.186-.185h-2.118a.185.185 0 00-.185.185v1.888c0 .102.082.185.185.185m0 2.716h2.118a.187.187 0 00.186-.186V6.29a.186.186 0 00-.186-.185h-2.118a.185.185 0 00-.185.185v1.887c0 .102.082.186.185.186m-2.93 0h2.12a.186.186 0 00.184-.186V6.29a.185.185 0 00-.185-.185H8.1a.185.185 0 00-.185.185v1.887c0 .102.083.186.185.186m-2.964 0h2.119a.186.186 0 00.185-.186V6.29a.185.185 0 00-.185-.185H5.136a.186.186 0 00-.186.185v1.887c0 .102.084.186.186.186m5.893 2.715h2.118a.186.186 0 00.186-.185V9.006a.186.186 0 00-.186-.186h-2.118a.185.185 0 00-.185.185v1.888c0 .102.082.185.185.185m-2.93 0h2.12a.185.185 0 00.184-.185V9.006a.185.185 0 00-.184-.186h-2.12a.185.185 0 00-.184.185v1.888c0 .102.083.185.185.185m-2.964 0h2.119a.185.185 0 00.185-.185V9.006a.185.185 0 00-.184-.186h-2.12a.186.186 0 00-.186.186v1.887c0 .102.084.185.186.185m-2.92 0h2.12a.185.185 0 00.184-.185V9.006a.185.185 0 00-.184-.186h-2.12a.185.185 0 00-.184.185v1.888c0 .102.082.185.185.185M23.763 9.89c-.065-.051-.672-.51-1.954-.51-.338 0-.676.03-1.01.087-.248-1.7-1.653-2.53-1.716-2.566l-.344-.199-.226.327c-.284.438-.49.922-.612 1.43-.23.97-.09 1.882.403 2.661-.595.332-1.55.413-1.744.42H.751a.751.751 0 00-.75.748 11.376 11.376 0 00.692 4.062c.545 1.428 1.355 2.48 2.41 3.124 1.18.723 3.1 1.137 5.275 1.137.983 0 1.97-.084 2.933-.25 1.352-.233 2.595-.686 3.693-1.347a11.717 11.717 0 002.925-2.522 19.063 19.063 0 002.302-3.54l.025-.055c.26-.026 1.016-.056 1.447.02.17.03.393.073.626.132.24.06.488.13.757.208.036.01.073.017.11.024.32.071.634.141.943.171a.756.756 0 00.834-.683.75.75 0 00-.65-.852c-.268-.03-.565-.082-.865-.136-.36-.065-.734-.133-1.069-.178-.461-.06-1.014-.084-1.45-.045zM13.983 11.078h2.119a.186.186 0 00.186-.185V9.006a.186.186 0 00-.186-.186h-2.119a.185.185 0 00-.185.185v1.888c0 .102.083.185.185.185"/></svg>
-                            Docker
-                        </span>
-                        <span class="px-3 py-1.5 bg-white/5 rounded-full text-xs flex items-center gap-1.5">
-                            <svg class="w-5 h-5" viewBox="0 0 24 24"><defs><linearGradient id="aiGradient" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#FF6B6B"/><stop offset="50%" style="stop-color:#A855F7"/><stop offset="100%" style="stop-color:#3B82F6"/></linearGradient></defs><path fill="url(#aiGradient)" d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.6 0 12 0zm-1.7 20.4c-2.6-.4-4.8-1.9-6.1-4.1l1.5-.7c1.1 1.8 2.9 3.1 5 3.4v1.4zm.2-3.4c-1.5-.3-2.8-1.2-3.7-2.4l1.4-.9c.7 1 1.7 1.6 2.9 1.8v1.5zm.5-3.5c-1-.2-1.9-.7-2.6-1.5l1.3-1c.5.6 1.2 1 2 1.2v1.3zm.5-3c-.7-.1-1.3-.4-1.8-.9l1.2-1.1c.4.4.8.6 1.3.7v1.3zm.5-2.6c-.5-.1-.9-.3-1.2-.6l1.1-1.1c.3.2.6.4 1 .5v1.2zm.5-2.3c-.4 0-.7-.2-.9-.4l1-1.2c.2.2.5.3.8.4v1.2zm.5-2c-.3 0-.5-.1-.7-.3l1-1.2c.2.1.4.2.6.3v1.2zm.5-1.7c-.2 0-.4-.1-.5-.2l.9-1.2c.1.1.3.2.5.2v1.2z"/></svg>
-                            AI/ML
-                        </span>
-                    </div>
-                </div>
-            </div>
+    <section
+      id="skills"
+      class="flex items-center justify-center px-4 sm:px-6 py-16 sm:py-20 md:py-24 relative"
+    >
+      <div class="section-decoration section-decoration-right"></div>
+      <div class="max-w-7xl w-full relative z-10">
+        <div class="reveal mb-10 sm:mb-14 text-center">
+          <div class="inline-block mb-4">
+            <span
+              class="px-4 py-2 bg-gradient-to-r from-orange-500/10 to-pink-500/10 border border-orange-500/20 rounded-full text-xs uppercase tracking-widest text-orange-300"
+              >Technical Stack</span
+            >
+          </div>
+          <h2
+            class="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent"
+          >
+            Skills & Expertise
+          </h2>
+          <p class="text-gray-300 text-base sm:text-lg font-light">
+            Technologies I work with
+          </p>
         </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7 md:gap-8">
+          <!-- Frontend -->
+          <div
+            class="card-enhanced p-6 sm:p-7 rounded-3xl reveal hover-lift-strong group"
+          >
+            <div class="flex items-center gap-3 mb-5">
+              <h3 class="text-lg sm:text-xl font-bold text-white">
+                Frontend Development
+              </h3>
+            </div>
+            <div class="flex flex-wrap gap-2.5">
+              <span
+                class="px-3.5 py-2 bg-gradient-to-br from-white/10 to-white/5 border border-white/10 rounded-xl text-xs font-medium flex items-center gap-2 hover:border-orange-500/30 transition-colors duration-300"
+              >
+                <svg class="w-5 h-5" fill="#E34F26" viewBox="0 0 24 24">
+                  <path
+                    d="M1.5 0h21l-1.91 21.563L11.977 24l-8.564-2.438L1.5 0zm7.031 9.75l-.232-2.718 10.059.003.23-2.622L5.412 4.41l.698 8.01h9.126l-.326 3.426-2.91.804-2.955-.81-.188-2.11H6.248l.33 4.171L12 19.351l5.379-1.443.744-8.157H8.531z"
+                  />
+                </svg>
+                HTML/CSS
+              </span>
+              <span
+                class="px-3.5 py-2 bg-gradient-to-br from-white/10 to-white/5 border border-white/10 rounded-xl text-xs font-medium flex items-center gap-2 hover:border-yellow-500/30 transition-colors duration-300"
+              >
+                <svg class="w-5 h-5" fill="#F7DF1E" viewBox="0 0 24 24">
+                  <path
+                    d="M0 0h24v24H0V0zm22.034 18.276c-.175-1.095-.888-2.015-3.003-2.873-.736-.345-1.554-.585-1.797-1.14-.091-.33-.105-.51-.046-.705.15-.646.915-.84 1.515-.66.39.12.75.42.976.9 1.034-.676 1.034-.676 1.755-1.125-.27-.42-.404-.601-.586-.78-.63-.705-1.469-1.065-2.834-1.034l-.705.089c-.676.165-1.32.525-1.71 1.005-1.14 1.291-.811 3.541.569 4.471 1.365 1.02 3.361 1.244 3.616 2.205.24 1.17-.87 1.545-1.966 1.41-.811-.18-1.26-.586-1.755-1.336l-1.83 1.051c.21.48.45.689.81 1.109 1.74 1.756 6.09 1.666 6.871-1.004.029-.09.24-.705.074-1.65l.046.067zm-8.983-7.245h-2.248c0 1.938-.009 3.864-.009 5.805 0 1.232.063 2.363-.138 2.711-.33.689-1.18.601-1.566.48-.396-.196-.597-.466-.83-.855-.063-.105-.11-.196-.127-.196l-1.825 1.125c.305.63.75 1.172 1.324 1.517.855.51 2.004.675 3.207.405.783-.226 1.458-.691 1.811-1.411.51-.93.402-2.07.397-3.346.012-2.054 0-4.109 0-6.179l.004-.056z"
+                  />
+                </svg>
+                JavaScript
+              </span>
+              <span
+                class="px-3.5 py-2 bg-gradient-to-br from-white/10 to-white/5 border border-white/10 rounded-xl text-xs font-medium flex items-center gap-2 hover:border-cyan-500/30 transition-colors duration-300"
+              >
+                <svg class="w-5 h-5" fill="#61DAFB" viewBox="0 0 24 24">
+                  <path
+                    d="M14.23 12.004a2.236 2.236 0 0 1-2.235 2.236 2.236 2.236 0 0 1-2.236-2.236 2.236 2.236 0 0 1 2.235-2.236 2.236 2.236 0 0 1 2.236 2.236zm2.648-10.69c-1.346 0-3.107.96-4.888 2.622-1.78-1.653-3.542-2.602-4.887-2.602-.41 0-.783.093-1.106.278-1.375.793-1.683 3.264-.973 6.365C1.98 8.917 0 10.42 0 12.004c0 1.59 1.99 3.097 5.043 4.03-.704 3.113-.39 5.588.988 6.38.32.187.69.275 1.102.275 1.345 0 3.107-.96 4.888-2.624 1.78 1.654 3.542 2.603 4.887 2.603.41 0 .783-.09 1.106-.275 1.374-.792 1.683-3.263.973-6.365C22.02 15.096 24 13.59 24 12.004c0-1.59-1.99-3.097-5.043-4.032.704-3.11.39-5.587-.988-6.38a2.167 2.167 0 0 0-1.092-.278zm-.005 1.09v.006c.225 0 .406.044.558.127.666.382.955 1.835.73 3.704-.054.46-.142.945-.25 1.44a23.476 23.476 0 0 0-3.107-.534A23.892 23.892 0 0 0 12.769 4.7c1.592-1.48 3.087-2.292 4.105-2.295zm-9.77.02c1.012 0 2.514.808 4.11 2.28-.686.72-1.37 1.537-2.02 2.442a22.73 22.73 0 0 0-3.113.538 15.02 15.02 0 0 1-.254-1.42c-.23-1.868.054-3.32.714-3.707.19-.09.4-.127.563-.132zm4.882 3.05c.455.468.91.992 1.36 1.564-.44-.02-.89-.034-1.345-.034-.46 0-.915.01-1.36.034.44-.572.895-1.096 1.345-1.565zM12 8.1c.74 0 1.477.034 2.202.093.406.582.802 1.203 1.183 1.86.372.64.71 1.29 1.018 1.946-.308.655-.646 1.31-1.013 1.95-.38.66-.773 1.288-1.18 1.87a25.64 25.64 0 0 1-4.412.005 26.64 26.64 0 0 1-1.183-1.86c-.372-.64-.71-1.29-1.018-1.946a25.17 25.17 0 0 1 1.013-1.954c.38-.66.773-1.286 1.18-1.868A25.245 25.245 0 0 1 12 8.098zm-3.635.254c-.24.377-.48.763-.704 1.16-.225.39-.435.782-.635 1.174-.265-.656-.49-1.31-.676-1.947.64-.15 1.315-.283 2.015-.386zm7.26 0c.695.103 1.365.23 2.006.387-.18.632-.405 1.282-.66 1.933a25.952 25.952 0 0 0-1.345-2.32zm3.063.675c.484.15.944.317 1.375.498 1.732.74 2.852 1.708 2.852 2.476-.005.768-1.125 1.74-2.857 2.475-.42.18-.88.342-1.355.493a23.966 23.966 0 0 0-1.1-2.98c.45-1.017.81-2.01 1.085-2.964zm-13.395.004c.278.96.645 1.957 1.1 2.98a23.142 23.142 0 0 0-1.086 2.964c-.484-.15-.944-.318-1.37-.5-1.732-.737-2.852-1.706-2.852-2.474 0-.768 1.12-1.742 2.852-2.476.42-.18.88-.342 1.356-.494zm11.678 4.28c.265.657.49 1.312.676 1.948-.64.157-1.316.29-2.016.39a25.819 25.819 0 0 0 1.341-2.338zm-9.945.02c.2.392.41.783.64 1.175.23.39.465.772.705 1.143a22.005 22.005 0 0 1-2.006-.386c.18-.63.406-1.282.66-1.933zM17.92 16.32c.112.493.2.968.254 1.423.23 1.868-.054 3.32-.714 3.708-.147.09-.338.128-.563.128-1.012 0-2.514-.807-4.11-2.28.686-.72 1.37-1.536 2.02-2.44 1.107-.118 2.154-.3 3.113-.54zm-11.83.01c.96.234 2.006.415 3.107.532.66.905 1.345 1.727 2.035 2.446-1.595 1.483-3.092 2.295-4.11 2.295a1.185 1.185 0 0 1-.553-.132c-.666-.38-.955-1.834-.73-3.703.054-.46.142-.944.25-1.438zm4.56.64c.44.02.89.034 1.345.034.46 0 .915-.01 1.36-.034-.44.572-.895 1.095-1.345 1.565-.455-.47-.91-.993-1.36-1.565z"
+                  />
+                </svg>
+                React
+              </span>
+              <span
+                class="px-3.5 py-2 bg-gradient-to-br from-white/10 to-white/5 border border-white/10 rounded-xl text-xs font-medium flex items-center gap-2 hover:border-cyan-500/30 transition-colors duration-300"
+              >
+                <svg class="w-5 h-5" fill="#06B6D4" viewBox="0 0 24 24">
+                  <path
+                    d="M12.001 4.8c-3.2 0-5.2 1.6-6 4.8 1.2-1.6 2.6-2.2 4.2-1.8.913.228 1.565.89 2.288 1.624C13.666 10.618 15.027 12 18.001 12c3.2 0 5.2-1.6 6-4.8-1.2 1.6-2.6 2.2-4.2 1.8-.913-.228-1.565-.89-2.288-1.624C16.337 6.182 14.976 4.8 12.001 4.8zm-6 7.2c-3.2 0-5.2 1.6-6 4.8 1.2-1.6 2.6-2.2 4.2-1.8.913.228 1.565.89 2.288 1.624 1.177 1.194 2.538 2.576 5.512 2.576 3.2 0 5.2-1.6 6-4.8-1.2 1.6-2.6 2.2-4.2 1.8-.913-.228-1.565-.89-2.288-1.624C10.337 13.382 8.976 12 6.001 12z"
+                  />
+                </svg>
+                Tailwind CSS
+              </span>
+            </div>
+          </div>
+
+          <!-- Backend -->
+          <div
+            class="card-enhanced p-6 sm:p-7 rounded-3xl reveal hover-lift-strong group"
+          >
+            <div class="flex items-center gap-3 mb-5">
+              <h3 class="text-lg sm:text-xl font-bold text-white">
+                Backend Development
+              </h3>
+            </div>
+            <div class="flex flex-wrap gap-2.5">
+              <span
+                class="px-3 py-1.5 bg-white/5 rounded-full text-xs flex items-center gap-1.5"
+              >
+                <svg class="w-5 h-5" viewBox="0 0 24 24">
+                  <defs>
+                    <linearGradient
+                      id="pythonGradient"
+                      x1="0%"
+                      y1="0%"
+                      x2="0%"
+                      y2="100%"
+                    >
+                      <stop offset="0%" style="stop-color: #3776ab" />
+                      <stop offset="100%" style="stop-color: #ffd43b" />
+                    </linearGradient>
+                  </defs>
+                  <path
+                    fill="url(#pythonGradient)"
+                    d="M14.25.18l.9.2.73.26.59.3.45.32.34.34.25.34.16.33.1.3.04.26.02.2-.01.13V8.5l-.05.63-.13.55-.21.46-.26.38-.3.31-.33.25-.35.19-.35.14-.33.1-.3.07-.26.04-.21.02H8.77l-.69.05-.59.14-.5.22-.41.27-.33.32-.27.35-.2.36-.15.37-.1.35-.07.32-.04.27-.02.21v3.06H3.17l-.21-.03-.28-.07-.32-.12-.35-.18-.36-.26-.36-.36-.35-.46-.32-.59-.28-.73-.21-.88-.14-1.05-.05-1.23.06-1.22.16-1.04.24-.87.32-.71.36-.57.4-.44.42-.33.42-.24.4-.16.36-.1.32-.05.24-.01h.16l.06.01h8.16v-.83H6.18l-.01-2.75-.02-.37.05-.34.11-.31.17-.28.25-.26.31-.23.38-.2.44-.18.51-.15.58-.12.64-.1.71-.06.77-.04.84-.02 1.27.05zm-6.3 1.98l-.23.33-.08.41.08.41.23.34.33.22.41.09.41-.09.33-.22.23-.34.08-.41-.08-.41-.23-.33-.33-.22-.41-.09-.41.09zm13.09 3.95l.28.06.32.12.35.18.36.27.36.35.35.47.32.59.28.73.21.88.14 1.04.05 1.23-.06 1.23-.16 1.04-.24.86-.32.71-.36.57-.4.45-.42.33-.42.24-.4.16-.36.09-.32.05-.24.02-.16-.01h-8.22v.82h5.84l.01 2.76.02.36-.05.34-.11.31-.17.29-.25.25-.31.24-.38.2-.44.17-.51.15-.58.13-.64.09-.71.07-.77.04-.84.01-1.27-.04-1.07-.14-.9-.2-.73-.25-.59-.3-.45-.33-.34-.34-.25-.34-.16-.33-.1-.3-.04-.25-.02-.2.01-.13v-5.34l.05-.64.13-.54.21-.46.26-.38.3-.32.33-.24.35-.2.35-.14.33-.1.3-.06.26-.04.21-.02.13-.01h5.84l.69-.05.59-.14.5-.21.41-.28.33-.32.27-.35.2-.36.15-.36.1-.35.07-.32.04-.28.02-.21V6.07h2.09l.14.01zm-6.47 14.25l-.23.33-.08.41.08.41.23.33.33.23.41.08.41-.08.33-.23.23-.33.08-.41-.08-.41-.23-.33-.33-.23-.41-.08-.41.08z"
+                  />
+                </svg>
+                Python
+              </span>
+              <span
+                class="px-3 py-1.5 bg-white/5 rounded-full text-xs flex items-center gap-1.5"
+              >
+                <svg class="w-5 h-5" fill="#092E20" viewBox="0 0 24 24">
+                  <path
+                    d="M11.146 0h1.929v2.488h-1.929zm1.929 2.488h4.534v1.929h-4.534zM21.62 6.78v8.803h-1.974v-8.8h-4.534V4.417h8.488V6.78zm-15.14 0v8.803H4.509v-8.8H.13V4.417h8.338V6.78zm7.969 0v8.803h-1.982v-8.8h-4.534V4.417h8.488V6.78zm-7.969 0v8.803H4.5v-8.8H.12V4.417h8.338V6.78z"
+                  />
+                </svg>
+                Django
+              </span>
+              <span
+                class="px-3 py-1.5 bg-white/5 rounded-full text-xs flex items-center gap-1.5"
+              >
+                <svg class="w-5 h-5" fill="#FFFFFF" viewBox="0 0 24 24">
+                  <path
+                    d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.6 0 12 0zM9.5 17.2c-.4 0-.7-.3-.7-.7 0-.4.3-.7.7-.7s.7.3.7.7c0 .4-.3.7-.7.7zm5.7-3.5c-.4.8-1.3 1.3-2.3 1.5v.8h-.8v-.8c-1.5-.2-2.6-1.3-2.6-1.3l.5-.6s.9.9 2.1 1v-3.1l-.3-.1c-1.2-.5-1.9-1-1.9-2.2 0-1.1.8-2 2.2-2.3v-.8h.8v.8c1.2.2 2 1 2 1l-.5.6s-.6-.6-1.5-.7v2.9l.3.1c1.5.6 2.2 1.1 2.2 2.4.1 1.1-.5 1.9-1.2 2.3zm-1-5.2c-.8-.1-1.4.4-1.4 1 0 .6.4 1 1 1.2l.4.2v-2.4zm.8 4.8c.8-.2 1.2-.8 1.2-1.4 0-.7-.4-1.1-1-.4l-.2-.1v2.9z"
+                  />
+                </svg>
+                Flask
+              </span>
+              <span
+                class="px-3 py-1.5 bg-white/5 rounded-full text-xs flex items-center gap-1.5"
+              >
+                <svg class="w-5 h-5" fill="#CC2927" viewBox="0 0 24 24">
+                  <path
+                    d="M4.7 19.5L2 11.2h3l1.7 5.7 1.7-5.7h2.8L9.5 19.5H4.7zm8.8 0L11.2 11.2h3l1.7 5.7 1.7-5.7H20l-2.7 8.3h-4.8z"
+                  />
+                </svg>
+                SQL
+              </span>
+              <span
+                class="px-3 py-1.5 bg-white/5 rounded-full text-xs flex items-center gap-1.5"
+              >
+                <svg class="w-5 h-5" fill="#4169E1" viewBox="0 0 24 24">
+                  <path
+                    d="M23.5 10.5v3c0 .3-.2.5-.5.5h-1v1.5c0 .8-.7 1.5-1.5 1.5h-17C2.7 17 2 16.3 2 15.5V14H1c-.3 0-.5-.2-.5-.5v-3c0-.3.2-.5.5-.5h1V8.5C2 7.7 2.7 7 3.5 7h17c.8 0 1.5.7 1.5 1.5V10h1c.3 0 .5.2.5.5zM3 12.5h1v-1H3v1zm2-5h16v8H5v-8zm16 9v1H5v-1h16z"
+                  />
+                </svg>
+                PostgreSQL
+              </span>
+            </div>
+          </div>
+
+          <!-- Tools -->
+          <div
+            class="card-enhanced p-6 sm:p-7 rounded-3xl reveal hover-lift-strong group"
+          >
+            <div class="flex items-center gap-3 mb-5">
+              <h3 class="text-lg sm:text-xl font-bold text-white">
+                Tools & Technologies
+              </h3>
+            </div>
+            <div class="flex flex-wrap gap-2.5">
+              <span
+                class="px-3 py-1.5 bg-white/5 rounded-full text-xs flex items-center gap-1.5"
+              >
+                <svg class="w-5 h-5" fill="#F05032" viewBox="0 0 24 24">
+                  <path
+                    d="M23.546 10.93L13.067.452c-.604-.603-1.582-.603-2.188 0L8.708 2.627l2.76 2.76c.645-.215 1.379-.07 1.889.441.516.515.658 1.258.438 1.9l2.658 2.66c.645-.223 1.387-.078 1.9.435.721.72.721 1.884 0 2.604-.719.719-1.881.719-2.6 0-.539-.541-.674-1.337-.404-1.996L12.86 8.955v6.525c.176.086.342.203.488.348.713.721.713 1.883 0 2.6-.719.721-1.889.721-2.609 0-.719-.719-.719-1.879 0-2.598.182-.18.387-.316.605-.406V8.835c-.217-.091-.424-.222-.6-.401-.545-.545-.676-1.342-.396-2.009L7.636 3.7.45 10.881c-.6.605-.6 1.584 0 2.189l10.48 10.477c.604.604 1.582.604 2.186 0l10.43-10.43c.605-.603.605-1.582 0-2.187"
+                  />
+                </svg>
+                Git
+              </span>
+              <span
+                class="px-3 py-1.5 bg-white/5 rounded-full text-xs flex items-center gap-1.5"
+              >
+                <svg class="w-5 h-5" fill="#007ACC" viewBox="0 0 24 24">
+                  <path
+                    d="M23.15 2.587L18.21.21a1.494 1.494 0 0 0-1.705.29l-9.46 8.63-4.12-3.128a.999.999 0 0 0-1.276.057L.327 7.261A1 1 0 0 0 .326 8.74L3.899 12 .326 15.26a1 1 0 0 0 .001 1.479L1.65 17.94a.999.999 0 0 0 1.276.057l4.12-3.128 9.46 8.63a1.492 1.492 0 0 0 1.704.29l4.942-2.377A1.5 1.5 0 0 0 24 20.06V3.939a1.5 1.5 0 0 0-.85-1.352zm-5.146 14.861L10.826 12l7.178-5.448v10.896z"
+                  />
+                </svg>
+                VS Code
+              </span>
+              <span
+                class="px-3 py-1.5 bg-white/5 rounded-full text-xs flex items-center gap-1.5"
+              >
+                <svg class="w-5 h-5" viewBox="0 0 24 24">
+                  <path
+                    fill="#F24E1E"
+                    d="M8.148 24c-2.489 0-4.515-2.014-4.515-4.49s2.014-4.49 4.49-4.49h4.588v4.441c0 2.503-2.047 4.539-4.563 4.539z"
+                  />
+                  <path
+                    fill="#FF7262"
+                    d="M3.657 12c0-2.476 2.014-4.49 4.49-4.49h4.588v8.98H8.148c-2.476 0-4.49-2.014-4.49-4.49z"
+                  />
+                  <path
+                    fill="#A259FF"
+                    d="M3.657 4.49C3.657 2.014 5.671 0 8.148 0h4.588v8.981H8.148c-2.476 0-4.49-2.014-4.49-4.49z"
+                  />
+                  <path
+                    fill="#1ABCFE"
+                    d="M12.735 0h4.588c2.476 0 4.49 2.014 4.49 4.49s-2.014 4.491-4.49 4.491h-4.588V0z"
+                  />
+                  <path
+                    fill="#0ACF83"
+                    d="M20.323 12c0 2.476-2.014 4.49-4.49 4.49s-4.49-2.014-4.49-4.49 2.014-4.49 4.49-4.49 4.49 2.014 4.49 4.49z"
+                  />
+                </svg>
+                Figma
+              </span>
+              <span
+                class="px-3 py-1.5 bg-white/5 rounded-full text-xs flex items-center gap-1.5"
+              >
+                <svg class="w-5 h-5" fill="#2496ED" viewBox="0 0 24 24">
+                  <path
+                    d="M13.983 11.078h2.119a.186.186 0 00.186-.185V9.006a.186.186 0 00-.186-.186h-2.119a.185.185 0 00-.185.185v1.888c0 .102.083.185.185.185m-2.954-5.43h2.118a.186.186 0 00.186-.186V3.574a.186.186 0 00-.186-.185h-2.118a.185.185 0 00-.185.185v1.888c0 .102.082.185.185.185m0 2.716h2.118a.187.187 0 00.186-.186V6.29a.186.186 0 00-.186-.185h-2.118a.185.185 0 00-.185.185v1.887c0 .102.082.186.185.186m-2.93 0h2.12a.186.186 0 00.184-.186V6.29a.185.185 0 00-.185-.185H8.1a.185.185 0 00-.185.185v1.887c0 .102.083.186.185.186m-2.964 0h2.119a.186.186 0 00.185-.186V6.29a.185.185 0 00-.185-.185H5.136a.186.186 0 00-.186.185v1.887c0 .102.084.186.186.186m5.893 2.715h2.118a.186.186 0 00.186-.185V9.006a.186.186 0 00-.186-.186h-2.118a.185.185 0 00-.185.185v1.888c0 .102.082.185.185.185m-2.93 0h2.12a.185.185 0 00.184-.185V9.006a.185.185 0 00-.184-.186h-2.12a.185.185 0 00-.184.185v1.888c0 .102.083.185.185.185m-2.964 0h2.119a.185.185 0 00.185-.185V9.006a.185.185 0 00-.184-.186h-2.12a.186.186 0 00-.186.186v1.887c0 .102.084.185.186.185m-2.92 0h2.12a.185.185 0 00.184-.185V9.006a.185.185 0 00-.184-.186h-2.12a.185.185 0 00-.184.185v1.888c0 .102.082.185.185.185M23.763 9.89c-.065-.051-.672-.51-1.954-.51-.338 0-.676.03-1.01.087-.248-1.7-1.653-2.53-1.716-2.566l-.344-.199-.226.327c-.284.438-.49.922-.612 1.43-.23.97-.09 1.882.403 2.661-.595.332-1.55.413-1.744.42H.751a.751.751 0 00-.75.748 11.376 11.376 0 00.692 4.062c.545 1.428 1.355 2.48 2.41 3.124 1.18.723 3.1 1.137 5.275 1.137.983 0 1.97-.084 2.933-.25 1.352-.233 2.595-.686 3.693-1.347a11.717 11.717 0 002.925-2.522 19.063 19.063 0 002.302-3.54l.025-.055c.26-.026 1.016-.056 1.447.02.17.03.393.073.626.132.24.06.488.13.757.208.036.01.073.017.11.024.32.071.634.141.943.171a.756.756 0 00.834-.683.75.75 0 00-.65-.852c-.268-.03-.565-.082-.865-.136-.36-.065-.734-.133-1.069-.178-.461-.06-1.014-.084-1.45-.045zM13.983 11.078h2.119a.186.186 0 00.186-.185V9.006a.186.186 0 00-.186-.186h-2.119a.185.185 0 00-.185.185v1.888c0 .102.083.185.185.185"
+                  />
+                </svg>
+                Docker
+              </span>
+              <span
+                class="px-3 py-1.5 bg-white/5 rounded-full text-xs flex items-center gap-1.5"
+              >
+                <svg class="w-5 h-5" viewBox="0 0 24 24">
+                  <defs>
+                    <linearGradient
+                      id="aiGradient"
+                      x1="0%"
+                      y1="0%"
+                      x2="100%"
+                      y2="100%"
+                    >
+                      <stop offset="0%" style="stop-color: #ff6b6b" />
+                      <stop offset="50%" style="stop-color: #a855f7" />
+                      <stop offset="100%" style="stop-color: #3b82f6" />
+                    </linearGradient>
+                  </defs>
+                  <path
+                    fill="url(#aiGradient)"
+                    d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.6 0 12 0zm-1.7 20.4c-2.6-.4-4.8-1.9-6.1-4.1l1.5-.7c1.1 1.8 2.9 3.1 5 3.4v1.4zm.2-3.4c-1.5-.3-2.8-1.2-3.7-2.4l1.4-.9c.7 1 1.7 1.6 2.9 1.8v1.5zm.5-3.5c-1-.2-1.9-.7-2.6-1.5l1.3-1c.5.6 1.2 1 2 1.2v1.3zm.5-3c-.7-.1-1.3-.4-1.8-.9l1.2-1.1c.4.4.8.6 1.3.7v1.3zm.5-2.6c-.5-.1-.9-.3-1.2-.6l1.1-1.1c.3.2.6.4 1 .5v1.2zm.5-2.3c-.4 0-.7-.2-.9-.4l1-1.2c.2.2.5.3.8.4v1.2zm.5-2c-.3 0-.5-.1-.7-.3l1-1.2c.2.1.4.2.6.3v1.2zm.5-1.7c-.2 0-.4-.1-.5-.2l.9-1.2c.1.1.3.2.5.2v1.2z"
+                  />
+                </svg>
+                AI/ML
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section
+      id="education"
+      class="flex items-center justify-center px-4 sm:px-6 py-16 sm:py-20 md:py-24 relative"
+    >
+      <div class="max-w-7xl w-full">
+        <div class="reveal mb-10 sm:mb-14 text-center">
+          <div class="inline-block mb-4">
+            <span
+              class="px-4 py-2 bg-gradient-to-r from-green-500/10 to-teal-500/10 border border-green-500/20 rounded-full text-xs uppercase tracking-widest text-green-300"
+              >Professional Journey</span
+            >
+          </div>
+          <h2
+            class="text-3xl sm:text-4xl md:text-5xl font-bold bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent"
+          >
+            Internship Experience
+          </h2>
+        </div>
+
+        <div
+          class="card-enhanced p-8 sm:p-10 rounded-3xl reveal hover-lift-strong group"
+        >
+          <div class="flex items-start gap-6">
+            <div
+              class="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-gradient-to-br from-green-500/20 to-teal-500/20 flex items-center justify-center flex-shrink-0"
+            >
+              <svg
+                class="w-8 h-8 sm:w-10 sm:h-10 text-green-400"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"
+                ></path>
+              </svg>
+            </div>
+            <div class="flex-1">
+              <h3 class="text-xl sm:text-2xl font-bold mb-2 text-white">
+                Team Pacific Corporation
+              </h3>
+              <p class="text-gray-300 mb-2 text-base sm:text-lg font-medium">
+                Application Developer Intern
+              </p>
+              <p class="text-sm sm:text-base text-gray-400 mb-3">
+                March - June 2026
+              </p>
+              <p class="text-gray-400 text-sm sm:text-base leading-relaxed">
+                Contributed to enterprise application development using Python
+                and Odoo, implementing features, optimizing workflows, and
+                supporting business process automation.
+              </p>
+
+              <p class="text-gray-400 text-sm sm:text-base leading-relaxed">
+                Participated in the development of AUTO-QA TPC, an AI-powered
+                quality assurance system focused on Integrated Circuit (IC)
+                detection, assisting in backend development, system integration,
+                testing, and performance improvements.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="flex items-center justify-center px-4 sm:px-6 py-16 sm:py-20 md:py-24 relative">
-        <div class="max-w-7xl w-full">
-            <div class="reveal mb-10 sm:mb-14 text-center">
-                <div class="inline-block mb-4">
-                    <span class="px-4 py-2 bg-gradient-to-r from-blue-500/10 to-purple-500/10 border border-blue-500/20 rounded-full text-xs uppercase tracking-widest text-blue-300">Portfolio</span>
-                </div>
-                <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">Selected Projects</h2>
-                <p class="text-gray-300 text-base sm:text-lg font-light">Recent work I'm proud of</p>
-            </div>
-            
-            <div class="grid sm:grid-cols-1 lg:grid-cols-2 gap-5 sm:gap-6">
-                <!-- Project 1: TCU CEAA -->
-                <div class="card rounded-xl overflow-hidden reveal project-card">
-                    <a href="https://tcu-ceaa-portal.web.app/" target="_blank" class="block aspect-video relative overflow-hidden group bg-gradient-to-br from-purple-900/20 to-blue-900/20">
-                        <img src="{{ url_for('static', filename='img/TCUCEAA-Landingpage.png') }}" alt="TCU-CEAA Portal" class="w-full h-full object-cover group-hover:opacity-95 transition-opacity duration-300">
-                    </a>
-                    <div class="p-4 sm:p-5">
-                        <h3 class="text-base sm:text-lg font-semibold mb-2">AI Scholarship Evaluation System (TCU-CEAA)</h3>
-                        <p class="text-gray-400 mb-3 leading-relaxed text-xs sm:text-sm">Thesis project:</p>
-                        <p class="text-gray-400 mb-3 leading-relaxed text-xs sm:text-sm">Built an AI-driven scholarship and grant evaluation system, automating applicant screening with OCR, computer vision, NLP, and document-verification models. Implemented a secure backend evaluation pipeline and user-facing submission workflow, enabling fast, consistent, and transparent scholarship scoring. Deployed on a scalable cloud-ready architecture, significantly reducing manual review time and improving evaluation accuracy.</p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="px-2.5 py-1 bg-white/5 rounded-full text-xs">Python</span>
-                            <span class="px-2.5 py-1 bg-white/5 rounded-full text-xs">Django</span>
-                            <span class="px-2.5 py-1 bg-white/5 rounded-full text-xs">React</span>
-                            <span class="px-2.5 py-1 bg-white/5 rounded-full text-xs">PostgreSQL</span>
-                            <span class="px-2.5 py-1 bg-white/5 rounded-full text-xs">AI/ML</span>
-                        </div>
-                        <a href="https://github.com/Syanpole/TCU_CEAA" target="_blank" class="text-xs uppercase tracking-wider hover:underline inline-flex items-center gap-1.5 text-purple-400 hover:text-purple-300 transition-colors">
-                            View Project
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <line x1="7" y1="17" x2="17" y2="7"></line>
-                                <polyline points="7 7 17 7 17 17"></polyline>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-                
-                <!-- Project 2: Graduate Survey Responses -->
-                <div class="card rounded-xl overflow-hidden reveal project-card">
-                    <a href="https://alumni-tracker.vercel.app/" target="_blank" class="block aspect-video relative overflow-hidden group bg-gradient-to-br from-green-900/20 to-emerald-900/20">
-                        <img src="{{ url_for('static', filename='img/AlumniTrackerDashboard.png') }}" alt="Graduate Survey Dashboard" class="w-full h-full object-cover group-hover:opacity-95 transition-opacity duration-300">
-                    </a>
-                    <div class="p-4 sm:p-5">
-                        <h3 class="text-base sm:text-lg font-semibold mb-2">Alumni Tracker - Analytics Platform</h3>
-                        <p class="text-gray-400 mb-3 leading-relaxed text-xs sm:text-sm">Designed and developed a React-based analytics dashboard to visualize graduate employment survey data for academic program evaluation. Built interactive charts using Chart.js, implemented role-based access control for admin and viewer users, and processed large CSV datasets using PapaParse. Focused on responsive UI/UX with Tailwind CSS and deployed the application on Vercel to support data-driven decision-making.</p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="px-2.5 py-1 bg-white/5 rounded-full text-xs">HTML</span>
-                            <span class="px-2.5 py-1 bg-white/5 rounded-full text-xs">CSS</span>
-                            <span class="px-2.5 py-1 bg-white/5 rounded-full text-xs">JavaScript</span>
-                            <span class="px-2.5 py-1 bg-white/5 rounded-full text-xs">React.js</span>
-                            <span class="px-2.5 py-1 bg-white/5 rounded-full text-xs">TailwindCSS</span>
-                        </div>
-                        <a href="https://github.com/KewnsR/GraduateSurveyResponses" target="_blank" class="text-xs uppercase tracking-wider hover:underline inline-flex items-center gap-1.5 text-green-400 hover:text-green-300 transition-colors">
-                            View Project
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <line x1="7" y1="17" x2="17" y2="7"></line>
-                                <polyline points="7 7 17 7 17 17"></polyline>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-            </div>
+    <section
+      id="projects"
+      class="flex items-center justify-center px-4 sm:px-6 py-16 sm:py-20 md:py-24 relative"
+    >
+      <div class="max-w-7xl w-full">
+        <div class="reveal mb-10 sm:mb-14 text-center">
+          <div class="inline-block mb-4">
+            <span
+              class="px-4 py-2 bg-gradient-to-r from-blue-500/10 to-purple-500/10 border border-blue-500/20 rounded-full text-xs uppercase tracking-widest text-blue-300"
+              >Portfolio</span
+            >
+          </div>
+          <h2
+            class="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent"
+          >
+            Selected Projects
+          </h2>
+          <p class="text-gray-300 text-base sm:text-lg font-light">
+            Recent work I'm proud of
+          </p>
         </div>
+
+        <div class="grid sm:grid-cols-1 lg:grid-cols-2 gap-5 sm:gap-6">
+          <!-- Project 1: TCU CEAA -->
+          <div class="card rounded-xl overflow-hidden reveal project-card">
+            <a
+              href="https://tcu-ceaa-portal.web.app/"
+              target="_blank"
+              class="block aspect-video relative overflow-hidden group bg-gradient-to-br from-purple-900/20 to-blue-900/20"
+            >
+              <img
+                src="{{ url_for('static', filename='img/TCUCEAA-Landingpage.png') }}"
+                alt="TCU-CEAA Portal"
+                class="w-full h-full object-cover group-hover:opacity-95 transition-opacity duration-300"
+              />
+            </a>
+            <div class="p-4 sm:p-5">
+              <h3 class="text-base sm:text-lg font-semibold mb-2">
+                AI Scholarship Evaluation System (TCU-CEAA)
+              </h3>
+              <p class="text-gray-400 mb-3 leading-relaxed text-xs sm:text-sm">
+                Thesis project:
+              </p>
+              <p class="text-gray-400 mb-3 leading-relaxed text-xs sm:text-sm">
+                Built an AI-driven scholarship and grant evaluation system,
+                automating applicant screening with OCR, computer vision, NLP,
+                and document-verification models. Implemented a secure backend
+                evaluation pipeline and user-facing submission workflow,
+                enabling fast, consistent, and transparent scholarship scoring.
+                Deployed on a scalable cloud-ready architecture, significantly
+                reducing manual review time and improving evaluation accuracy.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span class="px-2.5 py-1 bg-white/5 rounded-full text-xs"
+                  >Python</span
+                >
+                <span class="px-2.5 py-1 bg-white/5 rounded-full text-xs"
+                  >Django</span
+                >
+                <span class="px-2.5 py-1 bg-white/5 rounded-full text-xs"
+                  >React</span
+                >
+                <span class="px-2.5 py-1 bg-white/5 rounded-full text-xs"
+                  >PostgreSQL</span
+                >
+                <span class="px-2.5 py-1 bg-white/5 rounded-full text-xs"
+                  >AI/ML</span
+                >
+              </div>
+              <a
+                href="https://github.com/Syanpole/TCU_CEAA"
+                target="_blank"
+                class="text-xs uppercase tracking-wider hover:underline inline-flex items-center gap-1.5 text-purple-400 hover:text-purple-300 transition-colors"
+              >
+                View Project
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <line x1="7" y1="17" x2="17" y2="7"></line>
+                  <polyline points="7 7 17 7 17 17"></polyline>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Project 2: Graduate Survey Responses -->
+          <div class="card rounded-xl overflow-hidden reveal project-card">
+            <a
+              href="https://alumni-tracker.vercel.app/"
+              target="_blank"
+              class="block aspect-video relative overflow-hidden group bg-gradient-to-br from-green-900/20 to-emerald-900/20"
+            >
+              <img
+                src="{{ url_for('static', filename='img/AlumniTrackerDashboard.png') }}"
+                alt="Graduate Survey Dashboard"
+                class="w-full h-full object-cover group-hover:opacity-95 transition-opacity duration-300"
+              />
+            </a>
+            <div class="p-4 sm:p-5">
+              <h3 class="text-base sm:text-lg font-semibold mb-2">
+                Alumni Tracker - Analytics Platform
+              </h3>
+              <p class="text-gray-400 mb-3 leading-relaxed text-xs sm:text-sm">
+                Designed and developed a React-based analytics dashboard to
+                visualize graduate employment survey data for academic program
+                evaluation. Built interactive charts using Chart.js, implemented
+                role-based access control for admin and viewer users, and
+                processed large CSV datasets using PapaParse. Focused on
+                responsive UI/UX with Tailwind CSS and deployed the application
+                on Vercel to support data-driven decision-making.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span class="px-2.5 py-1 bg-white/5 rounded-full text-xs"
+                  >HTML</span
+                >
+                <span class="px-2.5 py-1 bg-white/5 rounded-full text-xs"
+                  >CSS</span
+                >
+                <span class="px-2.5 py-1 bg-white/5 rounded-full text-xs"
+                  >JavaScript</span
+                >
+                <span class="px-2.5 py-1 bg-white/5 rounded-full text-xs"
+                  >React.js</span
+                >
+                <span class="px-2.5 py-1 bg-white/5 rounded-full text-xs"
+                  >TailwindCSS</span
+                >
+              </div>
+              <a
+                href="https://github.com/KewnsR/GraduateSurveyResponses"
+                target="_blank"
+                class="text-xs uppercase tracking-wider hover:underline inline-flex items-center gap-1.5 text-green-400 hover:text-green-300 transition-colors"
+              >
+                View Project
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <line x1="7" y1="17" x2="17" y2="7"></line>
+                  <polyline points="7 7 17 7 17 17"></polyline>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="flex items-center justify-center px-4 sm:px-6 py-16 sm:py-20 md:py-24 relative">
-        <div class="section-decoration"></div>
-        <div class="max-w-7xl w-full relative z-10">
-            <!-- Desktop: Side by Side | Mobile: Stacked with Divider -->
-            <div class="grid md:grid-cols-2 gap-10 md:gap-20">
-                <!-- Left Column: Contact Info -->
-                <div class="reveal-slide-right pb-10 md:pb-0 border-b md:border-b-0 md:border-r border-gray-800/50 md:pr-16">
-                    <div class="inline-block mb-6">
-                        <span class="px-4 py-2 bg-gradient-to-r from-green-500/10 to-emerald-500/10 border border-green-500/20 rounded-full text-xs uppercase tracking-widest text-green-300">Let's Connect</span>
-                    </div>
-                    <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-5 sm:mb-7 leading-tight">Open for<br/><span class="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">OJT/Internship</span></h2>
-                    <p class="text-gray-400 text-sm sm:text-base mb-6 sm:mb-8 leading-relaxed">
-                        Currently seeking opportunities for On-the-Job Training or Internship to apply my skills in real-world projects and gain hands-on experience.
-                    </p>
-                    
-                    <div class="space-y-5 sm:space-y-6">
-                        <div class="flex items-center gap-3 sm:gap-4">
-                            <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-white/5 flex items-center justify-center flex-shrink-0">
-                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
-                                </svg>
-                            </div>
-                            <div class="min-w-0">
-                                <p class="text-xs text-gray-500 uppercase tracking-wider mb-1">Email</p>
-                                <p class="text-sm sm:text-base break-all">ramoslloydkenneth1@gmail.com</p>
-                            </div>
-                        </div>
-                        
-                        <div class="flex items-center gap-3 sm:gap-4">
-                            <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-white/5 flex items-center justify-center flex-shrink-0">
-                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                                </svg>
-                            </div>
-                            <div>
-                                <p class="text-xs text-gray-500 uppercase tracking-wider mb-1">Location</p>
-                                <p class="text-sm sm:text-base">Taguig City, Philippines</p>
-                            </div>
-                        </div>
-                        
-                        <div class="flex gap-3 sm:gap-4 pt-6 sm:pt-8">
-                            <a href="https://www.instagram.com/arthurr.kq/" target="_blank" class="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-white/5 flex items-center justify-center hover:bg-white/10 transition-all" aria-label="Instagram">
-                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-                                </svg>
-                            </a>
-                            <a href="https://github.com/KewnsR" target="_blank" class="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-white/5 flex items-center justify-center hover:bg-white/10 transition-all" aria-label="GitHub">
-                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                                </svg>
-                            </a>
-                            <a href="https://www.linkedin.com/in/lloyd-kenneth-ramos-047a30379/" target="_blank" class="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-white/5 flex items-center justify-center hover:bg-white/10 transition-all" aria-label="LinkedIn">
-                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Right Column: Contact Form -->
-                <div class="reveal pt-8 md:pt-0">
-                    <form id="contact-form" class="space-y-4">
-                        <div>
-                            <input type="text" name="name" id="name" placeholder="Your Name" class="w-full px-4 sm:px-5 py-3 sm:py-4 rounded-xl sm:rounded-2xl text-white text-sm sm:text-base" required>
-                        </div>
-                        <div>
-                            <input type="email" name="email" id="email" placeholder="Your Email" class="w-full px-4 sm:px-5 py-3 sm:py-4 rounded-xl sm:rounded-2xl text-white text-sm sm:text-base" required>
-                        </div>
-                        <div>
-                            <input type="text" name="subject" id="subject" placeholder="Subject" class="w-full px-4 sm:px-5 py-3 sm:py-4 rounded-xl sm:rounded-2xl text-white text-sm sm:text-base" required>
-                        </div>
-                        <div>
-                            <textarea name="message" id="message" placeholder="Your Message" rows="5" class="w-full px-4 sm:px-5 py-3 sm:py-4 rounded-xl sm:rounded-2xl text-white resize-none text-sm sm:text-base" required></textarea>
-                        </div>
-                        <div id="form-message" class="hidden text-sm text-center py-2 rounded-full"></div>
-                        <button type="submit" id="submit-btn" class="btn-primary-enhanced w-full px-6 py-3 sm:py-4 rounded-full font-semibold text-sm sm:text-base relative">Send Message</button>
-                    </form>
-                </div>
+    <section
+      id="contact"
+      class="flex items-center justify-center px-4 sm:px-6 py-16 sm:py-20 md:py-24 relative"
+    >
+      <div class="section-decoration"></div>
+      <div class="max-w-7xl w-full relative z-10">
+        <!-- Desktop: Side by Side | Mobile: Stacked with Divider -->
+        <div class="grid md:grid-cols-2 gap-10 md:gap-20">
+          <!-- Left Column: Contact Info -->
+          <div
+            class="reveal-slide-right pb-10 md:pb-0 border-b md:border-b-0 md:border-r border-gray-800/50 md:pr-16"
+          >
+            <div class="inline-block mb-6">
+              <span
+                class="px-4 py-2 bg-gradient-to-r from-green-500/10 to-emerald-500/10 border border-green-500/20 rounded-full text-xs uppercase tracking-widest text-green-300"
+                >Let's Connect</span
+              >
             </div>
+            <h2
+              class="text-3xl sm:text-4xl md:text-5xl font-bold mb-5 sm:mb-7 leading-tight"
+            >
+              Open to<br /><span
+                class="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent"
+                >Career Opportunities</span
+              >
+            </h2>
+
+            <p
+              class="text-gray-400 text-sm sm:text-base mb-6 sm:mb-8 leading-relaxed"
+            >
+              Seeking opportunities to contribute, learn, and grow through
+              impactful projects across various areas of technology.
+            </p>
+
+            <div class="space-y-5 sm:space-y-6">
+              <div class="flex items-center gap-3 sm:gap-4">
+                <div
+                  class="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-white/5 flex items-center justify-center flex-shrink-0"
+                >
+                  <svg
+                    class="w-5 h-5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                    ></path>
+                  </svg>
+                </div>
+                <div class="min-w-0">
+                  <p
+                    class="text-xs text-gray-500 uppercase tracking-wider mb-1"
+                  >
+                    Email
+                  </p>
+                  <p class="text-sm sm:text-base break-all">
+                    ramoslloydkenneth1@gmail.com
+                  </p>
+                </div>
+              </div>
+
+              <div class="flex items-center gap-3 sm:gap-4">
+                <div
+                  class="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-white/5 flex items-center justify-center flex-shrink-0"
+                >
+                  <svg
+                    class="w-5 h-5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                    ></path>
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                    ></path>
+                  </svg>
+                </div>
+                <div>
+                  <p
+                    class="text-xs text-gray-500 uppercase tracking-wider mb-1"
+                  >
+                    Location
+                  </p>
+                  <p class="text-sm sm:text-base">Taguig City, Philippines</p>
+                </div>
+              </div>
+
+              <div class="flex gap-3 sm:gap-4 pt-6 sm:pt-8">
+                <a
+                  href="https://www.instagram.com/kenarthur/"
+                  target="_blank"
+                  class="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-white/5 flex items-center justify-center hover:bg-white/10 transition-all"
+                  aria-label="Instagram"
+                >
+                  <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                      d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+                    />
+                  </svg>
+                </a>
+                <a
+                  href="https://github.com/KewnsR"
+                  target="_blank"
+                  class="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-white/5 flex items-center justify-center hover:bg-white/10 transition-all"
+                  aria-label="GitHub"
+                >
+                  <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                      d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
+                    />
+                  </svg>
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/lloyd-kenneth-ramos-047a30379/"
+                  target="_blank"
+                  class="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-white/5 flex items-center justify-center hover:bg-white/10 transition-all"
+                  aria-label="LinkedIn"
+                >
+                  <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                      d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
+                    />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Contact Form -->
+          <div class="reveal pt-8 md:pt-0">
+            <form id="contact-form" class="space-y-4">
+              <div>
+                <input
+                  type="text"
+                  name="name"
+                  id="name"
+                  placeholder="Your Name"
+                  class="w-full px-4 sm:px-5 py-3 sm:py-4 rounded-xl sm:rounded-2xl text-white text-sm sm:text-base"
+                  required
+                />
+              </div>
+              <div>
+                <input
+                  type="email"
+                  name="email"
+                  id="email"
+                  placeholder="Your Email"
+                  class="w-full px-4 sm:px-5 py-3 sm:py-4 rounded-xl sm:rounded-2xl text-white text-sm sm:text-base"
+                  required
+                />
+              </div>
+              <div>
+                <input
+                  type="text"
+                  name="subject"
+                  id="subject"
+                  placeholder="Subject"
+                  class="w-full px-4 sm:px-5 py-3 sm:py-4 rounded-xl sm:rounded-2xl text-white text-sm sm:text-base"
+                  required
+                />
+              </div>
+              <div>
+                <textarea
+                  name="message"
+                  id="message"
+                  placeholder="Your Message"
+                  rows="5"
+                  class="w-full px-4 sm:px-5 py-3 sm:py-4 rounded-xl sm:rounded-2xl text-white resize-none text-sm sm:text-base"
+                  required
+                ></textarea>
+              </div>
+              <div
+                id="form-message"
+                class="hidden text-sm text-center py-2 rounded-full"
+              ></div>
+              <button
+                type="submit"
+                id="submit-btn"
+                class="btn-primary-enhanced w-full px-6 py-3 sm:py-4 rounded-full font-semibold text-sm sm:text-base relative"
+              >
+                Send Message
+              </button>
+            </form>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Footer -->
     <footer class="border-t border-white/5 px-4 sm:px-6 py-6 sm:py-8">
-        <div class="max-w-7xl mx-auto text-center">
-            <p class="text-xs sm:text-sm text-gray-500">© 2026 Lloyd Kenneth Ramos. All rights reserved.</p>
-        </div>
+      <div class="max-w-7xl mx-auto text-center">
+        <p class="text-xs sm:text-sm text-gray-500">
+          © 2026 Lloyd Kenneth Ramos. All rights reserved.
+        </p>
+      </div>
     </footer>
 
     <script>
-        // Navigation scroll effect
-        const navbar = document.getElementById('navbar');
-        const navLinks = document.querySelectorAll('.nav-link');
-        
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 100) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
+      // Navigation scroll effect
+      const navbar = document.getElementById("navbar");
+      const navLinks = document.querySelectorAll(".nav-link");
+
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 100) {
+          navbar.classList.add("scrolled");
+        } else {
+          navbar.classList.remove("scrolled");
+        }
+
+        // Active section highlighting
+        const sections = document.querySelectorAll("section");
+        sections.forEach((section) => {
+          const rect = section.getBoundingClientRect();
+          if (rect.top <= 100 && rect.bottom >= 100) {
+            navLinks.forEach((link) => {
+              link.classList.remove("active");
+              if (link.getAttribute("href") === `#${section.id}`) {
+                link.classList.add("active");
+              }
+            });
+          }
+        });
+      });
+
+      // Mobile menu toggle
+      const mobileToggle = document.getElementById("mobile-toggle");
+      const mobileMenu = document.getElementById("mobile-menu");
+      const mobileLinks = document.querySelectorAll(".mobile-link");
+
+      mobileToggle.addEventListener("click", () => {
+        mobileMenu.classList.toggle("active");
+      });
+
+      mobileLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+          mobileMenu.classList.remove("active");
+        });
+      });
+
+      // Reveal animations
+      const reveals = document.querySelectorAll(
+        ".reveal, .reveal-slide-right, .reveal-slide-left",
+      );
+
+      const revealObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("active");
             }
-            
-            // Active section highlighting
-            const sections = document.querySelectorAll('section');
-            sections.forEach(section => {
-                const rect = section.getBoundingClientRect();
-                if (rect.top <= 100 && rect.bottom >= 100) {
-                    navLinks.forEach(link => {
-                        link.classList.remove('active');
-                        if (link.getAttribute('href') === `#${section.id}`) {
-                            link.classList.add('active');
-                        }
-                    });
-                }
+          });
+        },
+        {
+          threshold: 0.15,
+          rootMargin: "0px 0px -80px 0px",
+        },
+      );
+
+      reveals.forEach((reveal) => {
+        revealObserver.observe(reveal);
+      });
+
+      // Skill bar animations
+      const skillBars = document.querySelectorAll(".skill-progress");
+
+      const skillObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const width = entry.target.dataset.width;
+              setTimeout(() => {
+                entry.target.style.width = width;
+              }, 200);
+              skillObserver.unobserve(entry.target);
+            }
+          });
+        },
+        {
+          threshold: 0.5,
+        },
+      );
+
+      skillBars.forEach((bar) => {
+        skillObserver.observe(bar);
+      });
+
+      // Smooth scroll
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute("href"));
+          if (target) {
+            target.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
             });
+          }
         });
-        
-        // Mobile menu toggle
-        const mobileToggle = document.getElementById('mobile-toggle');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const mobileLinks = document.querySelectorAll('.mobile-link');
-        
-        mobileToggle.addEventListener('click', () => {
-            mobileMenu.classList.toggle('active');
-        });
-        
-        mobileLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.remove('active');
-            });
-        });
-        
-        // Reveal animations
-        const reveals = document.querySelectorAll('.reveal, .reveal-slide-right, .reveal-slide-left');
-        
-        const revealObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('active');
-                }
-            });
-        }, {
-            threshold: 0.15,
-            rootMargin: '0px 0px -80px 0px'
-        });
-        
-        reveals.forEach(reveal => {
-            revealObserver.observe(reveal);
-        });
-        
-        // Skill bar animations
-        const skillBars = document.querySelectorAll('.skill-progress');
-        
-        const skillObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const width = entry.target.dataset.width;
-                    setTimeout(() => {
-                        entry.target.style.width = width;
-                    }, 200);
-                    skillObserver.unobserve(entry.target);
-                }
-            });
-        }, {
-            threshold: 0.5
-        });
-        
-        skillBars.forEach(bar => {
-            skillObserver.observe(bar);
-        });
-        
-        // Smooth scroll
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
+      });
     </script>
     <script src="{{ url_for('static', filename='js/scroll-animations.js') }}"></script>
     <script src="{{ url_for('static', filename='js/contact-form.js') }}"></script>
-    
+
     <!-- Scroll to Top Button -->
     <button id="scrollToTop" class="scroll-to-top" aria-label="Scroll to top">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="18 15 12 9 6 15"></polyline>
-        </svg>
+      <svg
+        width="20"
+        height="20"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <polyline points="18 15 12 9 6 15"></polyline>
+      </svg>
     </button>
-</body>
+  </body>
 </html>
