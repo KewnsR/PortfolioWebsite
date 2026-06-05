@@ -361,7 +361,7 @@
         <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7 md:gap-8">
           <!-- Frontend -->
           <div
-            class="card-enhanced p-6 sm:p-7 rounded-3xl reveal hover-lift-strong group"
+            class="card-enhanced frontend-card p-6 sm:p-7 rounded-3xl reveal hover-lift-strong group"
           >
             <div class="flex items-center gap-3 mb-5">
               <h3 class="text-lg sm:text-xl font-bold text-white">
@@ -414,7 +414,7 @@
 
           <!-- Backend -->
           <div
-            class="card-enhanced p-6 sm:p-7 rounded-3xl reveal hover-lift-strong group"
+            class="card-enhanced backend-card p-6 sm:p-7 rounded-3xl reveal hover-lift-strong group"
           >
             <div class="flex items-center gap-3 mb-5">
               <h3 class="text-lg sm:text-xl font-bold text-white">
@@ -490,7 +490,7 @@
 
           <!-- Tools -->
           <div
-            class="card-enhanced p-6 sm:p-7 rounded-3xl reveal hover-lift-strong group"
+            class="card-enhanced tools-card p-6 sm:p-7 rounded-3xl reveal hover-lift-strong group"
           >
             <div class="flex items-center gap-3 mb-5">
               <h3 class="text-lg sm:text-xl font-bold text-white">
@@ -1018,6 +1018,20 @@
       </div>
     </footer>
 
+    <canvas
+      id="binary-rain"
+      style="
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 0;
+        opacity: 0.12;
+      "
+    ></canvas>
+
     <script>
       // Navigation scroll effect
       const navbar = document.getElementById("navbar");
@@ -1120,6 +1134,54 @@
           }
         });
       });
+
+      (function () {
+        const canvas = document.getElementById("binary-rain");
+        const ctx = canvas.getContext("2d");
+        const fontSize = 11;
+        const chars = "10";
+        let columns, drops;
+
+        function init() {
+          canvas.width = window.innerWidth;
+          canvas.height = window.innerHeight;
+          columns = Math.floor(canvas.width / (fontSize * 1.6));
+          drops = Array(columns)
+            .fill(0)
+            .map(() => Math.random() * -100);
+        }
+
+        function draw() {
+          ctx.fillStyle = "rgba(5, 8, 22, 0.05)";
+          ctx.fillRect(0, 0, canvas.width, canvas.height);
+          ctx.font = `${fontSize}px "Courier New", monospace`;
+          ctx.textBaseline = "top";
+
+          for (let i = 0; i < drops.length; i++) {
+            const char = chars[Math.floor(Math.random() * chars.length)];
+            const x = i * fontSize * 1.6;
+            const y = drops[i] * fontSize;
+
+            // Vary the blue tone slightly for depth
+            const alpha = 0.6 + Math.random() * 0.12;
+            const blue = Math.random() > 0.78;
+            ctx.fillStyle = blue
+              ? `rgba(96, 165, 250, ${alpha})`
+              : `rgba(37, 99, 235, ${alpha})`;
+
+            ctx.fillText(char, x, y);
+            drops[i] += 0.35 + Math.random() * 0.2;
+
+            if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+              drops[i] = -Math.floor(Math.random() * 20);
+            }
+          }
+        }
+
+        init();
+        setInterval(draw, 60);
+        window.addEventListener("resize", init);
+      })();
     </script>
     <script src="{{ url_for('static', filename='js/scroll-animations.js') }}"></script>
     <script src="{{ url_for('static', filename='js/contact-form.js') }}"></script>
