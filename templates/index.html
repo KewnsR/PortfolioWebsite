@@ -585,8 +585,9 @@
       </div>
     </section>
 
+    <!-- Internship Section -->
     <section
-      id="education"
+      id="internship"
       class="flex items-center justify-center px-4 sm:px-6 py-16 sm:py-20 md:py-24 relative"
     >
       <div class="max-w-7xl w-full">
@@ -609,21 +610,13 @@
         >
           <div class="flex items-start gap-6">
             <div
-              class="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-gradient-to-br from-green-500/20 to-teal-500/20 flex items-center justify-center flex-shrink-0"
+              class="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-transparent flex items-center justify-center flex-shrink-0 overflow-hidden"
             >
-              <svg
-                class="w-8 h-8 sm:w-10 sm:h-10 text-green-400"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"
-                ></path>
-              </svg>
+              <img
+                src="{{ url_for('static', filename='img/TPCLOGO.png') }}"
+                alt="Team Pacific Corporation Logo"
+                class="w-16 h-16 sm:w-16 sm:h-16 object-contain rounded-full"
+              />
             </div>
             <div class="flex-1">
               <h3 class="text-xl sm:text-2xl font-bold mb-2 text-white">

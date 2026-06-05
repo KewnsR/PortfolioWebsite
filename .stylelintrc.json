@@ -1,0 +1,22 @@
+{
+  "extends": "stylelint-config-standard",
+  "rules": {
+    "color-no-invalid-hex": true,
+    "declaration-block-no-duplicate-properties": true,
+    "block-no-empty": true,
+    "max-nesting-depth": 3,
+    "custom-property-empty-line-before": null,
+    "color-function-alias-notation": null,
+    "color-function-notation": null,
+    "alpha-value-notation": null,
+    "no-invalid-position-at-import-rule": null,
+    "font-family-name-quotes": null,
+    "keyframes-name-pattern": null,
+    "rule-empty-line-before": null,
+    "property-no-vendor-prefix": null,
+    "comment-empty-line-before": null,
+    "declaration-block-no-redundant-longhand-properties": null,
+    "media-feature-range-notation": null
+  },
+  "ignoreFiles": ["static/output.css", "static/css/tailwind.css"]
+}
