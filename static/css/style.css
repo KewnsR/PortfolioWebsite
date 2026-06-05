@@ -218,7 +218,7 @@ body::after {
 /* Scroll indicator */
 .scroll-indicator {
   position: absolute;
-  bottom: 84px;
+  bottom: 99px;
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
