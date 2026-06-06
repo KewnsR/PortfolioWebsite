@@ -139,7 +139,7 @@
                 >View Work</a
               >
               <a
-                href="{{ url_for('static', filename='kenramos.pdf') }}"
+                href="{{ url_for('static', filename='lkramos-cv.pdf') }}"
                 download
                 class="btn-tertiary px-6 sm:px-8 py-3 sm:py-3.5 rounded-full font-semibold text-xs sm:text-sm text-center inline-flex items-center gap-2"
               >
@@ -308,21 +308,13 @@
         >
           <div class="flex items-start gap-6">
             <div
-              class="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-gradient-to-br from-green-500/20 to-teal-500/20 flex items-center justify-center flex-shrink-0"
+              class="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-transparent flex items-center justify-center flex-shrink-0 overflow-hidden"
             >
-              <svg
-                class="w-8 h-8 sm:w-10 sm:h-10 text-green-400"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"
-                ></path>
-              </svg>
+              <img
+                src="{{ url_for('static', filename='img/LogoTCU.png') }}"
+                alt="Taguig City University Logo"
+                class="w-14 h-14 sm:w-16 sm:h-16 object-contain rounded-full"
+              />
             </div>
             <div class="flex-1">
               <h3 class="text-xl sm:text-2xl font-bold mb-2 text-white">
@@ -505,46 +497,30 @@
                 </svg>
                 Python
               </span>
-              <span
-                class="px-3 py-1.5 bg-white/5 rounded-full text-xs flex items-center gap-1.5"
-              >
-                <svg class="w-5 h-5" fill="#092E20" viewBox="0 0 24 24">
-                  <path
-                    d="M11.146 0h1.929v2.488h-1.929zm1.929 2.488h4.534v1.929h-4.534zM21.62 6.78v8.803h-1.974v-8.8h-4.534V4.417h8.488V6.78zm-15.14 0v8.803H4.509v-8.8H.13V4.417h8.338V6.78zm7.969 0v8.803h-1.982v-8.8h-4.534V4.417h8.488V6.78zm-7.969 0v8.803H4.5v-8.8H.12V4.417h8.338V6.78z"
-                  />
-                </svg>
-                Django
-              </span>
-              <span
-                class="px-3 py-1.5 bg-white/5 rounded-full text-xs flex items-center gap-1.5"
-              >
-                <svg class="w-5 h-5" fill="#FFFFFF" viewBox="0 0 24 24">
-                  <path
-                    d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.6 0 12 0zM9.5 17.2c-.4 0-.7-.3-.7-.7 0-.4.3-.7.7-.7s.7.3.7.7c0 .4-.3.7-.7.7zm5.7-3.5c-.4.8-1.3 1.3-2.3 1.5v.8h-.8v-.8c-1.5-.2-2.6-1.3-2.6-1.3l.5-.6s.9.9 2.1 1v-3.1l-.3-.1c-1.2-.5-1.9-1-1.9-2.2 0-1.1.8-2 2.2-2.3v-.8h.8v.8c1.2.2 2 1 2 1l-.5.6s-.6-.6-1.5-.7v2.9l.3.1c1.5.6 2.2 1.1 2.2 2.4.1 1.1-.5 1.9-1.2 2.3zm-1-5.2c-.8-.1-1.4.4-1.4 1 0 .6.4 1 1 1.2l.4.2v-2.4zm.8 4.8c.8-.2 1.2-.8 1.2-1.4 0-.7-.4-1.1-1-.4l-.2-.1v2.9z"
-                  />
-                </svg>
-                Flask
-              </span>
-              <span
-                class="px-3 py-1.5 bg-white/5 rounded-full text-xs flex items-center gap-1.5"
-              >
-                <svg class="w-5 h-5" fill="#CC2927" viewBox="0 0 24 24">
-                  <path
-                    d="M4.7 19.5L2 11.2h3l1.7 5.7 1.7-5.7h2.8L9.5 19.5H4.7zm8.8 0L11.2 11.2h3l1.7 5.7 1.7-5.7H20l-2.7 8.3h-4.8z"
-                  />
-                </svg>
-                SQL
-              </span>
-              <span
-                class="px-3 py-1.5 bg-white/5 rounded-full text-xs flex items-center gap-1.5"
-              >
-                <svg class="w-5 h-5" fill="#4169E1" viewBox="0 0 24 24">
-                  <path
-                    d="M23.5 10.5v3c0 .3-.2.5-.5.5h-1v1.5c0 .8-.7 1.5-1.5 1.5h-17C2.7 17 2 16.3 2 15.5V14H1c-.3 0-.5-.2-.5-.5v-3c0-.3.2-.5.5-.5h1V8.5C2 7.7 2.7 7 3.5 7h17c.8 0 1.5.7 1.5 1.5V10h1c.3 0 .5.2.5.5zM3 12.5h1v-1H3v1zm2-5h16v8H5v-8zm16 9v1H5v-1h16z"
-                  />
-                </svg>
-                PostgreSQL
-              </span>
+              <span class="px-3 py-1.5 bg-white/5 rounded-full text-xs flex items-center gap-1.5">
+  <svg class="w-5 h-5" fill="#092E20" viewBox="0 0 24 24">
+    <path d="M9.826 0v18.847c-1.55.295-2.695.413-3.94.413C2.17 19.26 0 17.582 0 14.348c0-3.116 2.053-5.145 5.234-5.145.493 0 .867.04 1.363.158V0h3.229zm-3.23 11.801a3.104 3.104 0 0 0-1.067-.158c-1.599 0-2.526.985-2.526 2.702 0 1.678.888 2.603 2.486 2.603.355 0 .651-.02 1.107-.079v-5.068zm8.37-2.362v7.43c0 2.56-.19 3.78-.749 4.844-.513 1.025-1.184 1.678-2.546 2.446l-2.999-1.422c1.362-.63 2.033-1.224 2.467-2.17.454-.965.592-2.086.592-4.98V9.44h3.235zM11.73.02h3.235v3.313H11.73z"/>
+  </svg>
+  Django
+</span>
+              <span class="px-3 py-1.5 bg-white/5 rounded-full text-xs flex items-center gap-1.5">
+  <svg class="w-5 h-5" fill="#FFFFFF" viewBox="0 0 24 24">
+    <path d="M8.5 0v8.5H4v3h4.5V24h3V11.5H16v-3h-4.5V0z"/>
+  </svg>
+  Flask
+</span>
+              <span class="px-3 py-1.5 bg-white/5 rounded-full text-xs flex items-center gap-1.5">
+  <svg class="w-5 h-5" fill="#4479A1" viewBox="0 0 24 24">
+    <path d="M12 0C5.373 0 0 2.239 0 5v14c0 2.761 5.373 5 12 5s12-2.239 12-5V5c0-2.761-5.373-5-12-5zm0 2c5.523 0 10 1.343 10 3s-4.477 3-10 3S2 6.657 2 5s4.477-3 10-3zm0 18c-5.523 0-10-1.343-10-3v-2.24C4.114 16.161 7.83 17 12 17s7.886-.839 10-2.24V17c0 1.657-4.477 3-10 3z"/>
+  </svg>
+  SQL
+</span>
+              <span class="px-3 py-1.5 bg-white/5 rounded-full text-xs flex items-center gap-1.5">
+  <svg class="w-5 h-5" fill="#336791" viewBox="0 0 24 24">
+    <path d="M12.07.22c-1.44-.01-2.63.39-3.52 1.18-1.47 1.3-2.31 3.46-2.43 6.25-.06 1.35.05 2.7.3 3.92-.43.24-.87.6-1.18 1.1-.63 1.01-.75 2.4-.35 4.13.28 1.22.84 2.45 1.63 3.58.68.97 1.46 1.72 2.25 2.15.63.35 1.24.5 1.83.44.73-.07 1.38-.48 1.93-1.21.42-.56.76-1.32 1.01-2.27.29.05.58.08.88.08 2.06 0 3.57-1.22 4.27-3.48.56-1.79.55-3.83-.03-5.6-.56-1.69-1.61-2.95-3-3.61-.22-1.84-.88-3.38-1.95-4.48C14.86.63 13.58.22 12.07.22z"/>
+  </svg>
+  PostgreSQL
+</span>
             </div>
           </div>
 
