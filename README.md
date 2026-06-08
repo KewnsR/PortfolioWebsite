@@ -11,10 +11,9 @@
 ### Frontend
 - **HTML5** - Semantic markup structure
 - **Tailwind CSS (CDN)** - Utility-first CSS framework
-- **Custom CSS** - Minimalist card design, gradient effects, reveal animations
 - **Vanilla JavaScript** - Intersection Observer API, smooth scrolling, mobile menu
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Installation
 
@@ -45,7 +44,7 @@
 5. **Open your browser**
    Navigate to `http://localhost:5000` to view the website
 
-## 🚀 Deployment
+## Deployment
 
 ### Vercel (Recommended)
 The project includes `vercel.json` configuration:
