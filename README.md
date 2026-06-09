@@ -57,13 +57,6 @@ vercel --prod
 python app.py
 ```
 
-### Traditional Hosting
-1. Use WSGI server like Gunicorn
-2. Configure web server (Nginx/Apache)
-3. Set up SSL certificate
-
 ## 📄 License
 
 This project is open source and available under the [MIT License](LICENSE).
-
-*Last updated: February 2026*
