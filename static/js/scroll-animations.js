@@ -15,12 +15,36 @@ function initScrollToTop() {
             }
         });
         
-        // Scroll to top on click
+        // Scroll to top on click with click animation and small delay
         scrollBtn.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
+            // Prevent re-trigger while already scrolling
+            if (scrollBtn.classList.contains('scrolling')) return;
+
+            // Add click visual state
+            scrollBtn.classList.add('clicked', 'scrolling');
+
+            // Small delay so the click animation is visible before scrolling
+            setTimeout(() => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            }, 80);
+
+            // Remove the clicked class after the click animation finishes
+            setTimeout(() => {
+                scrollBtn.classList.remove('clicked');
+            }, 420);
+
+            // Remove the scrolling state once we reach the top
+            const onScroll = () => {
+                if ((window.pageYOffset || document.documentElement.scrollTop) === 0) {
+                    scrollBtn.classList.remove('scrolling');
+                    window.removeEventListener('scroll', onScroll);
+                }
+            };
+
+            window.addEventListener('scroll', onScroll);
         });
     }
 }
