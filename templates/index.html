@@ -86,37 +86,69 @@
       </section>
 
       <!-- ─── ABOUT ─── -->
-      <section data-reveal id="about" style="margin-bottom:80px;">
-        <div class="section-header">
-          <h2 class="section-title">About Me</h2>
-          <span class="section-tag">— Who I Am</span>
-        </div>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:40px;" class="about-grid">
-          <div>
-            <span class="eyebrow">Background</span>
-            <p style="color:var(--muted);font-size:15px;line-height:1.75;margin-bottom:16px;">
-              Hello! I'm Lloyd Kenneth Ramos, a Computer Science graduate from Taguig City University with a strong interest in software development, web development, and emerging technologies. I enjoy building efficient, scalable, and user-friendly applications that solve real-world problems.
-            </p>
-            <p style="color:var(--muted);font-size:15px;line-height:1.75;">
-              Through my academic projects and internship experience, I have gained practical knowledge in software development, enterprise applications, and AI-powered systems. I am seeking opportunities to contribute, continue learning, and grow professionally alongside talented and collaborative teams.
-            </p>
-          </div>
-          <div style="display:flex;flex-direction:column;gap:16px;">
-            <div class="card-flat" style="flex:1;">
-              <span class="eyebrow" style="margin-bottom:6px;">Location</span>
-              <p style="font-size:15px;font-weight:500;">Taguig City, Philippines</p>
-            </div>
-            <div class="card-flat" style="flex:1;">
-              <span class="eyebrow" style="margin-bottom:6px;">Status</span>
-              <p style="font-size:15px;font-weight:500;color:var(--brand);">Looking for Work</p>
-            </div>
-            <div class="card-flat" style="flex:1;">
-              <span class="eyebrow" style="margin-bottom:6px;">Email</span>
-              <p style="font-size:13px;font-weight:500;word-break:break-all;">ramoslloydkenneth1@gmail.com</p>
-            </div>
-          </div>
-        </div>
-      </section>
+<section data-reveal id="about" style="margin-bottom:80px;">
+  <div class="section-header">
+    <h2 class="section-title">About Me</h2>
+    <span class="section-tag">— Who I Am</span>
+  </div>
+
+  <div class="about-grid">
+
+    <!-- Photo -->
+    <div>
+      <div class="about-photo">
+        <img
+          src="{{ url_for('static', filename='img/1v1formal.png') }}"
+          alt="Lloyd Kenneth Ramos"
+        />
+      </div>
+    </div>
+
+    <!-- Background -->
+    <div>
+      <span class="eyebrow">Background</span>
+
+      <p class="about-text">
+        Hello! I'm Lloyd Kenneth Ramos, a Computer Science graduate from
+        Taguig City University with a strong interest in software
+        development, web development, and emerging technologies. I enjoy
+        building efficient, scalable, and user-friendly applications that
+        solve real-world problems.
+      </p>
+
+      <p class="about-text">
+        Through my academic projects and internship experience, I have
+        gained practical knowledge in software development, enterprise
+        applications, and AI-powered systems. I am seeking opportunities
+        to contribute, continue learning, and grow professionally
+        alongside talented and collaborative teams.
+      </p>
+    </div>
+
+    <!-- Info Cards -->
+    <div class="about-info">
+
+      <div class="card-flat">
+        <span class="eyebrow">Location</span>
+        <p>Taguig City, Philippines</p>
+      </div>
+
+      <div class="card-flat">
+        <span class="eyebrow">Status</span>
+        <p style="color:var(--brand);">Looking for Work</p>
+      </div>
+
+      <div class="card-flat">
+        <span class="eyebrow">Email</span>
+        <p style="word-break:break-word;">
+          ramoslloydkenneth1@gmail.com
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
 
       <!-- ─── EDUCATION & EXPERIENCE ─── -->
       <section data-reveal id="work" style="margin-bottom:80px;">

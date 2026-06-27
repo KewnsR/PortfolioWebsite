@@ -164,6 +164,16 @@
         white-space: nowrap;
       }
 
+            /* Hero */
+      .hero-name {
+        font-size: clamp(32px, 8vw, 76px);
+        line-height: 0.88;
+        letter-spacing: -0.04em;
+        font-weight: 700;
+        text-transform: uppercase;
+        font-family: 'Space Grotesk', sans-serif;
+      }
+
       /* Scroll indicator */
       .scroll-indicator {
         position: absolute;
@@ -199,6 +209,60 @@
           transform: translateX(-50%) translateY(10px);
         }
       }
+
+
+      .about-grid{
+        display:grid;
+        grid-template-columns:220px 1fr 280px;
+        gap:50px;
+        align-items:start;
+      }
+
+      .about-photo{
+          width:200px;
+          height:267px;
+          border:1px solid var(--hairline);
+          overflow:hidden;
+      }
+
+      .about-photo img{
+          width:100%;
+          height:100%;
+          object-fit:cover;
+          object-position:top center;
+          display:block;
+      }
+
+      .about-text{
+          color:var(--muted);
+          font-size:15px;
+          line-height:1.8;
+          margin-bottom:18px;
+      }
+
+      .about-info{
+          display:flex;
+          flex-direction:column;
+          gap:16px;
+      }
+
+      .about-info .card-flat p{
+          font-size:15px;
+          font-weight:500;
+      }
+
+      @media (max-width: 992px){
+
+          .about-grid{
+              grid-template-columns:1fr;
+          }
+
+          .about-photo{
+              margin:0 auto;
+          }
+
+      }
+
       /* Cards — flat, square */
       .card-flat {
         background: var(--deep);
@@ -259,16 +323,6 @@
         color: var(--brand);
       }
 
-      /* Hero */
-      .hero-name {
-        font-size: clamp(36px, 8vw, 80px);
-        line-height: 0.88;
-        letter-spacing: -0.04em;
-        font-weight: 700;
-        text-transform: uppercase;
-        font-family: 'Space Grotesk', sans-serif;
-      }
-
       /* Skills list */
       .skills-list li {
         display: flex;
@@ -282,26 +336,26 @@
 
       /* Project placeholder */
       .project-img-wrap {
-    display: block;
-    width: 100%;
-    max-width: 700px; /* increase if you want */
-    background: var(--surface);
-    border: 1px solid var(--hairline);
-    overflow: hidden;
-    margin-bottom: 24px;
-    transition: border-color 0.2s;
-    text-decoration: none;
-}
+        display: block;
+        width: 100%;
+        max-width: 700px; /* increase if you want */
+        background: var(--surface);
+        border: 1px solid var(--hairline);
+        overflow: hidden;
+        margin-bottom: 24px;
+        transition: border-color 0.2s;
+        text-decoration: none;
+      }
 
-.project-img-wrap:hover {
-    border-color: var(--brand-border);
-}
+      .project-img-wrap:hover {
+          border-color: var(--brand-border);
+      }
 
-.project-img-wrap img {
-    display: block;
-    width: 100%;
-    height: auto; /* Keeps original aspect ratio */
-}
+      .project-img-wrap img {
+          display: block;
+          width: 100%;
+          height: auto; /* Keeps original aspect ratio */
+      }
 
       /* Contact glow box */
       .contact-box {
@@ -400,5 +454,5 @@
         width: 100%; height: 100%;
         pointer-events: none;
         z-index: 0;
-        opacity: 0.07;
+        opacity: 0.20;
       }
