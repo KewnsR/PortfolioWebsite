@@ -3,165 +3,67 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio</title>
-    <link
-      rel="icon"
-      type="image/png"
-      href="{{ url_for('static', filename='img/LKR_Logo.png') }}"
-    />
-    <link
-      rel="apple-touch-icon"
-      href="{{ url_for('static', filename='img/LKR_Logo.png') }}"
-    />
+    <title>Lloyd Kenneth Ramos — Full-Stack Developer</title>
+    <meta name="description" content="Portfolio of Lloyd Kenneth Ramos — Computer Science graduate from Taguig City University building scalable web applications and AI-powered systems." />
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='img/LKR_Logo.png') }}" />
+    <link rel="apple-touch-icon" href="{{ url_for('static', filename='img/LKR_Logo.png') }}" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
     <script src="https://cdn.tailwindcss.com"></script>
-    <link
-      href="{{ url_for('static', filename='css/style.css') }}"
-      rel="stylesheet"
-    />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
   </head>
   <body>
     <!-- Navigation -->
-    <nav id="navbar" class="fixed top-0 w-full z-50 px-6 py-4">
-      <div class="max-w-7xl mx-auto flex justify-between items-center">
-        <a href="#home" class="text-xl font-bold tracking-tight">LKR.</a>
-
-        <!-- Desktop Navigation -->
-        <div class="hidden md:flex gap-8">
-          <a href="#home" class="nav-link text-sm uppercase tracking-wider"
-            >Home</a
-          >
-          <a href="#about" class="nav-link text-sm uppercase tracking-wider"
-            >About</a
-          >
-          <a href="#skills" class="nav-link text-sm uppercase tracking-wider"
-            >Skills</a
-          >
-          <a href="#certifications" class="nav-link text-sm uppercase tracking-wider"
-          >Certifications</a
-          >
-          <a href="#projects" class="nav-link text-sm uppercase tracking-wider"
-            >Projects</a
-          >
-          <a href="#contact" class="nav-link text-sm uppercase tracking-wider"
-            >Contact</a
-          >
-        </div>
-
-        <!-- Mobile Menu Button -->
-        <button id="mobile-toggle" class="md:hidden">
-          <svg
-            class="w-6 h-6"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M4 6h16M4 12h16M4 18h16"
-            ></path>
-          </svg>
-        </button>
+    <nav>
+      <a href="#top" class="nav-logo">L.K.R.</a>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#work">Work</a>
+        <a href="#certifications">Certs</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
       </div>
+      <button class="mobile-toggle" id="mobile-toggle" aria-label="Open menu">
+        <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
     </nav>
 
     <!-- Mobile Menu -->
-    <div
-      id="mobile-menu"
-      class="mobile-menu fixed inset-0 bg-black z-40 md:hidden"
-    >
-      <div class="flex flex-col items-center justify-center h-full gap-8">
-        <a href="#home" class="mobile-link text-2xl uppercase tracking-wider"
-          >Home</a
-        >
-        <a href="#about" class="mobile-link text-2xl uppercase tracking-wider"
-          >About</a
-        >
-        <a href="#skills" class="mobile-link text-2xl uppercase tracking-wider"
-          >Skills</a
-        >
-        <a href="#certifications" class="mobile-link text-2xl uppercase tracking-wider"
-        >Certifications</a
-          >
-        <a
-          href="#projects"
-          class="mobile-link text-2xl uppercase tracking-wider"
-          >Projects</a
-        >
-        <a href="#contact" class="mobile-link text-2xl uppercase tracking-wider"
-          >Contact</a
-        >
-      </div>
+    <div class="mobile-menu" id="mobile-menu">
+      <button class="mobile-close" id="mobile-close" aria-label="Close menu">×</button>
+      <a href="#about" class="mobile-link">About</a>
+      <a href="#work" class="mobile-link">Work</a>
+      <a href="#certifications" class="mobile-link">Certs</a>
+      <a href="#skills" class="mobile-link">Skills</a>
+      <a href="#projects" class="mobile-link">Projects</a>
+      <a href="#contact" class="mobile-link">Contact</a>
     </div>
 
-    <!-- Hero Section -->
-    <section
-      id="home"
-      class="min-h-screen flex items-center justify-center px-4 sm:px-6 pt-20 sm:pt-24 md:pt-32 pb-12 sm:pb-16 md:pb-20 relative overflow-hidden"
-    >
-      <!-- Animated background elements -->
-      <div class="absolute inset-0 overflow-hidden pointer-events-none">
-        <div class="hero-glow hero-glow-1"></div>
-        <div class="hero-glow hero-glow-2"></div>
-        <div class="floating-element floating-1"></div>
-        <div class="floating-element floating-2"></div>
-        <div class="floating-element floating-3"></div>
-      </div>
+    <!-- Binary rain canvas -->
+    <canvas id="binary-rain"></canvas>
 
-      <div class="max-w-7xl w-full relative z-10">
-        <div class="flex items-center justify-center gap-8 sm:gap-12 relative">
-          <!-- Text Content -->
-          <div class="reveal flex-1 w-full text-center">
-            <div class="inline-block mb-4 sm:mb-5">
-              <span
-                class="px-4 py-2 bg-gradient-to-r from-purple-500/10 to-blue-500/10 border border-purple-500/20 rounded-full text-xs sm:text-sm uppercase tracking-widest text-purple-300 backdrop-blur-sm"
-                >Full-Stack Developer</span
-              >
-            </div>
-            <h1
-              class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-5 sm:mb-7 leading-tight hero-title"
-            >
-              LLOYD KENNETH<br />
-              <span class="text-white">RAMOS</span>
-            </h1>
-            <p
-              class="text-base sm:text-lg md:text-xl text-gray-300 max-w-3xl mx-auto mb-8 sm:mb-10 leading-relaxed font-light"
-            >
-              Full-Stack Developer crafting scalable web applications with a blend of robust architecture and clean design.
+    <main id="top" style="position:relative;z-index:1;">
+
+      <!-- ─── HERO ─── -->
+      <section data-reveal style="margin-bottom:80px;padding-bottom:48px;border-bottom:1px solid var(--hairline);">
+        <div style="display:flex;flex-direction:column;gap:0;">
+          <h1 class="hero-name">Lloyd<br>Kenneth<br>Ramos</h1>
+          <div style="display:flex;flex-direction:column;align-items:flex-end;margin-top:24px;gap:10px;">
+            <p style="font-size:14px;color:var(--muted);max-width:320px;text-align:right;line-height:1.7;">
+              Full-Stack Developer crafting scalable web applications with robust architecture and clean design.
             </p>
-            <div
-              class="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 justify-center items-center"
-            >
-              <a
-                href="#contact"
-                class="btn-primary-enhanced px-6 sm:px-8 py-3 sm:py-3.5 rounded-full font-semibold text-xs sm:text-sm text-center shadow-2xl"
-                >Get In Touch</a
-              >
-              <a
-                href="{{ url_for('static', filename='CV_LKR.pdf') }}"
-                download
-                class="btn-tertiary px-6 sm:px-8 py-3 sm:py-3.5 rounded-full font-semibold text-xs sm:text-sm text-center inline-flex items-center gap-2"
-              >
-                Download CV
-                <svg
-                  class="w-3.5 h-3.5"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M19 14l-7 7m0 0l-7-7m7 7V3"
-                  ></path>
-                </svg>
-              </a>
+            <span class="font-mono text-brand" style="font-size:10px;letter-spacing:0.18em;text-transform:uppercase;">Available for Hire · 2026</span>
+            <div style="display:flex;gap:12px;margin-top:8px;flex-wrap:wrap;justify-content:flex-end;">
+              <a href="#contact" class="btn-cv">Get In Touch</a>
+              <a href="{{ url_for('static', filename='CV_LKR.pdf') }}" download class="btn-cv">Download CV ↓</a>
             </div>
-
-            <!-- Scroll indicator -->
-            <div class="mt-24 sm:mt-32 text-center">
+          </div>
+        </div>
+        <div class="mt-24 sm:mt-32 text-center">
               <div
                 class="text-[10px] tracking-[0.3em] mb-1.5 text-blue-300/60 animate-pulse"
               >
@@ -181,984 +83,491 @@
                 ></path>
               </svg>
             </div>
-          </div>
+      </section>
+
+      <!-- ─── ABOUT ─── -->
+      <section data-reveal id="about" style="margin-bottom:80px;">
+        <div class="section-header">
+          <h2 class="section-title">About Me</h2>
+          <span class="section-tag">— Who I Am</span>
         </div>
-      </div>
-    </section>
-
-    <!-- About Section -->
-    <section
-      id="about"
-      class="flex items-center justify-center px-4 sm:px-6 py-16 sm:py-20 md:py-24 relative"
-    >
-      <div class="section-decoration"></div>
-      <div class="max-w-7xl w-full relative z-10">
-        <div
-          class="grid md:grid-cols-[260px_1fr] lg:grid-cols-[280px_1fr] gap-10 sm:gap-12 md:gap-16 items-start"
-        >
-          <!-- Profile Image -->
-          <div
-            class="reveal-slide-right w-full mx-auto md:mx-0 max-w-[220px] sm:max-w-[240px] md:max-w-none"
-          >
-            <div
-              class="profile-image-container relative w-full aspect-[3/4] mx-auto group"
-            >
-              <div
-                class="absolute inset-0 bg-gradient-to-br from-purple-600/30 to-blue-600/30 rounded-3xl blur-xl transition-all duration-500"
-              ></div>
-              <div
-                class="absolute inset-0 bg-gradient-to-br from-purple-600/20 to-blue-600/20 rounded-3xl"
-              ></div>
-              <img
-                src="{{ url_for('static', filename='img/1v1formal.png') }}"
-                alt="Lloyd Kenneth Ramos"
-                class="relative w-full h-full object-cover rounded-3xl shadow-2xl"
-              />
-            </div>
-          </div>
-
-          <!-- Text Content -->
-          <div class="reveal-slide-left flex flex-col justify-center">
-            <div class="inline-block mb-4 sm:mb-5">
-              <span
-                class="px-4 py-2 bg-gradient-to-r from-purple-500/10 to-blue-500/10 border border-purple-500/20 rounded-full text-xs uppercase tracking-widest text-purple-300"
-                >Who I Am</span
-              >
-            </div>
-            <h2
-              class="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 sm:mb-8 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent"
-            >
-              About Me
-            </h2>
-            <div
-              class="space-y-5 sm:space-y-6 text-gray-300 leading-relaxed text-base sm:text-lg font-light"
-            >
-              <p class="hover-lift">
-                Hello! I'm Lloyd Kenneth Ramos, a Computer Science graduate from
-                Taguig City University with a strong interest in software
-                development, web development, and emerging technologies. I enjoy
-                building efficient, scalable, and user-friendly applications
-                that solve real-world problems.
-              </p>
-              <p class="hover-lift">
-                Through my academic projects and internship experience, I have
-                gained practical knowledge in software development, enterprise
-                applications, and AI-powered systems. I am seeking opportunities
-                where I can contribute my skills, continue learning, and grow
-                professionally while working alongside talented and
-                collaborative teams.
-              </p>
-              <p class="hover-lift">
-                I am highly motivated, adaptable, and eager to take on new
-                challenges that will further strengthen both my technical
-                expertise and professional development.
-              </p>
-            </div>
-
-            <!-- Quick Info -->
-            <div
-              class="mt-6 sm:mt-8 grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4"
-            >
-              <div
-                class="border border-gray-800 rounded-lg sm:rounded-xl p-4 sm:p-5 hover:border-gray-700 transition-colors"
-              >
-                <p class="text-xs text-gray-500 uppercase tracking-wider mb-1">
-                  Location
-                </p>
-                <p class="text-sm font-medium">Taguig City, PH</p>
-              </div>
-              <div
-                class="border border-gray-800 rounded-lg sm:rounded-xl p-4 sm:p-5 hover:border-gray-700 transition-colors"
-              >
-                <p class="text-xs text-gray-500 uppercase tracking-wider mb-1">
-                  Status
-                </p>
-                <p class="text-sm font-medium text-green-400">
-                  Looking for Work
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Education Section -->
-    <section
-      id="education"
-      class="flex items-center justify-center px-4 sm:px-6 py-16 sm:py-20 md:py-24 relative"
-    >
-      <div class="max-w-7xl w-full">
-        <div class="reveal mb-10 sm:mb-14 text-center">
-          <div class="inline-block mb-4">
-            <span
-              class="px-4 py-2 bg-gradient-to-r from-green-500/10 to-teal-500/10 border border-green-500/20 rounded-full text-xs uppercase tracking-widest text-green-300"
-              >Academic Background</span
-            >
-          </div>
-          <h2
-            class="text-3xl sm:text-4xl md:text-5xl font-bold bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent"
-          >
-            Education
-          </h2>
-        </div>
-
-        <div
-          class="card-enhanced p-8 sm:p-10 rounded-3xl reveal hover-lift-strong group"
-        >
-          <div class="flex items-start gap-6">
-            <div
-              class="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-transparent flex items-center justify-center flex-shrink-0 overflow-hidden"
-            >
-              <img
-                src="{{ url_for('static', filename='img/LogoTCU.png') }}"
-                alt="Taguig City University Logo"
-                class="w-14 h-14 sm:w-16 sm:h-16 object-contain rounded-full"
-              />
-            </div>
-            <div class="flex-1">
-              <h3 class="text-xl sm:text-2xl font-bold mb-2 text-white">
-                Taguig City University
-              </h3>
-              <p class="text-gray-300 mb-2 text-base sm:text-lg font-medium">
-                Bachelor of Science in Computer Science
-              </p>
-              <p class="text-sm sm:text-base text-gray-400">2022 - June 2026</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Internship Experience -->
-        <div class="mt-16 sm:mt-20">
-          <div class="reveal mb-8 sm:mb-10 text-center">
-            <div class="inline-block mb-3">
-              <span
-                class="px-4 py-2 bg-gradient-to-r from-blue-500/10 to-cyan-500/10 border border-blue-500/20 rounded-full text-xs uppercase tracking-widest text-blue-300"
-                >Professional Journey</span
-              >
-            </div>
-            <h3
-              class="text-2xl sm:text-3xl md:text-4xl font-bold bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent"
-            >
-              Internship Experience
-            </h3>
-          </div>
-
-          <div
-            class="card-enhanced p-8 sm:p-10 rounded-3xl reveal hover-lift-strong group"
-          >
-            <div class="flex items-start gap-6">
-              <div
-                class="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-transparent flex items-center justify-center flex-shrink-0 overflow-hidden"
-              >
-                <img
-                  src="{{ url_for('static', filename='img/TPCLOGO.png') }}"
-                  alt="Team Pacific Corporation Logo"
-                  class="w-16 h-16 sm:w-16 sm:h-16 object-contain rounded-full"
-                />
-              </div>
-              <div class="flex-1">
-                <h4 class="text-xl sm:text-2xl font-bold mb-2 text-white">
-                  Team Pacific Corporation
-                </h4>
-                <p class="text-gray-300 mb-2 text-base sm:text-lg font-medium">
-                  Application Developer Intern
-                </p>
-                <p class="text-sm sm:text-base text-gray-400 mb-3">
-                  March - June 2026
-                </p>
-                <p class="text-gray-400 text-sm sm:text-base leading-relaxed">
-                  Contributed to enterprise application development using Python
-                  and Odoo, implementing features, optimizing workflows, and
-                  supporting business process automation.
-                </p>
-
-                <p class="text-gray-400 text-sm sm:text-base leading-relaxed">
-                  Participated in the development of AUTO-QA TPC, an AI-powered
-                  quality assurance system focused on Integrated Circuit (IC)
-                  detection, assisting in backend development, system
-                  integration, testing, and performance improvements.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Certifications Section -->
-<section
-  id="certifications"
-  class="flex items-center justify-center px-4 sm:px-6 py-16 sm:py-20 md:py-24 relative"
->
-  <div class="max-w-7xl w-full">
-    <div class="reveal mb-10 sm:mb-14 text-center">
-      <div class="inline-block mb-4">
-        <span
-          class="px-4 py-2 bg-gradient-to-r from-purple-500/10 to-violet-500/10 border border-purple-500/20 rounded-full text-xs uppercase tracking-widest text-purple-300"
-          >Credentials</span
-        >
-      </div>
-      <h2
-        class="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent"
-      >
-        Certifications
-      </h2>
-      <p class="text-gray-300 text-base sm:text-lg font-light">
-        Verified professional achievements
-      </p>
-    </div>
-
-    <div class="card-enhanced p-8 sm:p-10 rounded-3xl reveal hover-lift-strong group">
-      <div class="flex items-start gap-6">
-        <!-- Google Logo -->
-        <div
-          class="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-white flex items-center justify-center flex-shrink-0 p-2"
-        >
-          <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-            <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/>
-            <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/>
-            <path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/>
-            <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.18 1.48-4.97 2.31-8.16 2.31-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/>
-          </svg>
-        </div>
-
-        <div class="flex-1">
-          <div class="flex flex-wrap items-center gap-3 mb-1">
-            <h4 class="text-xl sm:text-2xl font-bold text-white">
-              Foundations of Cybersecurity
-            </h4>
-            <span
-              class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium bg-green-500/10 text-green-400 border border-green-500/20"
-            >
-              <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <polyline points="20 6 9 17 4 12" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-              Verified
-            </span>
-          </div>
-          <p class="text-gray-300 mb-1 text-base sm:text-lg font-medium">
-            Google · Coursera
-          </p>
-          <p class="text-sm sm:text-base text-gray-400 mb-4">2026</p>
-          <p class="text-gray-400 text-sm sm:text-base leading-relaxed mb-4">
-            Completed the first course of the Google Cybersecurity Certificate
-            program. Covered core security concepts including the history of
-            cybersecurity, common threats and attack types, security frameworks
-            (NIST, CIA triad), and the role of security professionals in
-            protecting organizations.
-          </p>
-          <div class="flex flex-wrap gap-2">
-            <span class="px-2.5 py-1 bg-white/5 rounded-full text-xs">Cybersecurity</span>
-            <span class="px-2.5 py-1 bg-white/5 rounded-full text-xs">Security Frameworks</span>
-            <span class="px-2.5 py-1 bg-white/5 rounded-full text-xs">NIST</span>
-            <span class="px-2.5 py-1 bg-white/5 rounded-full text-xs">Threat Analysis</span>
-            <span class="px-2.5 py-1 bg-white/5 rounded-full text-xs">CIA Triad</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-    <!-- Skills Section -->
-    <section
-      id="skills"
-      class="flex items-center justify-center px-4 sm:px-6 py-16 sm:py-20 md:py-24 relative"
-    >
-      <div class="section-decoration section-decoration-right"></div>
-      <div class="max-w-7xl w-full relative z-10">
-        <div class="reveal mb-10 sm:mb-14 text-center">
-          <div class="inline-block mb-4">
-            <span
-              class="px-4 py-2 bg-gradient-to-r from-orange-500/10 to-pink-500/10 border border-orange-500/20 rounded-full text-xs uppercase tracking-widest text-orange-300"
-              >Technical Stack</span
-            >
-          </div>
-          <h2
-            class="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent"
-          >
-            Skills & Expertise
-          </h2>
-          <p class="text-gray-300 text-base sm:text-lg font-light">
-            Technologies I work with
-          </p>
-        </div>
-
-        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7 md:gap-8">
-
-  <!-- Frontend -->
-  <div class="card-enhanced frontend-card p-6 sm:p-7 rounded-3xl reveal hover-lift-strong group">
-    <div class="flex items-center gap-3 mb-5">
-      <h3 class="text-lg sm:text-xl font-bold text-white">Frontend Development</h3>
-    </div>
-    <div class="flex flex-wrap gap-2.5">
-      <span class="px-3.5 py-2 bg-gradient-to-br from-white/10 to-white/5 border border-white/10 rounded-xl text-xs font-medium flex items-center gap-2">
-        <img src="{{ url_for('static', filename='img/tech/html-svg-icon.svg') }}" class="w-5 h-5" alt="HTML/CSS">
-        HTML
-      </span>
-      <span class="px-3.5 py-2 bg-gradient-to-br from-white/10 to-white/5 border border-white/10 rounded-xl text-xs font-medium flex items-center gap-2">
-        <img src="{{ url_for('static', filename='img/tech/css-svg-icon.svg') }}" class="w-5 h-5" alt="CSS">
-        CSS
-      </span>
-      <span class="px-3.5 py-2 bg-gradient-to-br from-white/10 to-white/5 border border-white/10 rounded-xl text-xs font-medium flex items-center gap-2">
-        <img src="{{ url_for('static', filename='img/tech/javascript-svg-icon.svg') }}" class="w-5 h-5" alt="JavaScript">
-        JavaScript
-      </span>
-      <span class="px-3.5 py-2 bg-gradient-to-br from-white/10 to-white/5 border border-white/10 rounded-xl text-xs font-medium flex items-center gap-2">
-        <img src="{{ url_for('static', filename='img/tech/react-svg-icon.svg') }}" class="w-5 h-5" alt="React">
-        React
-      </span>
-      <span class="px-3.5 py-2 bg-gradient-to-br from-white/10 to-white/5 border border-white/10 rounded-xl text-xs font-medium flex items-center gap-2">
-        <img src="{{ url_for('static', filename='img/tech/tailwind-svg-icon.svg') }}" class="w-5 h-5" alt="Tailwind CSS">
-        Tailwind CSS
-      </span>
-      <span class="px-3.5 py-2 bg-gradient-to-br from-white/10 to-white/5 border border-white/10 rounded-xl text-xs font-medium flex items-center gap-2">
-        <img src="{{ url_for('static', filename='img/tech/vite-svg-icon.svg') }}" class="w-5 h-5" alt="Vite">
-        Vite
-      </span>
-    </div>
-  </div>
-
-  <!-- Backend -->
-  <div class="card-enhanced backend-card p-6 sm:p-7 rounded-3xl reveal hover-lift-strong group">
-    <div class="flex items-center gap-3 mb-5">
-      <h3 class="text-lg sm:text-xl font-bold text-white">Backend Development</h3>
-    </div>
-    <div class="flex flex-wrap gap-2.5">
-      <span class="px-3.5 py-2 bg-gradient-to-br from-white/10 to-white/5 border border-white/10 rounded-xl text-xs font-medium flex items-center gap-2">
-        <img src="{{ url_for('static', filename='img/tech/python-svg-icon.svg') }}" class="w-5 h-5" alt="Python">
-        Python
-      </span>
-      <span class="px-3.5 py-2 bg-gradient-to-br from-white/10 to-white/5 border border-white/10 rounded-xl text-xs font-medium flex items-center gap-2">
-        <img src="{{ url_for('static', filename='img/tech/php-svg-icon.svg') }}" class="w-5 h-5" alt="PHP">
-        PHP
-      </span>
-      <span class="px-3.5 py-2 bg-gradient-to-br from-white/10 to-white/5 border border-white/10 rounded-xl text-xs font-medium flex items-center gap-2">
-        <img src="{{ url_for('static', filename='img/tech/sql-svg-icon.svg') }}" class="w-5 h-5" alt="SQL">
-        SQL
-      </span>
-      <span class="px-3.5 py-2 bg-gradient-to-br from-white/10 to-white/5 border border-white/10 rounded-xl text-xs font-medium flex items-center gap-2">
-        <img src="{{ url_for('static', filename='img/tech/django-svg-icon.svg') }}" class="w-5 h-5" alt="Django">
-        Django
-      </span>
-      <span class="px-3.5 py-2 bg-gradient-to-br from-white/10 to-white/5 border border-white/10 rounded-xl text-xs font-medium flex items-center gap-2">
-        <img src="{{ url_for('static', filename='img/tech/flask-svg-icon.svg') }}" class="w-5 h-5" alt="Flask">
-        Flask
-      </span>
-      <span class="px-3.5 py-2 bg-gradient-to-br from-white/10 to-white/5 border border-white/10 rounded-xl text-xs font-medium flex items-center gap-2">
-        <img src="{{ url_for('static', filename='img/tech/postgresql-svg-icon.svg') }}" class="w-5 h-5" alt="PostgreSQL">
-        PostgreSQL
-      </span>
-    </div>
-  </div>
-
-  <!-- Tools -->
-  <div class="card-enhanced tools-card p-6 sm:p-7 rounded-3xl reveal hover-lift-strong group">
-    <div class="flex items-center gap-3 mb-5">
-      <h3 class="text-lg sm:text-xl font-bold text-white">Tools & Technologies</h3>
-    </div>
-    <div class="flex flex-wrap gap-2.5">
-      <span class="px-3.5 py-2 bg-gradient-to-br from-white/10 to-white/5 border border-white/10 rounded-xl text-xs font-medium flex items-center gap-2">
-        <img src="{{ url_for('static', filename='img/tech/git-svg-icon.svg') }}" class="w-5 h-5" alt="Git">
-        Git
-      </span>
-      <span class="px-3.5 py-2 bg-gradient-to-br from-white/10 to-white/5 border border-white/10 rounded-xl text-xs font-medium flex items-center gap-2">
-        <img src="{{ url_for('static', filename='img/tech/vscode-svg-icon.svg') }}" class="w-5 h-5" alt="VS Code">
-        VS Code
-      </span>
-      <span class="px-3.5 py-2 bg-gradient-to-br from-white/10 to-white/5 border border-white/10 rounded-xl text-xs font-medium flex items-center gap-2">
-        <img src="{{ url_for('static', filename='img/tech/figma-svg-icon.svg') }}" class="w-5 h-5" alt="Figma">
-        Figma
-      </span>
-      <span class="px-3.5 py-2 bg-gradient-to-br from-white/10 to-white/5 border border-white/10 rounded-xl text-xs font-medium flex items-center gap-2">
-        <img src="{{ url_for('static', filename='img/tech/docker-svg-icon.svg') }}" class="w-5 h-5" alt="Docker">
-        Docker
-      </span>
-      <span class="px-3.5 py-2 bg-gradient-to-br from-white/10 to-white/5 border border-white/10 rounded-xl text-xs font-medium flex items-center gap-2">
-        <img src="{{ url_for('static', filename='img/tech/postman-svg-icon.svg') }}" class="w-5 h-5" alt="Postman">
-        Postman
-      </span>
-    </div>
-  </div>
-
-</div>
-    </section>
-
-    <!-- Projects Section -->
-    <section
-      id="projects"
-      class="flex items-center justify-center px-4 sm:px-6 py-16 sm:py-20 md:py-24 relative"
-    >
-      <div class="max-w-7xl w-full">
-        <div class="reveal mb-10 sm:mb-14 text-center">
-          <div class="inline-block mb-4">
-            <span
-              class="px-4 py-2 bg-gradient-to-r from-blue-500/10 to-purple-500/10 border border-blue-500/20 rounded-full text-xs uppercase tracking-widest text-blue-300"
-              >Portfolio</span
-            >
-          </div>
-          <h2
-            class="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent"
-          >
-            Featured Projects
-          </h2>
-          <p class="text-gray-300 text-base sm:text-lg font-light">
-            Selected Works
-          </p>
-        </div>
-
-        <div class="grid sm:grid-cols-1 lg:grid-cols-2 gap-5 sm:gap-6">
-          <!-- Project 1: TCU CEAA -->
-          <div class="card rounded-xl overflow-hidden reveal project-card">
-            <a
-              href="https://tcu-ceaa-portal.web.app/"
-              target="_blank"
-              class="block aspect-video relative overflow-hidden group bg-gradient-to-br from-purple-900/20 to-blue-900/20"
-            >
-              <img
-                src="{{ url_for('static', filename='img/TCUCEAA-Landingpage.png') }}"
-                alt="TCU-CEAA Portal"
-                class="w-full h-full object-cover group-hover:opacity-95 transition-opacity duration-300"
-              />
-            </a>
-            <div class="p-4 sm:p-5">
-              <h3 class="text-base sm:text-lg font-semibold mb-2">
-                AI Scholarship Evaluation System (TCU-CEAA)
-              </h3>
-              <p class="text-gray-400 mb-3 leading-relaxed text-xs sm:text-sm">
-                Thesis project:
-              </p>
-              <p class="text-gray-400 mb-3 leading-relaxed text-xs sm:text-sm">
-                Built an AI-driven scholarship and grant evaluation system,
-                automating applicant screening with OCR, computer vision, NLP,
-                and document-verification models. Implemented a secure backend
-                evaluation pipeline and user-facing submission workflow,
-                enabling fast, consistent, and transparent scholarship scoring.
-                Deployed on a scalable cloud-ready architecture, significantly
-                reducing manual review time and improving evaluation accuracy.
-              </p>
-              <div class="flex flex-wrap gap-2 mb-4">
-                <span class="px-2.5 py-1 bg-white/5 rounded-full text-xs"
-                  >Python</span
-                >
-                <span class="px-2.5 py-1 bg-white/5 rounded-full text-xs"
-                  >Django</span
-                >
-                <span class="px-2.5 py-1 bg-white/5 rounded-full text-xs"
-                  >React</span
-                >
-                <span class="px-2.5 py-1 bg-white/5 rounded-full text-xs"
-                  >PostgreSQL</span
-                >
-                <span class="px-2.5 py-1 bg-white/5 rounded-full text-xs"
-                  >AI/ML</span
-                >
-              </div>
-              <a
-                href="https://github.com/Syanpole/TCU_CEAA"
-                target="_blank"
-                class="text-xs uppercase tracking-wider hover:underline inline-flex items-center gap-1.5 text-purple-400 hover:text-purple-300 transition-colors"
-              >
-                View Project
-                <svg
-                  width="14"
-                  height="14"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
-                  <line x1="7" y1="17" x2="17" y2="7"></line>
-                  <polyline points="7 7 17 7 17 17"></polyline>
-                </svg>
-              </a>
-            </div>
-          </div>
-
-          <!-- Project 2: Graduate Survey Responses -->
-          <div class="card rounded-xl overflow-hidden reveal project-card">
-            <a
-              href="https://alumni-tracker.vercel.app/"
-              target="_blank"
-              class="block aspect-video relative overflow-hidden group bg-gradient-to-br from-green-900/20 to-emerald-900/20"
-            >
-              <img
-                src="{{ url_for('static', filename='img/AlumniTrackerDashboard.png') }}"
-                alt="Graduate Survey Dashboard"
-                class="w-full h-full object-cover group-hover:opacity-95 transition-opacity duration-300"
-              />
-            </a>
-            <div class="p-4 sm:p-5">
-              <h3 class="text-base sm:text-lg font-semibold mb-2">
-                Alumni Tracker - Analytics Platform
-              </h3>
-              <p class="text-gray-400 mb-3 leading-relaxed text-xs sm:text-sm">
-                Designed and developed a React-based analytics dashboard to
-                visualize graduate employment survey data for academic program
-                evaluation. Built interactive charts using Chart.js, implemented
-                role-based access control for admin and viewer users, and
-                processed large CSV datasets using PapaParse. Focused on
-                responsive UI/UX with Tailwind CSS and deployed the application
-                on Vercel to support data-driven decision-making.
-              </p>
-              <div class="flex flex-wrap gap-2 mb-4">
-                <span class="px-2.5 py-1 bg-white/5 rounded-full text-xs"
-                  >HTML</span
-                >
-                <span class="px-2.5 py-1 bg-white/5 rounded-full text-xs"
-                  >CSS</span
-                >
-                <span class="px-2.5 py-1 bg-white/5 rounded-full text-xs"
-                  >JavaScript</span
-                >
-                <span class="px-2.5 py-1 bg-white/5 rounded-full text-xs"
-                  >React.js</span
-                >
-                <span class="px-2.5 py-1 bg-white/5 rounded-full text-xs"
-                  >TailwindCSS</span
-                >
-              </div>
-              <a
-                href="https://github.com/KewnsR/GraduateSurveyResponses"
-                target="_blank"
-                class="text-xs uppercase tracking-wider hover:underline inline-flex items-center gap-1.5 text-green-400 hover:text-green-300 transition-colors"
-              >
-                View Project
-                <svg
-                  width="14"
-                  height="14"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
-                  <line x1="7" y1="17" x2="17" y2="7"></line>
-                  <polyline points="7 7 17 7 17 17"></polyline>
-                </svg>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section
-      id="contact"
-      class="flex items-center justify-center px-4 sm:px-6 py-16 sm:py-20 md:py-24 relative"
-    >
-      <div class="section-decoration"></div>
-      <div class="max-w-7xl w-full relative z-10">
-        <!-- Desktop: Side by Side | Mobile: Stacked with Divider -->
-        <div class="grid md:grid-cols-2 gap-10 md:gap-20">
-          <!-- Left Column: Contact Info -->
-          <div
-            class="reveal-slide-right pb-10 md:pb-0 border-b md:border-b-0 md:border-r border-gray-800/50 md:pr-16"
-          >
-            <div class="inline-block mb-6">
-              <span
-                class="px-4 py-2 bg-gradient-to-r from-green-500/10 to-emerald-500/10 border border-green-500/20 rounded-full text-xs uppercase tracking-widest text-green-300"
-                >Let's Connect</span
-              >
-            </div>
-            <h2
-              class="text-3xl sm:text-4xl md:text-5xl font-bold mb-5 sm:mb-7 leading-tight"
-            >
-              Open to<br /><span
-                class="bg-gradient-to-r from-green-300 to-blue-400 bg-clip-text text-transparent"
-                >Career Opportunities</span
-              >
-            </h2>
-
-            <p
-              class="text-gray-400 text-sm sm:text-base mb-6 sm:mb-8 leading-relaxed"
-            >
-              Seeking opportunities to contribute, learn, and grow through
-              impactful projects across various areas of technology.
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:40px;" class="about-grid">
+          <div>
+            <span class="eyebrow">Background</span>
+            <p style="color:var(--muted);font-size:15px;line-height:1.75;margin-bottom:16px;">
+              Hello! I'm Lloyd Kenneth Ramos, a Computer Science graduate from Taguig City University with a strong interest in software development, web development, and emerging technologies. I enjoy building efficient, scalable, and user-friendly applications that solve real-world problems.
             </p>
-
-            <div class="space-y-5 sm:space-y-6">
-              <div class="flex items-center gap-3 sm:gap-4">
-                <div
-                  class="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-white/5 flex items-center justify-center flex-shrink-0"
-                >
-                  <svg
-                    class="w-5 h-5"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                    ></path>
-                  </svg>
-                </div>
-                <div class="min-w-0">
-                  <p
-                    class="text-xs text-gray-500 uppercase tracking-wider mb-1"
-                  >
-                    Email
-                  </p>
-                  <p class="text-sm sm:text-base break-all">
-                    ramoslloydkenneth1@gmail.com
-                  </p>
-                </div>
-              </div>
-
-              <div class="flex items-center gap-3 sm:gap-4">
-                <div
-                  class="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-white/5 flex items-center justify-center flex-shrink-0"
-                >
-                  <svg
-                    class="w-5 h-5"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                    ></path>
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                    ></path>
-                  </svg>
-                </div>
-                <div>
-                  <p
-                    class="text-xs text-gray-500 uppercase tracking-wider mb-1"
-                  >
-                    Location
-                  </p>
-                  <p class="text-sm sm:text-base">Taguig City, Philippines</p>
-                </div>
-              </div>
-
-              <div class="flex gap-3 sm:gap-4 pt-6 sm:pt-8">
-                <a
-                  href="https://www.instagram.com/kenrthur/"
-                  target="_blank"
-                  class="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-white/5 flex items-center justify-center hover:bg-white/10 transition-all"
-                  aria-label="Instagram"
-                >
-                  <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                    <path
-                      d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
-                    />
-                  </svg>
-                </a>
-                <a
-                  href="https://github.com/KewnsR"
-                  target="_blank"
-                  class="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-white/5 flex items-center justify-center hover:bg-white/10 transition-all"
-                  aria-label="GitHub"
-                >
-                  <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                    <path
-                      d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
-                    />
-                  </svg>
-                </a>
-                <a
-                  href="https://www.linkedin.com/in/lloyd-kenneth-ramos-047a30379/"
-                  target="_blank"
-                  class="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-white/5 flex items-center justify-center hover:bg-white/10 transition-all"
-                  aria-label="LinkedIn"
-                >
-                  <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                    <path
-                      d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
-                    />
-                  </svg>
-                </a>
-              </div>
+            <p style="color:var(--muted);font-size:15px;line-height:1.75;">
+              Through my academic projects and internship experience, I have gained practical knowledge in software development, enterprise applications, and AI-powered systems. I am seeking opportunities to contribute, continue learning, and grow professionally alongside talented and collaborative teams.
+            </p>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:16px;">
+            <div class="card-flat" style="flex:1;">
+              <span class="eyebrow" style="margin-bottom:6px;">Location</span>
+              <p style="font-size:15px;font-weight:500;">Taguig City, Philippines</p>
+            </div>
+            <div class="card-flat" style="flex:1;">
+              <span class="eyebrow" style="margin-bottom:6px;">Status</span>
+              <p style="font-size:15px;font-weight:500;color:var(--brand);">Looking for Work</p>
+            </div>
+            <div class="card-flat" style="flex:1;">
+              <span class="eyebrow" style="margin-bottom:6px;">Email</span>
+              <p style="font-size:13px;font-weight:500;word-break:break-all;">ramoslloydkenneth1@gmail.com</p>
             </div>
           </div>
+        </div>
+      </section>
 
-          <!-- Right Column: Contact Form -->
-          <div class="reveal pt-8 md:pt-0">
-            <form id="contact-form" class="space-y-4">
-              <div>
-                <input
-                  type="text"
-                  name="name"
-                  id="name"
-                  placeholder="Your Name"
-                  class="w-full px-4 sm:px-5 py-3 sm:py-4 rounded-xl sm:rounded-2xl text-white text-sm sm:text-base"
-                  required
-                />
+      <!-- ─── EDUCATION & EXPERIENCE ─── -->
+      <section data-reveal id="work" style="margin-bottom:80px;">
+        <div class="section-header">
+          <h2 class="section-title">Education &amp; Experience</h2>
+          <span class="section-tag">— 2022 / 2026</span>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;" class="edu-grid">
+
+          <!-- Education -->
+          <div class="card-flat">
+            <span class="eyebrow">Academic Background</span>
+            <div style="display:flex;align-items:center;gap:16px;margin-bottom:16px;">
+              <div style="width:52px;height:52px;border:1px solid var(--hairline);overflow:hidden;flex-shrink:0;display:grid;place-items:center;background:#fff;">
+                <img src="{{ url_for('static', filename='img/LogoTCU.png') }}" alt="TCU" style="width:42px;height:42px;object-fit:contain;" />
               </div>
               <div>
-                <input
-                  type="email"
-                  name="email"
-                  id="email"
-                  placeholder="Your Email"
-                  class="w-full px-4 sm:px-5 py-3 sm:py-4 rounded-xl sm:rounded-2xl text-white text-sm sm:text-base"
-                  required
-                />
+                <h3 style="font-size:17px;font-weight:700;text-transform:uppercase;letter-spacing:-0.01em;">Taguig City University</h3>
+                <p style="color:var(--muted);font-size:13px;">Bachelor of Science in Computer Science</p>
+              </div>
+            </div>
+            <p class="font-mono" style="font-size:11px;color:var(--muted);">2022 — June 2026</p>
+          </div>
+
+          <!-- Internship -->
+          <div class="card-flat">
+            <span class="eyebrow">Internship</span>
+            <div style="display:flex;align-items:center;gap:16px;margin-bottom:16px;">
+              <div style="width:52px;height:52px;border:1px solid var(--hairline);overflow:hidden;flex-shrink:0;display:grid;place-items:center;background:#fff;">
+                <img src="{{ url_for('static', filename='img/TPCLOGO.png') }}" alt="TPC" style="width:42px;height:42px;object-fit:contain;" />
               </div>
               <div>
-                <input
-                  type="text"
-                  name="subject"
-                  id="subject"
-                  placeholder="Subject"
-                  class="w-full px-4 sm:px-5 py-3 sm:py-4 rounded-xl sm:rounded-2xl text-white text-sm sm:text-base"
-                  required
-                />
+                <h3 style="font-size:17px;font-weight:700;text-transform:uppercase;letter-spacing:-0.01em;">Team Pacific Corporation</h3>
+                <p style="color:var(--muted);font-size:13px;">Application Developer Intern</p>
               </div>
-              <div>
-                <textarea
-                  name="message"
-                  id="message"
-                  placeholder="Your Message"
-                  rows="5"
-                  class="w-full px-4 sm:px-5 py-3 sm:py-4 rounded-xl sm:rounded-2xl text-white resize-none text-sm sm:text-base"
-                  required
-                ></textarea>
-              </div>
-              <div
-                id="form-message"
-                class="hidden text-sm text-center py-2 rounded-full"
-              ></div>
-              <button
-                type="submit"
-                id="submit-btn"
-                class="btn-primary-enhanced w-full px-6 py-3 sm:py-4 rounded-full font-semibold text-sm sm:text-base relative"
-              >
-                Send Message
-              </button>
-            </form>
+            </div>
+            <p class="font-mono" style="font-size:11px;color:var(--muted);margin-bottom:14px;">March — June 2026</p>
+            <p style="color:var(--muted);font-size:13px;line-height:1.7;margin-bottom:10px;">
+              Contributed to enterprise application development using Python and Odoo — implementing features, optimizing workflows, and supporting business process automation.
+            </p>
+            <p style="color:var(--muted);font-size:13px;line-height:1.7;">
+              Participated in <span style="color:var(--white);font-weight:600;">AUTO-QA TPC</span>, an AI-powered quality assurance system focused on Integrated Circuit (IC) detection — backend development, system integration, testing, and performance improvements.
+            </p>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ─── CERTIFICATIONS ─── -->
+      <section data-reveal id="certifications" style="margin-bottom:80px;">
+        <div class="section-header">
+          <h2 class="section-title">Certifications</h2>
+          <span class="section-tag">— Verified</span>
+        </div>
+
+        <div class="card-flat" style="display:flex;align-items:flex-start;gap:24px;flex-wrap:wrap;">
+          <!-- Google logo -->
+          <div style="width:56px;height:56px;background:#fff;border:1px solid var(--hairline);display:grid;place-items:center;flex-shrink:0;padding:8px;">
+            <svg viewBox="0 0 48 48" style="width:36px;height:36px;" xmlns="http://www.w3.org/2000/svg">
+              <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/>
+              <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/>
+              <path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/>
+              <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.18 1.48-4.97 2.31-8.16 2.31-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/>
+            </svg>
+          </div>
+
+          <div style="flex:1;min-width:260px;">
+            <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:4px;">
+              <h3 style="font-size:18px;font-weight:700;text-transform:uppercase;letter-spacing:-0.01em;">Foundations of Cybersecurity</h3>
+              <span class="badge-verified">
+                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+                Verified
+              </span>
+            </div>
+            <p style="color:var(--muted);font-size:14px;margin-bottom:4px;">Google · Coursera</p>
+            <p class="font-mono" style="font-size:11px;color:var(--muted);margin-bottom:16px;">2026</p>
+            <p style="color:var(--muted);font-size:14px;line-height:1.7;margin-bottom:16px;">
+              Completed the first course of the Google Cybersecurity Certificate program. Covered core security concepts including the history of cybersecurity, common threats and attack types, security frameworks (NIST, CIA triad), and the role of security professionals in protecting organizations.
+            </p>
+            <div style="display:flex;flex-wrap:wrap;gap:8px;">
+              <span class="tag">Cybersecurity</span>
+              <span class="tag">Security Frameworks</span>
+              <span class="tag">NIST</span>
+              <span class="tag">Threat Analysis</span>
+              <span class="tag">CIA Triad</span>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- Footer -->
-    <footer class="border-t border-white/5 px-4 sm:px-6 py-6 sm:py-8">
-      <div class="max-w-7xl mx-auto text-center">
-        <p class="text-xs sm:text-sm text-gray-500">
-          © 2026 Lloyd Kenneth Ramos. All rights reserved.
-        </p>
-      </div>
-    </footer>
+      <!-- ─── SKILLS ─── -->
+      <section data-reveal id="skills" style="margin-bottom:80px;">
+        <div class="section-header">
+          <h2 class="section-title">Skills Index</h2>
+          <span class="section-tag">— Technical Stack</span>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;" class="skills-grid">
 
-    <canvas
-      id="binary-rain"
-      style="
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        pointer-events: none;
-        z-index: 0;
-        opacity: 0.12;
-      "
-    ></canvas>
+          <div class="card-flat">
+            <span class="eyebrow">Frontend</span>
+            <ul class="skills-list" style="list-style:none;">
+              <li>HTML <span class="font-mono" style="font-size:10px;color:var(--muted);">01</span></li>
+              <li>CSS <span class="font-mono" style="font-size:10px;color:var(--muted);">02</span></li>
+              <li>JavaScript <span class="font-mono" style="font-size:10px;color:var(--muted);">03</span></li>
+              <li>React <span class="font-mono" style="font-size:10px;color:var(--muted);">04</span></li>
+              <li>Tailwind CSS <span class="font-mono" style="font-size:10px;color:var(--muted);">05</span></li>
+              <li>Vite <span class="font-mono" style="font-size:10px;color:var(--muted);">06</span></li>
+            </ul>
+          </div>
 
-    <script>
-      // Navigation scroll effect
-      const navbar = document.getElementById("navbar");
-      const navLinks = document.querySelectorAll(".nav-link");
+          <div class="card-flat">
+            <span class="eyebrow">Backend</span>
+            <ul class="skills-list" style="list-style:none;">
+              <li>Python <span class="font-mono" style="font-size:10px;color:var(--muted);">01</span></li>
+              <li>PHP <span class="font-mono" style="font-size:10px;color:var(--muted);">02</span></li>
+              <li>SQL <span class="font-mono" style="font-size:10px;color:var(--muted);">03</span></li>
+              <li>Django <span class="font-mono" style="font-size:10px;color:var(--muted);">04</span></li>
+              <li>Flask <span class="font-mono" style="font-size:10px;color:var(--muted);">05</span></li>
+              <li>PostgreSQL <span class="font-mono" style="font-size:10px;color:var(--muted);">06</span></li>
+            </ul>
+          </div>
 
-      window.addEventListener("scroll", () => {
-        if (window.scrollY > 100) {
-          navbar.classList.add("scrolled");
-        } else {
-          navbar.classList.remove("scrolled");
-        }
+          <div class="card-flat">
+            <span class="eyebrow">Tools</span>
+            <ul class="skills-list" style="list-style:none;">
+              <li>Git <span class="font-mono" style="font-size:10px;color:var(--muted);">01</span></li>
+              <li>VS Code <span class="font-mono" style="font-size:10px;color:var(--muted);">02</span></li>
+              <li>Figma <span class="font-mono" style="font-size:10px;color:var(--muted);">03</span></li>
+              <li>Docker <span class="font-mono" style="font-size:10px;color:var(--muted);">04</span></li>
+              <li>Postman <span class="font-mono" style="font-size:10px;color:var(--muted);">05</span></li>
+            </ul>
+          </div>
 
-        // Active section highlighting - find the section most in view
-        const sections = document.querySelectorAll("section");
-        let mostVisibleSection = null;
-        let maxVisibility = 0;
+        </div>
+      </section>
 
-        sections.forEach((section) => {
-          const rect = section.getBoundingClientRect();
-          const viewportHeight = window.innerHeight;
-          const sectionTop = rect.top;
-          const sectionBottom = rect.bottom;
+      <!-- ─── PROJECTS ─── -->
+      <section data-reveal id="projects" style="margin-bottom:80px;">
+        <div class="section-header">
+          <h2 class="section-title">Selected Works</h2>
+          <span class="section-tag">— Portfolio / 2026</span>
+        </div>
 
-          // Calculate how much of the section is visible
-          if (sectionBottom > 0 && sectionTop < viewportHeight) {
-            const visibleTop = Math.max(0, sectionTop);
-            const visibleBottom = Math.min(viewportHeight, sectionBottom);
-            const visibility = visibleBottom - visibleTop;
+        <div style="display:flex;flex-direction:column;gap:56px;">
 
-            if (visibility > maxVisibility) {
-              maxVisibility = visibility;
-              mostVisibleSection = section;
-            }
-          }
-        });
+          <!-- Project 01 -->
+          <article style="display:grid;grid-template-columns:80px 1fr;gap:24px;" class="project-article">
+            <div>
+              <span style="font-size:clamp(32px,4vw,48px);font-weight:700;color:rgba(255,255,255,0.08);font-family:'Space Grotesk',sans-serif;letter-spacing:-0.04em;">01</span>
+            </div>
+            <div>
+              <a href="https://tcu-ceaae-portal.web.app/" target="_blank" class="project-img-wrap">
+                <img src="{{ url_for('static', filename='img/TCUCEAA-Landingpage.png') }}" alt="TCU-CEAA Portal" />
+              </a>
+              <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;gap:16px;margin-bottom:12px;">
+                <div>
+                  <h3 style="font-size:clamp(18px,2.5vw,22px);font-weight:700;text-transform:uppercase;letter-spacing:-0.02em;margin-bottom:4px;">AI Scholarship Evaluation System</h3>
+                  <p style="font-size:12px;color:var(--muted);font-style:italic;">TCU-CEAA · Thesis Project</p>
+                </div>
+                <div style="display:flex;gap:16px;flex-shrink:0;">
+                  <a href="https://tcu-ceaae-portal.web.app/" target="_blank" class="font-mono text-brand" style="font-size:10px;text-transform:uppercase;letter-spacing:0.14em;text-decoration:none;">Live ↗</a>
+                  <a href="https://github.com/Syanpole/TCU_CEAA" target="_blank" class="font-mono" style="font-size:10px;text-transform:uppercase;letter-spacing:0.14em;color:var(--muted);text-decoration:none;">Code ↗</a>
+                </div>
+              </div>
+              <p style="color:var(--muted);font-size:14px;line-height:1.75;max-width:680px;margin-bottom:16px;">
+                An AI-driven scholarship and grant evaluation system automating applicant screening with OCR, computer vision, NLP, and document-verification models. Secure backend evaluation pipeline and user-facing submission workflow deployed on a scalable cloud-ready architecture — reducing manual review time and improving evaluation accuracy.
+              </p>
+              <div style="display:flex;flex-wrap:wrap;gap:8px;">
+                <span class="tag">Python</span>
+                <span class="tag">Django</span>
+                <span class="tag">React</span>
+                <span class="tag">PostgreSQL</span>
+                <span class="tag">AI / ML</span>
+              </div>
+            </div>
+          </article>
 
-        // Update active link
-        if (mostVisibleSection) {
-          navLinks.forEach((link) => {
-            link.classList.remove("active");
-            if (link.getAttribute("href") === `#${mostVisibleSection.id}`) {
-              link.classList.add("active");
-            }
-          });
-        }
-      });
+          <!-- Project 02 -->
+          <article style="display:grid;grid-template-columns:80px 1fr;gap:24px;" class="project-article">
+            <div>
+              <span style="font-size:clamp(32px,4vw,48px);font-weight:700;color:rgba(255,255,255,0.08);font-family:'Space Grotesk',sans-serif;letter-spacing:-0.04em;">02</span>
+            </div>
+            <div>
+              <a href="https://alumni-trackerr.vercel.app/" target="_blank" class="project-img-wrap">
+                <img src="{{ url_for('static', filename='img/AlumniTrackerDashboard.png') }}" alt="Alumni Tracker Dashboard" />
+              </a>
+              <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;gap:16px;margin-bottom:12px;">
+                <div>
+                  <h3 style="font-size:clamp(18px,2.5vw,22px);font-weight:700;text-transform:uppercase;letter-spacing:-0.02em;margin-bottom:4px;">Alumni Tracker — Analytics Platform</h3>
+                  <p style="font-size:12px;color:var(--muted);font-style:italic;">Graduate Survey Dashboard</p>
+                </div>
+                <div style="display:flex;gap:16px;flex-shrink:0;">
+                  <a href="https://alumni-trackerr.vercel.app/" target="_blank" class="font-mono text-brand" style="font-size:10px;text-transform:uppercase;letter-spacing:0.14em;text-decoration:none;">Live ↗</a>
+                  <a href="https://github.com/KewnsR/GraduateSurveyResponses" target="_blank" class="font-mono" style="font-size:10px;text-transform:uppercase;letter-spacing:0.14em;color:var(--muted);text-decoration:none;">Code ↗</a>
+                </div>
+              </div>
+              <p style="color:var(--muted);font-size:14px;line-height:1.75;max-width:680px;margin-bottom:16px;">
+                A React-based analytics dashboard visualizing graduate employment survey data for academic program evaluation. Interactive Chart.js visuals, role-based access for admin and viewer users, CSV processing via PapaParse, and a responsive Tailwind UI deployed on Vercel.
+              </p>
+              <div style="display:flex;flex-wrap:wrap;gap:8px;">
+                <span class="tag">HTML</span>
+                <span class="tag">CSS</span>
+                <span class="tag">JavaScript</span>
+                <span class="tag">React.js</span>
+                <span class="tag">Tailwind CSS</span>
+              </div>
+            </div>
+          </article>
 
-      // Mobile menu toggle
-      const mobileToggle = document.getElementById("mobile-toggle");
-      const mobileMenu = document.getElementById("mobile-menu");
-      const mobileLinks = document.querySelectorAll(".mobile-link");
+        </div>
+      </section>
 
-      mobileToggle.addEventListener("click", () => {
-        mobileMenu.classList.toggle("active");
-      });
+      <!-- ─── CONTACT ─── -->
+      <section data-reveal id="contact" style="margin-bottom:80px;">
+        <div class="contact-box">
+          <div class="contact-glow" style="top:-100px;right:-80px;"></div>
+          <div class="contact-glow" style="bottom:-120px;left:-60px;opacity:0.04;"></div>
 
-      mobileLinks.forEach((link) => {
-        link.addEventListener("click", () => {
-          mobileMenu.classList.remove("active");
-        });
-      });
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;position:relative;" class="contact-grid">
 
-      // Reveal animations
-      const reveals = document.querySelectorAll(
-        ".reveal, .reveal-slide-right, .reveal-slide-left",
-      );
+            <!-- Left -->
+            <div>
+              <div style="display:flex;align-items:center;gap:10px;margin-bottom:24px;">
+                <span class="ping-dot"></span>
+                <span class="font-mono text-brand" style="font-size:10px;text-transform:uppercase;letter-spacing:0.18em;">Available · Let's Connect</span>
+              </div>
+              <h2 style="font-size:clamp(36px,5vw,64px);font-weight:700;text-transform:uppercase;letter-spacing:-0.04em;line-height:0.88;margin-bottom:24px;">
+                Let's build<br>something<br>great.
+              </h2>
+              <p style="color:var(--muted);font-size:14px;line-height:1.75;max-width:380px;margin-bottom:32px;">
+                Open to full-time, part-time roles, and freelance collaborations. Reach out — I usually respond within 24 hours.
+              </p>
+              <div style="display:flex;flex-wrap:wrap;gap:12px;">
+                <a href="mailto:ramoslloydkenneth1@gmail.com" class="btn-cv" style="background:var(--brand);border-color:var(--brand);color:#fff;">Email Me ↗</a>
+                <a href="{{ url_for('static', filename='CV_LKR.pdf') }}" download class="btn-cv">Download CV ↓</a>
+              </div>
+            </div>
 
-      const revealObserver = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add("active");
-            }
-          });
-        },
-        {
-          threshold: 0.15,
-          rootMargin: "0px 0px -80px 0px",
-        },
-      );
+            <!-- Right -->
+            <div style="display:flex;flex-direction:column;gap:16px;">
+              <a href="mailto:ramoslloydkenneth1@gmail.com" class="card-flat" style="text-decoration:none;display:block;transition:border-color 0.2s;">
+                <span style="font-family:'Space Mono',monospace;font-size:9px;text-transform:uppercase;letter-spacing:0.16em;color:var(--muted);display:block;margin-bottom:6px;">Email</span>
+                <span style="font-size:13px;font-weight:600;word-break:break-all;color:var(--brand);">ramoslloydkenneth1@gmail.com</span>
+              </a>
+              <div class="card-flat">
+                <span style="font-family:'Space Mono',monospace;font-size:9px;text-transform:uppercase;letter-spacing:0.16em;color:var(--muted);display:block;margin-bottom:6px;">Location</span>
+                <span style="font-size:14px;font-weight:600;">Taguig City, Philippines</span>
+              </div>
+              <div class="card-flat">
+                <span style="font-family:'Space Mono',monospace;font-size:9px;text-transform:uppercase;letter-spacing:0.16em;color:var(--muted);display:block;margin-bottom:12px;">Socials</span>
+                <div style="display:flex;gap:10px;">
+                  <a href="https://github.com/KewnsR" target="_blank" class="social-btn" aria-label="GitHub">
+                    <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                  </a>
+                  <a href="https://www.instagram.com/kenrthur/" target="_blank" class="social-btn" aria-label="Instagram">
+                    <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                  </a>
+                  <a href="https://www.linkedin.com/in/lloyd-kenneth-ramos-047a30379/" target="_blank" class="social-btn" aria-label="LinkedIn">
+                    <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                  </a>
+                </div>
+              </div>
+            </div>
 
-      reveals.forEach((reveal) => {
-        revealObserver.observe(reveal);
-      });
+          </div>
+        </div>
+      </section>
 
-      // Skill bar animations
-      const skillBars = document.querySelectorAll(".skill-progress");
+      <!-- Footer -->
+      <footer style="display:flex;justify-content:space-between;align-items:center;padding-top:32px;border-top:1px solid var(--hairline);flex-wrap:wrap;gap:8px;">
+        <span class="font-mono" style="font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:0.16em;">© 2026 Lloyd Kenneth Ramos</span>
+        <span class="font-mono" style="font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:0.16em;">Designed &amp; built with care</span>
+      </footer>
 
-      const skillObserver = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              const width = entry.target.dataset.width;
-              setTimeout(() => {
-                entry.target.style.width = width;
-              }, 200);
-              skillObserver.unobserve(entry.target);
-            }
-          });
-        },
-        {
-          threshold: 0.5,
-        },
-      );
+    </main>
 
-      skillBars.forEach((bar) => {
-        skillObserver.observe(bar);
-      });
-
-      // Smooth scroll
-      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-        anchor.addEventListener("click", function (e) {
-          e.preventDefault();
-          const target = document.querySelector(this.getAttribute("href"));
-          if (target) {
-            target.scrollIntoView({
-              behavior: "smooth",
-              block: "start",
-            });
-          }
-        });
-      });
-
-      (function () {
-        const canvas = document.getElementById("binary-rain");
-        const ctx = canvas.getContext("2d");
-        const fontSize = 11;
-        const chars = "10";
-        let columns, drops;
-
-        function init() {
-          canvas.width = window.innerWidth;
-          canvas.height = window.innerHeight;
-          columns = Math.floor(canvas.width / (fontSize * 1.6));
-          drops = Array(columns)
-            .fill(0)
-            .map(() => Math.random() * -100);
-        }
-
-        function draw() {
-          ctx.fillStyle = "rgba(5, 8, 22, 0.05)";
-          ctx.fillRect(0, 0, canvas.width, canvas.height);
-          ctx.font = `${fontSize}px "Courier New", monospace`;
-          ctx.textBaseline = "top";
-
-          for (let i = 0; i < drops.length; i++) {
-            const char = chars[Math.floor(Math.random() * chars.length)];
-            const x = i * fontSize * 1.6;
-            const y = drops[i] * fontSize;
-
-            // Vary the blue tone slightly for depth
-            const alpha = 0.6 + Math.random() * 0.12;
-            const blue = Math.random() > 0.78;
-            ctx.fillStyle = blue
-              ? `rgba(96, 165, 250, ${alpha})`
-              : `rgba(37, 99, 235, ${alpha})`;
-
-            ctx.fillText(char, x, y);
-            drops[i] += 0.35 + Math.random() * 0.2;
-
-            if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
-              drops[i] = -Math.floor(Math.random() * 20);
-            }
-          }
-        }
-
-        init();
-        setInterval(draw, 60);
-        window.addEventListener("resize", init);
-      })();
-    </script>
-    <script src="{{ url_for('static', filename='js/scroll-animations.js') }}"></script>
-    <script src="{{ url_for('static', filename='js/contact-form.js') }}"></script>
-
-    <!-- Scroll to Top Button -->
-    <button id="scrollToTop" class="scroll-to-top" aria-label="Scroll to top">
-      <svg
-        width="20"
-        height="20"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-      >
-        <polyline points="18 15 12 9 6 15"></polyline>
+    <!-- Scroll to top -->
+    <button id="scrollToTop" aria-label="Scroll to top">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <polyline points="18 15 12 9 6 15"/>
       </svg>
     </button>
+
+    <!-- Responsive grid fixes -->
+    <style>
+      @media (max-width: 768px) {
+        .about-grid, .edu-grid, .skills-grid, .contact-grid { grid-template-columns: 1fr !important; }
+        .project-article { grid-template-columns: 48px 1fr !important; }
+        .project-img-wrap { max-width: 100% !important; }
+      }
+    </style>
+
+    <script>
+  /* ── Nav scroll ── */
+  const navbar = document.querySelector("nav");
+  const allNavLinks = document.querySelectorAll(".nav-links a:not(.btn-cv)");
+
+  window.addEventListener("scroll", () => {
+    const sections = document.querySelectorAll("section[id]");
+    let current = "";
+
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop - navbar.offsetHeight - 30;
+
+      if (window.scrollY >= sectionTop) {
+        current = section.id;
+      }
+    });
+
+    allNavLinks.forEach(link => {
+      link.classList.toggle(
+        "nav-active",
+        link.getAttribute("href") === "#" + current
+      );
+    });
+
+    document
+      .getElementById("scrollToTop")
+      .classList.toggle("visible", window.scrollY > 300);
+  });
+
+  /* ── Scroll to top ── */
+  document.getElementById("scrollToTop").addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  });
+
+  /* ── Mobile menu ── */
+  document.getElementById("mobile-toggle").addEventListener("click", () => {
+    document.getElementById("mobile-menu").classList.add("open");
+  });
+
+  document.getElementById("mobile-close").addEventListener("click", () => {
+    document.getElementById("mobile-menu").classList.remove("open");
+  });
+
+  document.querySelectorAll(".mobile-link").forEach(link => {
+    link.addEventListener("click", () => {
+      document.getElementById("mobile-menu").classList.remove("open");
+    });
+  });
+
+  /* ── Smooth scroll with navbar offset ── */
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+
+    anchor.addEventListener("click", function (e) {
+
+      const target = document.querySelector(this.getAttribute("href"));
+
+      if (!target) return;
+
+      e.preventDefault();
+
+      const navHeight = navbar.offsetHeight;
+
+      const targetPosition =
+        target.getBoundingClientRect().top +
+        window.pageYOffset -
+        navHeight -
+        20;
+
+      window.scrollTo({
+        top: targetPosition,
+        behavior: "smooth"
+      });
+
+    });
+
+  });
+
+  /* ── Reveal on scroll ── */
+  const revealObserver = new IntersectionObserver(
+    entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+        }
+      });
+    },
+    {
+      threshold: 0.1,
+      rootMargin: "0px 0px -60px 0px"
+    }
+  );
+
+  document
+    .querySelectorAll("[data-reveal]")
+    .forEach(el => revealObserver.observe(el));
+
+  /* ── Binary rain ── */
+  (() => {
+    const canvas = document.getElementById("binary-rain");
+    const ctx = canvas.getContext("2d");
+
+    const fontSize = 11;
+    const chars = "10";
+
+    let columns, drops;
+
+    function init() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+
+      columns = Math.floor(canvas.width / (fontSize * 1.6));
+      drops = Array(columns)
+        .fill(0)
+        .map(() => Math.random() * -100);
+    }
+
+    function draw() {
+      ctx.fillStyle = "rgba(8,11,24,0.06)";
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      ctx.font = `${fontSize}px "Space Mono", monospace`;
+      ctx.textBaseline = "top";
+
+      for (let i = 0; i < drops.length; i++) {
+        const char = chars[Math.floor(Math.random() * chars.length)];
+
+        const x = i * fontSize * 1.6;
+        const y = drops[i] * fontSize;
+
+        const alpha = 0.5 + Math.random() * 0.2;
+
+        ctx.fillStyle =
+          Math.random() > 0.7
+            ? `rgba(79,95,255,${alpha})`
+            : `rgba(60,75,200,${alpha})`;
+
+        ctx.fillText(char, x, y);
+
+        drops[i] += 0.3 + Math.random() * 0.2;
+
+        if (
+          drops[i] * fontSize > canvas.height &&
+          Math.random() > 0.975
+        ) {
+          drops[i] = -Math.floor(Math.random() * 20);
+        }
+      }
+    }
+
+    init();
+    setInterval(draw, 60);
+
+    window.addEventListener("resize", init);
+  })();
+</script>
+
+    <script src="{{ url_for('static', filename='js/contact-form.js') }}"></script>
   </body>
 </html>
