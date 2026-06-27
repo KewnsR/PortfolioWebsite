@@ -456,3 +456,71 @@
         z-index: 0;
         opacity: 0.20;
       }
+
+
+      .contact-form{
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+}
+
+.form-group{
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+}
+
+.form-group label{
+    font-family:'Space Mono', monospace;
+    font-size:10px;
+    letter-spacing:.15em;
+    text-transform:uppercase;
+    color:var(--muted);
+}
+
+.contact-form input,
+.contact-form textarea{
+
+    width:100%;
+    padding:14px 16px;
+
+    background:var(--surface);
+
+    border:1px solid var(--hairline);
+
+    color:var(--white);
+
+    font-size:14px;
+
+    font-family:'Space Grotesk', sans-serif;
+
+    transition:.25s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus{
+
+    outline:none;
+
+    border-color:var(--brand);
+
+    box-shadow:0 0 0 3px rgba(79,95,255,.15);
+
+}
+
+.contact-form textarea{
+
+    resize:vertical;
+    min-height:150px;
+
+}
+
+.send-btn{
+
+    width:fit-content;
+    margin-top:10px;
+
+    background:var(--brand);
+    border-color:var(--brand);
+
+}
