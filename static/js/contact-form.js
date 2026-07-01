@@ -4,6 +4,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const submitBtn = document.getElementById('submit-btn');
     const formMessage = document.getElementById('form-message');
 
+    if (!form || !submitBtn || !formMessage) {
+        return;
+    }
+
     form.addEventListener('submit', async function(e) {
         e.preventDefault();
 
@@ -34,7 +38,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 body: JSON.stringify(formData)
             });
 
-            const data = await response.json();
+            const data = await response.json().catch(() => ({
+                success: false,
+                message: 'Unexpected server response. Please try again.'
+            }));
 
             if (data.success) {
                 showMessage(data.message, 'success');

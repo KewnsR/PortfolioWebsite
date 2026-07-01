@@ -38,14 +38,19 @@ def test_config():
 @app.route("/send-email", methods=['POST'])
 def send_email():
     try:
-        # Check if email is configured
         if not app.config['MAIL_USERNAME'] or not app.config['MAIL_PASSWORD']:
             return jsonify({
-                'success': False, 
+                'success': False,
                 'message': 'Email service is not configured. Please contact the administrator.'
             }), 503
         
-        data = request.get_json()
+        if not app.config['RECIPIENT_EMAIL']:
+            return jsonify({
+                'success': False,
+                'message': 'Recipient email is not configured.'
+            }), 503
+
+        data = request.get_json(silent=True) or request.form.to_dict()
         
         # Get form data
         name = data.get('name', '').strip()
