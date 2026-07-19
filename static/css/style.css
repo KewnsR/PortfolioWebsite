@@ -524,3 +524,101 @@
     border-color:var(--brand);
 
 }
+
+
+.logo-loop-track {
+  display: flex;
+  width: max-content;
+  animation: logo-loop-scroll 34s linear infinite;
+}
+
+.logo-loop-copy {
+  display: flex;
+  align-items: center;
+  gap: 64px;
+  padding-right: 64px;
+  flex-shrink: 0;
+}
+
+.logo-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.logo-item img {
+  height: 44px;
+  width: 44px;
+  object-fit: contain;
+  filter: grayscale(100%) brightness(1.8);
+  opacity: 0.55;
+  transition: opacity 0.25s, filter 0.25s, transform 0.25s;
+}
+
+.logo-item span {
+  font-family: 'Space Mono', monospace;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--muted);
+  opacity: 0;
+  transform: translateY(-4px);
+  transition: opacity 0.25s, transform 0.25s;
+}
+
+/* pause the whole loop while pointer is over any logo, and highlight that logo */
+.logo-item:hover {
+  cursor: pointer;
+}
+.logo-item:hover img {
+  filter: none;
+  opacity: 1;
+  transform: scale(1.1);
+}
+.logo-item:hover span {
+  opacity: 1;
+  transform: translateY(0);
+}
+.logo-loop:has(.logo-item:hover) .logo-loop-track {
+  animation-play-state: paused;
+}
+
+@keyframes logo-loop-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .logo-loop-track { animation: none; }
+  .logo-loop { overflow-x: auto; }
+}
+
+/* prevent any element from ever causing horizontal page scroll */
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+#skills {
+  width: 100%;
+  max-width: 100vw;
+  overflow: hidden;
+}
+
+.logo-loop {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding: 34px 0;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+}
+
+.logo-loop-track {
+  display: flex;
+  width: max-content;
+  animation: logo-loop-scroll 34s linear infinite;
+  will-change: transform;
+}
