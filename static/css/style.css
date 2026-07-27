@@ -622,3 +622,156 @@ html, body {
   animation: logo-loop-scroll 34s linear infinite;
   will-change: transform;
 }
+
+/* Certifications Swipable Gallery */
+.certs-gallery {
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  padding: 10px 4px 20px;
+  -webkit-overflow-scrolling: touch;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.certs-gallery::-webkit-scrollbar {
+  display: none;
+}
+
+.certs-gallery {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.cert-card {
+  flex: 0 0 340px;
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 380px;
+  aspect-ratio: 1 / 1;
+  background: var(--deep);
+  border: 1px solid var(--hairline);
+  padding: 32px;
+  transition: border-color 0.25s, transform 0.25s;
+}
+
+.cert-card:hover {
+  border-color: var(--brand-border);
+  transform: translateY(-4px);
+}
+
+@media (max-width: 768px) {
+  .cert-card {
+    flex: 0 0 290px;
+    padding: 24px;
+  }
+}
+
+/* Certifications Carousel Layout (Padded relative wrapper with absolute buttons) */
+.certs-carousel-layout {
+  position: relative;
+  width: 100%;
+  padding: 0 56px; /* Create fixed space on sides for buttons */
+}
+
+.carousel-btn-flat {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  background: rgba(14, 18, 37, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid var(--hairline);
+  color: var(--white);
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.carousel-btn-flat#cert-prev {
+  left: 8px; /* Fixed anchor on left side */
+}
+
+.carousel-btn-flat#cert-next {
+  right: 8px; /* Fixed anchor on right side */
+}
+
+.carousel-btn-flat:hover {
+  background: var(--brand);
+  border-color: var(--brand);
+  color: #fff;
+  box-shadow: 0 0 15px rgba(79, 95, 255, 0.4);
+}
+
+.carousel-btn-flat:active {
+  transform: translateY(-50%) scale(0.92); /* Preserve center vertical alignment on active state */
+}
+
+.carousel-btn-flat svg {
+  transition: transform 0.3s ease;
+}
+
+.carousel-btn-flat#cert-prev:hover svg {
+  animation: nudgeLeft 0.6s ease infinite alternate;
+}
+
+.carousel-btn-flat#cert-next:hover svg {
+  animation: nudgeRight 0.6s ease infinite alternate;
+}
+
+@keyframes nudgeLeft {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-4px); }
+}
+
+@keyframes nudgeRight {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(4px); }
+}
+
+@media (max-width: 768px) {
+  .certs-carousel-layout {
+    padding: 0; /* No side margins or buttons on mobile, let cards fill the full screen width */
+  }
+  .carousel-btn-flat {
+    display: none; /* Hide buttons on mobile to maximize viewport card display width */
+  }
+}
+
+/* Cert link styling */
+.cert-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--brand);
+  font-family: 'Space Mono', monospace;
+  font-size: 11.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-top: 18px;
+  text-decoration: none;
+  font-weight: 600;
+  width: fit-content;
+  transition: color 0.3s ease, gap 0.3s ease;
+}
+
+.cert-link:hover {
+  color: var(--white);
+  gap: 8px;
+}
+
+.cert-link svg {
+  transition: transform 0.3s ease;
+}
+
+.cert-link:hover svg {
+  transform: translate(2px, -2px);
+}

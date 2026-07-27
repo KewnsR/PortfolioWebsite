@@ -16,7 +16,7 @@
   <body>
     <!-- Navigation -->
     <nav>
-      <a href="#top" class="nav-logo">L.K.R.</a>
+      <a href="#top" class="nav-logo">LKR</a>
       <div class="nav-links">
         <a href="#about">About</a>
         <a href="#work">Work</a>
@@ -49,15 +49,15 @@
     <main id="top" style="position:relative;z-index:1;">
 
       <!-- ─── HERO ─── -->
-      <section data-reveal style="margin-bottom:80px;padding-bottom:48px;border-bottom:1px solid var(--hairline);">
+      <section class="hero-section" data-reveal style="margin-bottom:80px;padding-bottom:48px;border-bottom:1px solid var(--hairline);">
         <div style="display:flex;flex-direction:column;gap:0;">
           <h1 class="hero-name">Lloyd<br>Kenneth<br>Ramos</h1>
-          <div style="display:flex;flex-direction:column;align-items:flex-end;margin-top:24px;gap:10px;">
-            <p style="font-size:14px;color:var(--muted);max-width:320px;text-align:right;line-height:1.7;">
+          <div class="hero-content" style="display:flex;flex-direction:column;align-items:flex-end;margin-top:24px;gap:10px;">
+            <p class="hero-desc" style="font-size:14px;color:var(--muted);max-width:320px;text-align:right;line-height:1.7;">
               Full-Stack Developer crafting scalable web applications with robust architecture and clean design.
             </p>
             <span class="font-mono text-brand" style="font-size:10px;letter-spacing:0.18em;text-transform:uppercase;">Available for Hire · 2026</span>
-            <div style="display:flex;gap:12px;margin-top:8px;flex-wrap:wrap;justify-content:flex-end;">
+            <div class="hero-actions" style="display:flex;gap:12px;margin-top:8px;flex-wrap:wrap;justify-content:flex-end;">
               <a href="#contact" class="btn-cv">Get In Touch</a>
               <a href="{{ url_for('static', filename='CV_LKR.pdf') }}" download class="btn-cv">Download CV ↓</a>
             </div>
@@ -125,24 +125,24 @@
       </p>
     </div>
 
-    <!-- Info Cards -->
+    <!-- Info Card -->
     <div class="about-info">
 
-      <div class="card-flat">
-        <span class="eyebrow">Location</span>
-        <p>Taguig City, Philippines</p>
-      </div>
-
-      <div class="card-flat">
-        <span class="eyebrow">Status</span>
-        <p style="color:var(--brand);">Looking for Work</p>
-      </div>
-
-      <div class="card-flat">
-        <span class="eyebrow">Email</span>
-        <p style="word-break:break-word;">
-          ramoslloydkenneth1@gmail.com
-        </p>
+      <div class="card-flat" style="display:flex; flex-direction:column; gap:20px; padding: 24px;">
+        <div>
+          <span class="eyebrow" style="margin-bottom:6px;">Location</span>
+          <p style="font-size:14.5px; color:var(--white);">Taguig City, Philippines</p>
+        </div>
+        <div style="border-top:1px solid var(--hairline); padding-top:16px;">
+          <span class="eyebrow" style="margin-bottom:6px;">Status</span>
+          <p style="font-size:14.5px; color:var(--brand); font-weight:600;">Looking for Work</p>
+        </div>
+        <div style="border-top:1px solid var(--hairline); padding-top:16px;">
+          <span class="eyebrow" style="margin-bottom:6px;">Email</span>
+          <p style="font-size:13px; word-break:break-all; font-family:'Space Mono',monospace;">
+            <a href="mailto:ramoslloydkenneth1@gmail.com" style="color:var(--white); text-decoration:none; transition:color 0.25s;" onmouseover="this.style.color='var(--brand)'" onmouseout="this.style.color='var(--white)'">ramoslloydkenneth1@gmail.com</a>
+          </p>
+        </div>
       </div>
 
     </div>
@@ -193,56 +193,103 @@
               Participated in <span style="color:var(--white);font-weight:600;">AUTO-QA TPC</span>, an AI-powered quality assurance system focused on Integrated Circuit (IC) detection — backend development, system integration, testing, and performance improvements.
             </p>
           </div>
-
         </div>
       </section>
 
       <!-- ─── CERTIFICATIONS ─── -->
-      <section data-reveal id="certifications" style="margin-bottom:120px;">
+      <section data-reveal id="certifications" style="margin-top: 40px; margin-bottom:120px;">
         <div class="section-header">
           <h2 class="section-title">Certifications</h2>
-          <span class="section-tag">— Verified</span>
+          <!-- <span class="section-tag">— Swipe to explore</span> -->
         </div>
 
-        <div class="card-flat" style="display:flex;align-items:flex-start;gap:24px;flex-wrap:wrap;">
-          <!-- Google logo -->
-          <div style="width:56px;height:56px;background:#fff;border:1px solid var(--hairline);display:grid;place-items:center;flex-shrink:0;padding:8px;">
-            <svg viewBox="0 0 48 48" style="width:36px;height:36px;" xmlns="http://www.w3.org/2000/svg">
-              <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/>
-              <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/>
-              <path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/>
-              <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.18 1.48-4.97 2.31-8.16 2.31-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/>
-            </svg>
-          </div>
+        <div class="certs-carousel-layout">
+          <!-- Prev Button -->
+          <button id="cert-prev" class="carousel-btn-flat" aria-label="Previous Certification">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+          </button>
 
-          <div style="flex:1;min-width:260px;">
-            <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:4px;">
-              <h3 style="font-size:18px;font-weight:700;text-transform:uppercase;letter-spacing:-0.01em;">Foundations of Cybersecurity</h3>
-              <span class="badge-verified">
-                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
-                Verified
-              </span>
+          <div class="certs-gallery">
+            <!-- Cert 01 -->
+            <div class="cert-card">
+              <div>
+                <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:20px;">
+                  <!-- Google logo -->
+                  <div style="width:48px;height:48px;background:#fff;border:1px solid var(--hairline);display:grid;place-items:center;padding:6px;flex-shrink:0;">
+                    <svg viewBox="0 0 48 48" style="width:28px;height:28px;" xmlns="http://www.w3.org/2000/svg">
+                      <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/>
+                      <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/>
+                      <path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/>
+                      <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.18 1.48-4.97 2.31-8.16 2.31-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/>
+                    </svg>
+                  </div>
+                  <span class="badge-verified" style="flex-shrink:0;">
+                    <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+                    Verified
+                  </span>
+                </div>
+                <h3 style="font-size:16px;font-weight:700;text-transform:uppercase;letter-spacing:-0.01em;margin-bottom:6px;line-height:1.3;">Foundations of Cybersecurity</h3>
+                <p style="color:var(--brand);font-family:'Space Mono',monospace;font-size:11px;margin-bottom:12px;">Google · Coursera</p>
+                <p style="color:var(--muted);font-size:12.5px;line-height:1.6;margin-bottom:16px;">
+                  Covered core security concepts, frameworks (NIST, CIA triad), threats/vulnerabilities, and the role of security professionals in protecting systems.
+                </p>
+                <a href="https://coursera.org/share/d3e8f11aba8a3c5e1f0c0ea4150e6771" target="_blank" class="cert-link" style="margin-bottom: 20px;">
+                  View Credential
+                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+                </a>
+              </div>
+              <div style="display:flex;flex-wrap:wrap;gap:6px;">
+                <span class="tag" style="font-size:9px;padding:3px 8px;">NIST</span>
+                <span class="tag" style="font-size:9px;padding:3px 8px;">CIA Triad</span>
+                <span class="tag" style="font-size:9px;padding:3px 8px;">Security</span>
+              </div>
             </div>
-            <p style="color:var(--muted);font-size:14px;margin-bottom:4px;">Google · Coursera</p>
-            <p class="font-mono" style="font-size:11px;color:var(--muted);margin-bottom:16px;">2026</p>
-            <p style="color:var(--muted);font-size:14px;line-height:1.7;margin-bottom:16px;">
-              Completed the first course of the Google Cybersecurity Certificate program. Covered core security concepts including the history of cybersecurity, common threats and attack types, security frameworks (NIST, CIA triad), and the role of security professionals in protecting organizations.
-            </p>
-            <div style="display:flex;flex-wrap:wrap;gap:8px;">
-              <span class="tag">Cybersecurity</span>
-              <span class="tag">Security Frameworks</span>
-              <span class="tag">NIST</span>
-              <span class="tag">Threat Analysis</span>
-              <span class="tag">CIA Triad</span>
-            </div>
+            
+            <!-- Cert 02 -->
+            <div class="cert-card">
+              <div>
+                <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:20px;">
+                  <!-- Google logo -->
+                  <div style="width:48px;height:48px;background:#fff;border:1px solid var(--hairline);display:grid;place-items:center;padding:6px;flex-shrink:0;">
+                    <svg viewBox="0 0 48 48" style="width:28px;height:28px;" xmlns="http://www.w3.org/2000/svg">
+                      <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/>
+                      <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/>
+                      <path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/>
+                      <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.18 1.48-4.97 2.31-8.16 2.31-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/>
+                    </svg>
+                  </div>
+                  <span class="badge-verified" style="flex-shrink:0;">
+                    <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+                    Verified
+                  </span>
+                </div>
+                <h3 style="font-size:16px;font-weight:700;text-transform:uppercase;letter-spacing:-0.01em;margin-bottom:6px;line-height:1.3;">Introduction to AI</h3>
+                <p style="color:var(--brand);font-family:'Space Mono',monospace;font-size:11px;margin-bottom:12px;">Google · Coursera</p>
+                <p style="color:var(--muted);font-size:12.5px;line-height:1.6;margin-bottom:16px;">
+                  Learned the core concepts of Artificial Intelligence, including machine learning, deep learning, neural networks, generative AI, and the ethical implications of AI technologies.
+                </p>
+                <a href="https://coursera.org/share/0c6787f4371c705f6bed19b601215ef6" target="_blank" class="cert-link" style="margin-bottom: 20px;">
+                  View Credential
+                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+                </a>
+              </div>
+              <div style="display:flex;flex-wrap:wrap;gap:6px;">
+                <span class="tag" style="font-size:9px;padding:3px 8px;">AI Fundamentals</span>
+                <span class="tag" style="font-size:9px;padding:3px 8px;">Machine Learning</span>
+                <span class="tag" style="font-size:9px;padding:3px 8px;">Generative AI</span>
+              </div>
+            </div>        
           </div>
+          <!-- Next Button -->
+          <button id="cert-next" class="carousel-btn-flat" aria-label="Next Certification">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+          </button>
         </div>
       </section>
 
       <!-- ─── SKILLS ─── -->
-<section data-reveal id="skills" style="margin-bottom:120px;">
-
-  <div class="logo-loop">
+      <section data-reveal id="skills" style="margin-bottom:120px;">
+        <div class="logo-loop">
     <div class="logo-loop-track">
 
       <div class="logo-loop-copy">
@@ -504,12 +551,93 @@
       </svg>
     </button>
 
-    <!-- Responsive grid fixes -->
+    <!-- Responsive grid and layout overrides for mobile -->
     <style>
       @media (max-width: 768px) {
-        .about-grid, .edu-grid, .skills-grid, .contact-grid { grid-template-columns: 1fr !important; }
-        .project-article { grid-template-columns: 48px 1fr !important; }
+        /* General layout overrides */
+        .about-grid, .edu-grid, .skills-grid, .contact-grid { 
+          grid-template-columns: 1fr !important; 
+          gap: 32px !important;
+        }
+
+        /* About grid specifically needs custom gap */
+        .about-grid {
+          gap: 28px !important;
+        }
+
+        /* Project list styling - stack number above content to save space on mobile */
+        .project-article { 
+          grid-template-columns: 1fr !important; 
+          gap: 12px !important;
+        }
+        .project-article > div:first-child {
+          margin-bottom: -6px;
+        }
+        .project-article span {
+          font-size: 32px !important;
+        }
+
         .project-img-wrap { max-width: 100% !important; }
+
+        /* Full viewport height Hero on mobile to push "About Me" below the fold */
+        .hero-section {
+          min-height: calc(100vh - 140px) !important;
+          display: flex !important;
+          flex-direction: column !important;
+          justify-content: space-between !important;
+          margin-bottom: 40px !important;
+          padding-bottom: 24px !important;
+        }
+
+        /* Hero content alignment override for better mobile reading */
+        .hero-content {
+          align-items: flex-start !important;
+        }
+        .hero-desc {
+          text-align: left !important;
+          max-width: 100% !important;
+        }
+        .hero-actions {
+          justify-content: flex-start !important;
+        }
+
+        /* Mobile menu layer order correction */
+        .mobile-menu {
+          z-index: 100 !important;
+        }
+
+        /* Typography size reductions on mobile for a better fit */
+        .hero-name {
+          font-size: clamp(28px, 7vw, 42px) !important;
+          line-height: 0.95 !important;
+        }
+        .hero-desc {
+          font-size: 13px !important;
+          line-height: 1.6 !important;
+        }
+        .section-title {
+          font-size: 20px !important;
+        }
+        .about-text {
+          font-size: 13.5px !important;
+          line-height: 1.7 !important;
+        }
+        .card-flat h3 {
+          font-size: 15px !important;
+        }
+        .card-flat p, .card-flat span {
+          font-size: 12px !important;
+        }
+        .project-article h3 {
+          font-size: 16px !important;
+        }
+        .project-article p {
+          font-size: 13px !important;
+        }
+        .btn-cv, .tag {
+          font-size: 9px !important;
+          padding: 8px 14px !important;
+        }
       }
     </style>
 
@@ -623,6 +751,79 @@
   document
     .querySelectorAll("[data-reveal]")
     .forEach(el => revealObserver.observe(el));
+
+  /* ── Certifications carousel ── */
+  const certGallery = document.querySelector(".certs-gallery");
+  const certPrev = document.getElementById("cert-prev");
+  const certNext = document.getElementById("cert-next");
+
+  if (certGallery) {
+    // 1. Button Navigation
+    if (certPrev && certNext) {
+      certPrev.addEventListener("click", () => {
+        const card = certGallery.querySelector(".cert-card");
+        if (card) {
+          const cardWidth = card.offsetWidth;
+          certGallery.scrollBy({
+            left: -(cardWidth + 24),
+            behavior: "smooth"
+          });
+        }
+      });
+
+      certNext.addEventListener("click", () => {
+        const card = certGallery.querySelector(".cert-card");
+        if (card) {
+          const cardWidth = card.offsetWidth;
+          certGallery.scrollBy({
+            left: cardWidth + 24,
+            behavior: "smooth"
+          });
+        }
+      });
+    }
+
+    // 2. Drag-to-Scroll (Swipe with mouse cursor)
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+
+    certGallery.addEventListener("mousedown", (e) => {
+      isDown = true;
+      certGallery.style.cursor = "grabbing";
+      certGallery.style.scrollSnapType = "none";
+      certGallery.style.scrollBehavior = "auto";
+      startX = e.pageX - certGallery.offsetLeft;
+      scrollLeft = certGallery.scrollLeft;
+    });
+
+    const endDrag = () => {
+      if (!isDown) return;
+      isDown = false;
+      certGallery.style.cursor = "grab";
+      certGallery.style.scrollSnapType = "x mandatory";
+      certGallery.style.scrollBehavior = "smooth";
+    };
+
+    certGallery.addEventListener("mouseleave", endDrag);
+    certGallery.addEventListener("mouseup", endDrag);
+
+    certGallery.addEventListener("mousemove", (e) => {
+      if (!isDown) return;
+      e.preventDefault();
+      const x = e.pageX - certGallery.offsetLeft;
+      const walk = (x - startX) * 1.5; // Scroll speed multiplier
+      certGallery.scrollLeft = scrollLeft - walk;
+    });
+
+    // Set initial cursor style
+    certGallery.style.cursor = "grab";
+
+    // Prevent default browser drag behaviors for links and images inside the cards
+    certGallery.querySelectorAll("img, a").forEach(elem => {
+      elem.addEventListener("dragstart", (e) => e.preventDefault());
+    });
+  }
 
   /* ── Binary rain ── */
   (() => {
