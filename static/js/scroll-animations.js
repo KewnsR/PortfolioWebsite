@@ -239,12 +239,24 @@ function initSmoothScroll() {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
+            const href = this.getAttribute("href");
+            const target = document.querySelector(href);
             
             if (target) {
-                const headerOffset = 80;
-                const elementPosition = target.getBoundingClientRect().top;
-                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                let offsetPosition;
+                if (href === "#skills") {
+                    // Center the skills section vertically in the viewport
+                    const viewportHeight = window.innerHeight;
+                    const targetHeight = target.offsetHeight;
+                    offsetPosition =
+                        target.getBoundingClientRect().top +
+                        window.pageYOffset -
+                        (viewportHeight - targetHeight) / 2;
+                } else {
+                    const headerOffset = 80;
+                    const elementPosition = target.getBoundingClientRect().top;
+                    offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                }
                 
                 window.scrollTo({
                     top: offsetPosition,

@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Lloyd Kenneth Ramos — Full-Stack Developer</title>
+    <title>LKR - Portfolio</title>
     <meta name="description" content="Portfolio of Lloyd Kenneth Ramos — Computer Science graduate from Taguig City University building scalable web applications and AI-powered systems." />
     <link rel="icon" type="image/png" href="{{ url_for('static', filename='img/LKR_Logo.png') }}" />
     <link rel="apple-touch-icon" href="{{ url_for('static', filename='img/LKR_Logo.png') }}" />
@@ -523,9 +523,9 @@
     let current = "";
 
     sections.forEach(section => {
-      const sectionTop = section.offsetTop - navbar.offsetHeight - 30;
-
-      if (window.scrollY >= sectionTop) {
+      const rect = section.getBoundingClientRect();
+      const threshold = section.id === "skills" ? window.innerHeight * 0.55 : navbar.offsetHeight + 100;
+      if (rect.top <= threshold) {
         current = section.id;
       }
     });
@@ -570,19 +570,31 @@
 
     anchor.addEventListener("click", function (e) {
 
-      const target = document.querySelector(this.getAttribute("href"));
+      const href = this.getAttribute("href");
+      const target = document.querySelector(href);
 
       if (!target) return;
 
       e.preventDefault();
 
       const navHeight = navbar.offsetHeight;
+      let targetPosition;
 
-      const targetPosition =
-        target.getBoundingClientRect().top +
-        window.pageYOffset -
-        navHeight -
-        20;
+      if (href === "#skills") {
+        // Center the skills section vertically in the viewport
+        const viewportHeight = window.innerHeight;
+        const targetHeight = target.offsetHeight;
+        targetPosition =
+          target.getBoundingClientRect().top +
+          window.pageYOffset -
+          (viewportHeight - targetHeight) / 2;
+      } else {
+        targetPosition =
+          target.getBoundingClientRect().top +
+          window.pageYOffset -
+          navHeight -
+          20;
+      }
 
       window.scrollTo({
         top: targetPosition,
