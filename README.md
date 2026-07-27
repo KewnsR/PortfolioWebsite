@@ -1,4 +1,4 @@
-# 💻 Lloyd Kenneth Ramos — Personal Portfolio
+# 💻 Portfolio - Website
 
 A sleek, premium developer portfolio website designed with a dark cyberpunk aesthetic. Features a real-time binary rain matrix background, drag-to-scroll certifications carousel, and an SMTP contact form.
 
