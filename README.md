@@ -1,7 +1,5 @@
 # 💻 Portfolio - Website
 
-Simple Portfolio
-
 ![Status](https://img.shields.io/badge/Status-Active-brightgreen) ![Flask](https://img.shields.io/badge/Flask-3.1.0-blue) ![Python](https://img.shields.io/badge/Python-3.x-yellow)
 
 ## 🛠️ Tech Stack
