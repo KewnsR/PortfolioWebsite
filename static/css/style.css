@@ -135,6 +135,8 @@
 
       /* Layout */
       main {
+        position: relative;
+        z-index: 1;
         max-width: 1280px;
         margin: 0 auto;
         padding: 140px 40px 80px;
@@ -165,6 +167,48 @@
       }
 
             /* Hero */
+      .hero-section {
+        margin-bottom: 90px;
+        padding-bottom: 48px;
+        border-bottom: 1px solid var(--hairline);
+      }
+
+      .hero-stack {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+      }
+
+      .hero-content {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        margin-top: 24px;
+        gap: 10px;
+      }
+
+      .hero-desc {
+        font-size: 14px;
+        color: var(--muted);
+        max-width: 320px;
+        text-align: right;
+        line-height: 1.7;
+      }
+
+      .hero-status {
+        font-size: 10px;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+      }
+
+      .hero-actions {
+        display: flex;
+        gap: 12px;
+        margin-top: 8px;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+      }
+
       .hero-name {
         font-size: clamp(32px, 8vw, 76px);
         line-height: 0.88;
@@ -218,6 +262,61 @@
         align-items:start;
       }
 
+      #about,
+      #work,
+      #projects,
+      #contact {
+        margin-bottom: 90px;
+      }
+
+      #certifications,
+      #skills {
+        margin-top: 50px;
+        margin-bottom: 120px;
+      }
+
+      .about-info-card {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding: 24px;
+      }
+
+      .about-info-card .about-info-text {
+        font-size: 14.5px;
+        color: var(--white);
+      }
+
+      .about-info-card .about-info-status {
+        color: var(--brand);
+        font-weight: 600;
+      }
+
+      .about-info-card .about-info-email {
+        font-size: 13px;
+        word-break: break-all;
+        font-family: 'Space Mono', monospace;
+      }
+
+      .about-info-card .about-info-email a {
+        color: var(--white);
+        text-decoration: none;
+        transition: color 0.25s;
+      }
+
+      .about-info-card .about-info-email a:hover {
+        color: var(--brand);
+      }
+
+      .about-info-divider {
+        border-top: 1px solid var(--hairline);
+        padding-top: 16px;
+      }
+
+      .eyebrow-tight {
+        margin-bottom: 6px;
+      }
+
       .about-photo{
           width:200px;
           height:267px;
@@ -238,6 +337,69 @@
           font-size:15px;
           line-height:1.8;
           margin-bottom:18px;
+      }
+
+      .experience-row {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        margin-bottom: 16px;
+      }
+
+      .experience-row h3 {
+        font-size: 17px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: -0.01em;
+      }
+
+      .experience-row p {
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      .experience-logo {
+        width: 52px;
+        height: 52px;
+        border: 1px solid var(--hairline);
+        overflow: hidden;
+        flex-shrink: 0;
+        display: grid;
+        place-items: center;
+        background: #fff;
+      }
+
+      .experience-logo img {
+        width: 42px;
+        height: 42px;
+        object-fit: contain;
+      }
+
+      .experience-meta {
+        font-size: 11px;
+        color: var(--muted);
+      }
+
+      .internship-meta {
+        margin-bottom: 14px;
+      }
+
+      .experience-copy {
+        color: var(--muted);
+        font-size: 13px;
+        line-height: 1.7;
+        margin-bottom: 10px;
+      }
+
+      .experience-accent {
+        color: var(--white);
+        font-weight: 600;
+      }
+
+      .edu-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 24px;
       }
 
       .about-info{
@@ -445,6 +607,74 @@
         main { padding: 100px 20px 60px; }
         .contact-box { padding: 32px 20px; }
         .card-flat { padding: 24px 20px; }
+        .about-grid, .edu-grid, .skills-grid, .contact-grid {
+          grid-template-columns: 1fr !important;
+          gap: 32px !important;
+        }
+        .about-grid {
+          gap: 28px !important;
+        }
+        .project-article {
+          grid-template-columns: 1fr !important;
+          gap: 12px !important;
+        }
+        .project-article > div:first-child {
+          margin-bottom: -6px;
+        }
+        .project-article > div:first-child span {
+          font-size: 32px !important;
+        }
+        .project-img-wrap { max-width: 100% !important; }
+        .hero-section {
+          min-height: calc(100vh - 140px) !important;
+          display: flex !important;
+          flex-direction: column !important;
+          justify-content: space-between !important;
+          margin-bottom: 40px !important;
+          padding-bottom: 24px !important;
+        }
+        .hero-content {
+          align-items: flex-start !important;
+        }
+        .hero-desc {
+          text-align: left !important;
+          max-width: 100% !important;
+          font-size: 13px !important;
+          line-height: 1.6 !important;
+        }
+        .hero-actions {
+          justify-content: flex-start !important;
+        }
+        .mobile-menu {
+          z-index: 100 !important;
+        }
+        .hero-name {
+          font-size: clamp(28px, 7vw, 42px) !important;
+          line-height: 0.95 !important;
+        }
+        .section-title {
+          font-size: 20px !important;
+        }
+        .about-text {
+          font-size: 13.5px !important;
+          line-height: 1.7 !important;
+        }
+        .card-flat h3 {
+          font-size: 15px !important;
+        }
+        .card-flat p, .card-flat span {
+          font-size: 12px !important;
+        }
+        .project-article h3 {
+          font-size: 16px !important;
+        }
+        .project-article p {
+          font-size: 13px !important;
+        }
+        .btn-cv, .tag {
+          font-size: 9px !important;
+          padding: 8px 14px !important;
+        }
       }
 
       /* Binary rain */
@@ -457,6 +687,23 @@
         opacity: 0.20;
       }
 
+
+      .site-footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 32px;
+        border-top: 1px solid var(--hairline);
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      .footer-copy {
+        font-size: 10px;
+        color: var(--muted);
+        text-transform: uppercase;
+        letter-spacing: 0.16em;
+      }
 
       .contact-form{
     display:flex;

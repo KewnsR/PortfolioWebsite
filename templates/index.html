@@ -46,18 +46,18 @@
     <!-- Binary rain canvas -->
     <canvas id="binary-rain"></canvas>
 
-    <main id="top" style="position:relative;z-index:1;">
+    <main id="top">
 
       <!-- ─── HERO ─── -->
-      <section class="hero-section" data-reveal style="margin-bottom:90px;padding-bottom:48px;border-bottom:1px solid var(--hairline);">
-        <div style="display:flex;flex-direction:column;gap:0;">
+      <section class="hero-section" data-reveal>
+        <div class="hero-stack">
           <h1 class="hero-name">Lloyd<br>Kenneth<br>Ramos</h1>
-          <div class="hero-content" style="display:flex;flex-direction:column;align-items:flex-end;margin-top:24px;gap:10px;">
-            <p class="hero-desc" style="font-size:14px;color:var(--muted);max-width:320px;text-align:right;line-height:1.7;">
+          <div class="hero-content">
+            <p class="hero-desc">
               Full-Stack Developer crafting scalable web applications with robust architecture and clean design.
             </p>
-            <span class="font-mono text-brand" style="font-size:10px;letter-spacing:0.18em;text-transform:uppercase;">Available for Hire · 2026</span>
-            <div class="hero-actions" style="display:flex;gap:12px;margin-top:8px;flex-wrap:wrap;justify-content:flex-end;">
+            <span class="font-mono text-brand hero-status">Available for Hire · 2026</span>
+            <div class="hero-actions">
               <a href="#contact" class="btn-cv">Get In Touch</a>
               <a href="{{ url_for('static', filename='CV_LKR.pdf') }}" download class="btn-cv">Download CV ↓</a>
             </div>
@@ -86,7 +86,7 @@
       </section>
 
       <!-- ─── ABOUT ─── -->
-<section data-reveal id="about" style="margin-bottom:90px;">
+<section data-reveal id="about">
   <div class="section-header">
     <h2 class="section-title">About Me</h2>
     <span class="section-tag">— Who I Am</span>
@@ -128,19 +128,19 @@
     <!-- Info Card -->
     <div class="about-info">
 
-      <div class="card-flat" style="display:flex; flex-direction:column; gap:20px; padding: 24px;">
+      <div class="card-flat about-info-card">
         <div>
-          <span class="eyebrow" style="margin-bottom:6px;">Location</span>
-          <p style="font-size:14.5px; color:var(--white);">Taguig City, Philippines</p>
+          <span class="eyebrow eyebrow-tight">Location</span>
+          <p class="about-info-text">Taguig City, Philippines</p>
         </div>
-        <div style="border-top:1px solid var(--hairline); padding-top:16px;">
-          <span class="eyebrow" style="margin-bottom:6px;">Status</span>
-          <p style="font-size:14.5px; color:var(--brand); font-weight:600;">Looking for Work</p>
+        <div class="about-info-divider">
+          <span class="eyebrow eyebrow-tight">Status</span>
+          <p class="about-info-text about-info-status">Looking for Work</p>
         </div>
-        <div style="border-top:1px solid var(--hairline); padding-top:16px;">
-          <span class="eyebrow" style="margin-bottom:6px;">Email</span>
-          <p style="font-size:13px; word-break:break-all; font-family:'Space Mono',monospace;">
-            <a href="mailto:ramoslloydkenneth1@gmail.com" style="color:var(--white); text-decoration:none; transition:color 0.25s;" onmouseover="this.style.color='var(--brand)'" onmouseout="this.style.color='var(--white)'">ramoslloydkenneth1@gmail.com</a>
+        <div class="about-info-divider">
+          <span class="eyebrow eyebrow-tight">Email</span>
+          <p class="about-info-email">
+            <a href="mailto:ramoslloydkenneth1@gmail.com">ramoslloydkenneth1@gmail.com</a>
           </p>
         </div>
       </div>
@@ -151,53 +151,53 @@
 </section>
 
       <!-- ─── EDUCATION & EXPERIENCE ─── -->
-      <section data-reveal id="work" style="margin-bottom:90px;">
+      <section data-reveal id="work">
         <div class="section-header">
           <h2 class="section-title">Education &amp; Experience</h2>
           <span class="section-tag">— 2022 / 2026</span>
         </div>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;" class="edu-grid">
+        <div class="edu-grid">
 
           <!-- Education -->
           <div class="card-flat">
             <span class="eyebrow">Academic Background</span>
-            <div style="display:flex;align-items:center;gap:16px;margin-bottom:16px;">
-              <div style="width:52px;height:52px;border:1px solid var(--hairline);overflow:hidden;flex-shrink:0;display:grid;place-items:center;background:#fff;">
-                <img src="{{ url_for('static', filename='img/LogoTCU.png') }}" alt="TCU" style="width:42px;height:42px;object-fit:contain;" />
+            <div class="experience-row">
+              <div class="experience-logo">
+                <img src="{{ url_for('static', filename='img/LogoTCU.png') }}" alt="TCU" />
               </div>
               <div>
-                <h3 style="font-size:17px;font-weight:700;text-transform:uppercase;letter-spacing:-0.01em;">Taguig City University</h3>
-                <p style="color:var(--muted);font-size:13px;">Bachelor of Science in Computer Science</p>
+                <h3>Taguig City University</h3>
+                <p>Bachelor of Science in Computer Science</p>
               </div>
             </div>
-            <p class="font-mono" style="font-size:11px;color:var(--muted);">2022 — June 2026</p>
+            <p class="font-mono experience-meta">2022 — June 2026</p>
           </div>
 
           <!-- Internship -->
           <div class="card-flat">
             <span class="eyebrow">Internship</span>
-            <div style="display:flex;align-items:center;gap:16px;margin-bottom:16px;">
-              <div style="width:52px;height:52px;border:1px solid var(--hairline);overflow:hidden;flex-shrink:0;display:grid;place-items:center;background:#fff;">
-                <img src="{{ url_for('static', filename='img/TPCLOGO.png') }}" alt="TPC" style="width:42px;height:42px;object-fit:contain;" />
+            <div class="experience-row">
+              <div class="experience-logo">
+                <img src="{{ url_for('static', filename='img/TPCLOGO.png') }}" alt="TPC" />
               </div>
               <div>
-                <h3 style="font-size:17px;font-weight:700;text-transform:uppercase;letter-spacing:-0.01em;">Team Pacific Corporation</h3>
-                <p style="color:var(--muted);font-size:13px;">Application Developer Intern</p>
+                <h3>Team Pacific Corporation</h3>
+                <p>Application Developer Intern</p>
               </div>
             </div>
-            <p class="font-mono" style="font-size:11px;color:var(--muted);margin-bottom:14px;">March — June 2026</p>
-            <p style="color:var(--muted);font-size:13px;line-height:1.7;margin-bottom:10px;">
+            <p class="font-mono experience-meta internship-meta">March — June 2026</p>
+            <p class="experience-copy">
               Contributed to enterprise application development using Python and Odoo — implementing features, optimizing workflows, and supporting business process automation.
             </p>
-            <p style="color:var(--muted);font-size:13px;line-height:1.7;">
-              Participated in <span style="color:var(--white);font-weight:600;">AUTO-QA TPC</span>, an AI-powered quality assurance system focused on Integrated Circuit (IC) detection — backend development, system integration, testing, and performance improvements.
+            <p class="experience-copy">
+              Participated in <span class="experience-accent">AUTO-QA TPC</span>, an AI-powered quality assurance system focused on Integrated Circuit (IC) detection — backend development, system integration, testing, and performance improvements.
             </p>
           </div>
         </div>
       </section>
 
       <!-- ─── CERTIFICATIONS ─── -->
-      <section data-reveal id="certifications" style="margin-top: 50px; margin-bottom:120px;">
+      <section data-reveal id="certifications">
         <div class="section-header">
           <h2 class="section-title">Certifications</h2>
           <!-- <span class="section-tag">— Swipe to explore</span> -->
@@ -288,7 +288,7 @@
       </section>
 
       <!-- ─── SKILLS ─── -->
-      <section data-reveal id="skills" style="margin-bottom:120px;">
+      <section data-reveal id="skills">
         <div class="logo-loop">
     <div class="logo-loop-track">
 
@@ -336,7 +336,7 @@
 </section>
 
       <!-- ─── PROJECTS ─── -->
-      <section data-reveal id="projects" style="margin-bottom:90px;">
+      <section data-reveal id="projects">
         <div class="container section-container">
           <div class="section-header">
             <h2 class="section-title">Projects</h2>
@@ -521,7 +521,7 @@
         </div>
       </section>
       <!-- ─── CONTACT ─── -->
-      <section data-reveal id="contact" style="margin-bottom:90px;">
+      <section data-reveal id="contact">
         <div class="contact-box">
           <div class="contact-glow" style="top:-100px;right:-80px;"></div>
           <div class="contact-glow" style="bottom:-120px;left:-60px;opacity:0.04;"></div>
@@ -625,9 +625,9 @@
       </section>
 
       <!-- Footer -->
-      <footer style="display:flex;justify-content:space-between;align-items:center;padding-top:32px;border-top:1px solid var(--hairline);flex-wrap:wrap;gap:8px;">
-        <span class="font-mono" style="font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:0.16em;">© 2026 Lloyd Kenneth Ramos</span>
-        <span class="font-mono" style="font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:0.16em;">Designed &amp; built with care</span>
+      <footer class="site-footer">
+        <span class="font-mono footer-copy">© 2026 Lloyd Kenneth Ramos</span>
+        <span class="font-mono footer-copy">Designed &amp; built with care</span>
       </footer>
 
     </main>
@@ -639,431 +639,7 @@
       </svg>
     </button>
 
-    <!-- Responsive grid and layout overrides for mobile -->
-    <style>
-      @media (max-width: 768px) {
-        /* General layout overrides */
-        .about-grid, .edu-grid, .skills-grid, .contact-grid { 
-          grid-template-columns: 1fr !important; 
-          gap: 32px !important;
-        }
-
-        /* About grid specifically needs custom gap */
-        .about-grid {
-          gap: 28px !important;
-        }
-
-        /* Project list styling - stack number above content to save space on mobile */
-        .project-article { 
-          grid-template-columns: 1fr !important; 
-          gap: 12px !important;
-        }
-        .project-article > div:first-child {
-          margin-bottom: -6px;
-        }
-        .project-article > div:first-child span {
-          font-size: 32px !important;
-        }
-
-        .project-img-wrap { max-width: 100% !important; }
-
-        /* Full viewport height Hero on mobile to push "About Me" below the fold */
-        .hero-section {
-          min-height: calc(100vh - 140px) !important;
-          display: flex !important;
-          flex-direction: column !important;
-          justify-content: space-between !important;
-          margin-bottom: 40px !important;
-          padding-bottom: 24px !important;
-        }
-
-        /* Hero content alignment override for better mobile reading */
-        .hero-content {
-          align-items: flex-start !important;
-        }
-        .hero-desc {
-          text-align: left !important;
-          max-width: 100% !important;
-        }
-        .hero-actions {
-          justify-content: flex-start !important;
-        }
-
-        /* Mobile menu layer order correction */
-        .mobile-menu {
-          z-index: 100 !important;
-        }
-
-        /* Typography size reductions on mobile for a better fit */
-        .hero-name {
-          font-size: clamp(28px, 7vw, 42px) !important;
-          line-height: 0.95 !important;
-        }
-        .hero-desc {
-          font-size: 13px !important;
-          line-height: 1.6 !important;
-        }
-        .section-title {
-          font-size: 20px !important;
-        }
-        .about-text {
-          font-size: 13.5px !important;
-          line-height: 1.7 !important;
-        }
-        .card-flat h3 {
-          font-size: 15px !important;
-        }
-        .card-flat p, .card-flat span {
-          font-size: 12px !important;
-        }
-        .project-article h3 {
-          font-size: 16px !important;
-        }
-        .project-article p {
-          font-size: 13px !important;
-        }
-        .btn-cv, .tag {
-          font-size: 9px !important;
-          padding: 8px 14px !important;
-        }
-      }
-    </style>
-
-    <script>
-  /* ── Nav scroll ── */
-  const navbar = document.querySelector("nav");
-  const allNavLinks = document.querySelectorAll(".nav-links a:not(.btn-cv)");
-
-  window.addEventListener("scroll", () => {
-    const sections = document.querySelectorAll("section[id]");
-    let current = "";
-
-    sections.forEach(section => {
-      const rect = section.getBoundingClientRect();
-      const threshold = section.id === "skills" ? window.innerHeight * 0.55 : navbar.offsetHeight + 100;
-      if (rect.top <= threshold) {
-        current = section.id;
-      }
-    });
-
-    allNavLinks.forEach(link => {
-      link.classList.toggle(
-        "nav-active",
-        link.getAttribute("href") === "#" + current
-      );
-    });
-
-    document
-      .getElementById("scrollToTop")
-      .classList.toggle("visible", window.scrollY > 300);
-  });
-
-  /* ── Scroll to top ── */
-  document.getElementById("scrollToTop").addEventListener("click", () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth"
-    });
-  });
-
-  /* ── Mobile menu ── */
-  document.getElementById("mobile-toggle").addEventListener("click", () => {
-    document.getElementById("mobile-menu").classList.add("open");
-  });
-
-  document.getElementById("mobile-close").addEventListener("click", () => {
-    document.getElementById("mobile-menu").classList.remove("open");
-  });
-
-  document.querySelectorAll(".mobile-link").forEach(link => {
-    link.addEventListener("click", () => {
-      document.getElementById("mobile-menu").classList.remove("open");
-    });
-  });
-
-  /* ── Smooth scroll with navbar offset ── */
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-
-    anchor.addEventListener("click", function (e) {
-
-      const href = this.getAttribute("href");
-      const target = document.querySelector(href);
-
-      if (!target) return;
-
-      e.preventDefault();
-
-      const navHeight = navbar.offsetHeight;
-      let targetPosition;
-
-      if (href === "#skills") {
-        // Center the skills section vertically in the viewport
-        const viewportHeight = window.innerHeight;
-        const targetHeight = target.offsetHeight;
-        targetPosition =
-          target.getBoundingClientRect().top +
-          window.pageYOffset -
-          (viewportHeight - targetHeight) / 2;
-      } else {
-        targetPosition =
-          target.getBoundingClientRect().top +
-          window.pageYOffset -
-          navHeight -
-          20;
-      }
-
-      window.scrollTo({
-        top: targetPosition,
-        behavior: "smooth"
-      });
-
-    });
-
-  });
-
-  /* ── Reveal on scroll ── */
-  const revealObserver = new IntersectionObserver(
-    entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-        }
-      });
-    },
-    {
-      threshold: 0.1,
-      rootMargin: "0px 0px -60px 0px"
-    }
-  );
-
-  document
-    .querySelectorAll("[data-reveal]")
-    .forEach(el => revealObserver.observe(el));
-
-  /* ── Certifications carousel ── */
-  const certGallery = document.querySelector(".certs-gallery");
-  const certPrev = document.getElementById("cert-prev");
-  const certNext = document.getElementById("cert-next");
-
-  if (certGallery) {
-    // 1. Button Navigation
-    if (certPrev && certNext) {
-      certPrev.addEventListener("click", () => {
-        const card = certGallery.querySelector(".cert-card");
-        if (card) {
-          const cardWidth = card.offsetWidth;
-          certGallery.scrollBy({
-            left: -(cardWidth + 24),
-            behavior: "smooth"
-          });
-        }
-      });
-
-      certNext.addEventListener("click", () => {
-        const card = certGallery.querySelector(".cert-card");
-        if (card) {
-          const cardWidth = card.offsetWidth;
-          certGallery.scrollBy({
-            left: cardWidth + 24,
-            behavior: "smooth"
-          });
-        }
-      });
-    }
-
-    // 2. Drag-to-Scroll (Swipe with mouse cursor)
-    let isDown = false;
-    let startX;
-    let scrollLeft;
-
-    certGallery.addEventListener("mousedown", (e) => {
-      isDown = true;
-      certGallery.style.cursor = "grabbing";
-      certGallery.style.scrollSnapType = "none";
-      certGallery.style.scrollBehavior = "auto";
-      startX = e.pageX - certGallery.offsetLeft;
-      scrollLeft = certGallery.scrollLeft;
-    });
-
-    const endDrag = () => {
-      if (!isDown) return;
-      isDown = false;
-      certGallery.style.cursor = "grab";
-      certGallery.style.scrollSnapType = "x mandatory";
-      certGallery.style.scrollBehavior = "smooth";
-    };
-
-    certGallery.addEventListener("mouseleave", endDrag);
-    certGallery.addEventListener("mouseup", endDrag);
-
-    certGallery.addEventListener("mousemove", (e) => {
-      if (!isDown) return;
-      e.preventDefault();
-      const x = e.pageX - certGallery.offsetLeft;
-      const walk = (x - startX) * 1.5; // Scroll speed multiplier
-      certGallery.scrollLeft = scrollLeft - walk;
-    });
-
-    // Set initial cursor style
-    certGallery.style.cursor = "grab";
-
-    // Prevent default browser drag behaviors for links and images inside the cards
-    certGallery.querySelectorAll("img, a").forEach(elem => {
-      elem.addEventListener("dragstart", (e) => e.preventDefault());
-    });
-
-    // Auto-hide navigation arrows if there is no overflow (e.g. only 2 cards)
-    function toggleCarouselButtons() {
-      const hasOverflow = certGallery.scrollWidth > certGallery.clientWidth;
-      if (hasOverflow) {
-        if (certPrev) certPrev.style.visibility = "visible";
-        if (certNext) certNext.style.visibility = "visible";
-      } else {
-        if (certPrev) certPrev.style.visibility = "hidden";
-        if (certNext) certNext.style.visibility = "hidden";
-      }
-    }
-    window.addEventListener("resize", toggleCarouselButtons);
-    setTimeout(toggleCarouselButtons, 100);
-  }
-
-  /* ── Projects stack card scrolling ── */
-  const projectCards = document.querySelectorAll(".project-card");
-  const stackContainer = document.querySelector(".projects-stack-container");
-  const progressDots = document.querySelectorAll(".projects-progress-nav .progress-dot");
-
-  function updateCardStack() {
-    if (!stackContainer || projectCards.length === 0) return;
-
-    let activeIndex = 0;
-    const stickyTop = 120;
-
-    projectCards.forEach((card, idx) => {
-      const rect = card.getBoundingClientRect();
-
-      // Update scroll spy active index
-      if (rect.top <= stickyTop + 10) {
-        activeIndex = idx;
-      }
-
-      // Smooth overlapping transitions (scale down & fade previous cards)
-      const nextCard = projectCards[idx + 1];
-      if (nextCard) {
-        const nextRect = nextCard.getBoundingClientRect();
-        
-        // Compute progress of the next card moving into viewport up to sticky position
-        const progress = Math.max(0, Math.min(1, (window.innerHeight - nextRect.top) / (window.innerHeight - stickyTop)));
-        
-        const scale = 1 - progress * 0.05;      // Down to scale(0.95)
-        const opacity = 1 - progress * 0.45;    // Down to opacity(0.55)
-        const filterVal = 1 - progress * 0.35;  // Slightly darken
-        
-        card.style.transform = `scale(${scale})`;
-        card.style.opacity = `${opacity}`;
-        card.style.filter = `brightness(${filterVal})`;
-      } else {
-        // Last card stays dominant
-        card.style.transform = "scale(1)";
-        card.style.opacity = "1";
-        card.style.filter = "brightness(1)";
-      }
-    });
-
-    // Update progress dots status
-    progressDots.forEach((dot, idx) => {
-      if (idx === activeIndex) {
-        dot.classList.add("active");
-      } else {
-        dot.classList.remove("active");
-      }
-    });
-  }
-
-  // Handle clickable dot navigation
-  window.scrollToCard = (index) => {
-    const card = projectCards[index];
-    if (card) {
-      const cardRect = card.getBoundingClientRect();
-      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-      const targetY = cardRect.top + scrollTop - 120;
-      window.scrollTo({
-        top: targetY,
-        behavior: "smooth"
-      });
-    }
-  };
-
-  // Attach listeners
-  window.addEventListener("scroll", () => {
-    requestAnimationFrame(updateCardStack);
-  });
-  window.addEventListener("resize", updateCardStack);
-  // Run once to initialize styling
-  updateCardStack();
-
-
-  /* ── Binary rain ── */
-  (() => {
-    const canvas = document.getElementById("binary-rain");
-    const ctx = canvas.getContext("2d");
-
-    const fontSize = 11;
-    const chars = "10";
-
-    let columns, drops;
-
-    function init() {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-
-      columns = Math.floor(canvas.width / (fontSize * 1.6));
-      drops = Array(columns)
-        .fill(0)
-        .map(() => Math.random() * -100);
-    }
-
-    function draw() {
-      ctx.fillStyle = "rgba(8,11,24,0.06)";
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-      ctx.font = `${fontSize}px "Space Mono", monospace`;
-      ctx.textBaseline = "top";
-
-      for (let i = 0; i < drops.length; i++) {
-        const char = chars[Math.floor(Math.random() * chars.length)];
-
-        const x = i * fontSize * 1.6;
-        const y = drops[i] * fontSize;
-
-        const alpha = 0.5 + Math.random() * 0.2;
-
-        ctx.fillStyle =
-          Math.random() > 0.7
-            ? `rgba(79,95,255,${alpha})`
-            : `rgba(60,75,200,${alpha})`;
-
-        ctx.fillText(char, x, y);
-
-        drops[i] += 0.3 + Math.random() * 0.2;
-
-        if (
-          drops[i] * fontSize > canvas.height &&
-          Math.random() > 0.975
-        ) {
-          drops[i] = -Math.floor(Math.random() * 20);
-        }
-      }
-    }
-
-    init();
-    setInterval(draw, 60);
-
-    window.addEventListener("resize", init);
-  })();
-
-  
-</script>
-
+    <script src="{{ url_for('static', filename='js/portfolio.js') }}"></script>
     <script src="{{ url_for('static', filename='js/contact-form.js') }}"></script>
   </body>
 </html>
