@@ -1,7 +1,5 @@
 # 💻 Portfolio - Website
 
-A sleek, premium developer portfolio website designed with a dark cyberpunk aesthetic. Features a real-time binary rain matrix background, drag-to-scroll certifications carousel, and an SMTP contact form.
-
 ![Status](https://img.shields.io/badge/Status-Active-brightgreen) ![Flask](https://img.shields.io/badge/Flask-3.1.0-blue) ![Python](https://img.shields.io/badge/Python-3.x-yellow)
 
 ## 🛠️ Tech Stack
