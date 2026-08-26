@@ -11,6 +11,13 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      (() => {
+        const savedTheme = localStorage.getItem('portfolio-theme');
+        const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
+        document.documentElement.dataset.theme = savedTheme || (prefersLight ? 'light' : 'dark');
+      })();
+    </script>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
   </head>
   <body>
@@ -674,6 +681,16 @@
         <polyline points="18 15 12 9 6 15"/>
       </svg>
     </button>
+
+    <aside class="theme-switcher" aria-label="Color theme">
+      <span class="theme-switcher-label">Theme</span>
+      <button id="theme-toggle" class="theme-toggle" type="button" role="switch" aria-checked="false" aria-label="Switch to light mode">
+        <span class="theme-toggle-track" aria-hidden="true">
+          <span class="theme-toggle-thumb"></span>
+        </span>
+        <span class="theme-toggle-text">Dark</span>
+      </button>
+    </aside>
 
     <script src="{{ url_for('static', filename='js/portfolio.js') }}"></script>
     <script src="{{ url_for('static', filename='js/contact-form.js') }}"></script>

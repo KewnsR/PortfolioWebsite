@@ -13,8 +13,27 @@ document.addEventListener('DOMContentLoaded', () => {
   const projectCards = document.querySelectorAll('.project-card');
   const stackContainer = document.querySelector('.projects-stack-container');
   const progressDots = document.querySelectorAll('.projects-progress-nav .progress-dot');
+  const themeToggle = document.getElementById('theme-toggle');
+  const themeToggleText = themeToggle?.querySelector('.theme-toggle-text');
 
   document.documentElement.style.scrollBehavior = 'smooth';
+
+  function updateThemeControl() {
+    const isLight = document.documentElement.dataset.theme === 'light';
+    themeToggle?.setAttribute('aria-checked', String(isLight));
+    themeToggle?.setAttribute('aria-label', `Switch to ${isLight ? 'dark' : 'light'} mode`);
+    if (themeToggleText) themeToggleText.textContent = isLight ? 'Light' : 'Dark';
+  }
+
+  if (themeToggle) {
+    themeToggle.addEventListener('click', () => {
+      const nextTheme = document.documentElement.dataset.theme === 'light' ? 'dark' : 'light';
+      document.documentElement.dataset.theme = nextTheme;
+      localStorage.setItem('portfolio-theme', nextTheme);
+      updateThemeControl();
+    });
+    updateThemeControl();
+  }
 
   function updateActiveNav() {
     if (!navbar) return;
@@ -262,7 +281,8 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     const drawRain = () => {
-      ctx.fillStyle = 'rgba(8,11,24,0.06)';
+      const isLight = document.documentElement.dataset.theme === 'light';
+      ctx.fillStyle = isLight ? 'rgba(244,245,247,0.06)' : 'rgba(0,0,0,0.06)';
       ctx.fillRect(0, 0, canvas.width, canvas.height);
       ctx.font = `${fontSize}px "Space Mono", monospace`;
       ctx.textBaseline = 'top';
