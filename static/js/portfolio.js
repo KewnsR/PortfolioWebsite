@@ -311,3 +311,17 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('resize', initRain);
   }
 });
+
+window.addEventListener('load', () => {
+  const loader = document.getElementById('loading-screen');
+  if (loader) {
+    // Small delay to ensure smooth transition
+    setTimeout(() => {
+      loader.style.opacity = '0';
+      loader.style.pointerEvents = 'none';
+      setTimeout(() => {
+        loader.style.display = 'none';
+      }, 700); // Wait for the transition to finish (700ms from tailwind class)
+    }, 200);
+  }
+});

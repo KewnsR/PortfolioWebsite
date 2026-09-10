@@ -1160,9 +1160,9 @@ html[data-theme="light"] .carousel-btn-flat {
   border: 1px solid var(--hairline);
   padding: 40px;
   display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
+  grid-template-columns: 1.3fr 0.7fr;
   gap: 40px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
   transform-origin: center top;
   will-change: transform, opacity;
   transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
@@ -1170,8 +1170,8 @@ html[data-theme="light"] .carousel-btn-flat {
 
 .project-card:hover {
   border-color: var(--brand-border);
-  box-shadow: 0 25px 50px rgba(79, 95, 255, 0.12);
-  transform: translateY(-4px) scale(1) !important; /* Slightly lift and override scroll scaling */
+  box-shadow: 0 18px 36px rgba(79, 95, 255, 0.08);
+  transform: translateY(-2px) scale(1) !important; /* Slightly lift and override scroll scaling */
 }
 
 /* Staggered Lift on Tags when Card is Hovered */
@@ -1274,23 +1274,23 @@ html[data-theme="light"] .carousel-btn-flat {
 }
 
 .mockup-icon {
-  width: 60px;
-  height: 60px;
+  width: 50px;
+  height: 50px;
   background: rgba(79, 95, 255, 0.08);
   border: 1px solid rgba(79, 95, 255, 0.2);
   border-radius: 12px;
   display: grid;
   place-items: center;
   color: var(--brand);
-  box-shadow: 0 0 20px rgba(79, 95, 255, 0.15);
-  transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+  box-shadow: 0 0 15px rgba(79, 95, 255, 0.1);
+  transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
 .project-card:hover .mockup-icon {
-  transform: scale(1.08) rotate(3deg);
-  box-shadow: 0 0 30px rgba(79, 95, 255, 0.35);
+  transform: scale(1.04) rotate(1.5deg);
+  box-shadow: 0 0 20px rgba(79, 95, 255, 0.25);
   color: var(--white);
-  border-color: rgba(79, 95, 255, 0.4);
+  border-color: rgba(79, 95, 255, 0.35);
 }
 
 /* Vertical Progress Indicator Nav */
